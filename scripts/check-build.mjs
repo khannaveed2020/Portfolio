@@ -1,0 +1,25 @@
+import assert from 'node:assert/strict'
+import { readFile, readdir, stat } from 'node:fs/promises'
+
+const html = await readFile('dist/index.html', 'utf8')
+for (const id of ['about', 'work', 'credentials', 'contact']) assert(html.includes(`id="${id}"`), `Missing static section ${id}`)
+for (const word of ['Microsoft', 'Wipro Infotech', 'Cessna 172', 'Traffic Manager', 'Bastion', 'Azure NAT Gateway', 'Lab experience only']) assert(html.includes(word), `Missing source-grounded content: ${word}`)
+assert(html.includes('aria-label="Open Naveed Khan résumé PDF"'))
+assert(html.includes('href="/portfolio/Naveed_Khan_Resume.pdf"'))
+assert(html.includes('<details>') && html.includes('<summary>'))
+assert(!html.includes('<!--app-html-->'))
+const hero = html.slice(html.indexOf('id="about"'), html.indexOf('id="work"'))
+assert(!hero.includes('Senior Support Escalation Engineer'), 'Role leaked into personal introduction')
+const pdf = await readFile('dist/Naveed_Khan_Resume.pdf')
+assert(pdf.subarray(0, 5).toString() === '%PDF-')
+assert((await stat('dist/Naveed_Khan_Resume.pdf')).size > 10000)
+for (const match of html.matchAll(/(?:src|href)="(\/portfolio\/assets\/[^\"]+)"/g)) await stat(`dist/${match[1].replace('/portfolio/', '')}`)
+async function audit(path) {
+  for (const entry of await readdir(path, { withFileTypes: true })) {
+    const file = `${path}/${entry.name}`
+    assert(!/\.docx$|master.resume|source-documents/i.test(file), `Private file in output: ${file}`)
+    if (entry.isDirectory()) await audit(file)
+  }
+}
+await audit('dist')
+console.log('PASS: static content, native details, asset URLs, résumé and public-output privacy checks.')
