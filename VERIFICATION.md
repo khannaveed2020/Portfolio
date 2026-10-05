@@ -98,6 +98,14 @@ No public deployment was made during this implementation.
 - Read the current RoadLens README from the repository's main branch. Public project copy now lists supported benefits (searching people/vehicles, local footage/session control, offline after setup and flexible installation) instead of the limitations disclosure and hackathon/MVP notice. No production, safety, accuracy or unrestricted AI-search claims were introduced.
 - Build, static/private-output and whitespace checks pass. Screenshots: `.qa/static-capabilities.jpg` and `.qa/roadlens-benefits.jpg`. No new Lighthouse or cross-browser audit. User-supplied untracked `Pics/` remains untouched and excluded from this commit.
 
+## Photography addition — 5 October 2026
+
+- All sixteen HBK photos visually inspected and integrated with descriptive alternative text and captions. Two-sentence introduction describes the user-confirmed travel/photography interest without invented destinations or achievements.
+- Small translucent HBK website overlays appear on every slide. These are presentation watermarks, not embedded in JPEG pixels; originals remain unchanged.
+- Desktop gallery inspected, Enter advances the control, and Next wraps from 16 to 1. Mobile at 320px shows the image, watermark, count, control and introduction without horizontal overflow (document width 320px).
+- Responsive JPEG preparation strips EXIF metadata. Build and static checks verify all sixteen photos, small variants, heading and watermark overlays. No new dependencies or automatic gallery motion. Screenshot: `.qa/photography.jpg`.
+- No new Lighthouse or cross-browser audit, or public Pages deployment in this revision.
+
 ## Personal photo galleries — 5 October 2026
 
 - Six supplied Aviation photographs and two Scuba photographs replace interim story illustrations. Flight-simulation captions distinguish those images from real-world flying.

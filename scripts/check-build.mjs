@@ -13,6 +13,12 @@ assert(html.includes('href="mailto:khannaveed2020@outlook.com"'))
 assert(!html.replace(/<[^>]*>/g, '').includes('khannaveed2020@outlook.com'), 'Visible email address appeared')
 assert(html.includes('aria-label="Next aviation photo"') && html.includes('aria-label="Next scuba photo"'), 'Missing accessible photo controls')
 assert(html.includes('/Portfolio/photos/aviation-06.jpg') && html.includes('/Portfolio/photos/scuba-02.jpg'), 'Missing story photo galleries')
+assert(html.includes('id="photography-heading"') && html.includes('aria-label="Next photography photo"'), 'Missing Photography section or control')
+assert((html.match(/class="photo-watermark"/g) || []).length === 16, 'Every HBK photo must have its website watermark')
+for (let number = 5077; number <= 5092; number++) {
+  assert(html.includes(`/Portfolio/photos/photography-${number}.jpg`), `Missing HBK photo ${number}`)
+  await stat(`dist/photos/photography-${number}-small.jpg`)
+}
 assert(html.includes('/Portfolio/credly.svg'), 'Missing local brand logo')
 assert(html.includes('<h3 id="credentials-heading"'), 'Credentials must be an explicit heading')
 assert(html.includes('RoadLens — Intelligent Car Dashcam'), 'Missing verified project content')

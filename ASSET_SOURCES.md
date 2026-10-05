@@ -14,6 +14,8 @@ The page does not request brand assets from external servers at runtime.
 
 ## Personal story photographs
 
+- Photography: all sixteen user-approved `Pics/HBK/IMG_5077.jpg` through `IMG_5092.jpg`, exported as `photography-{number}.jpg` and `-small.jpg`. Landscape, architecture and everyday-detail captions describe inspected images without inferring locations. HBK is a small, translucent website overlay, not baked into downloadable JPEG pixels. Originals remain unchanged and ignored.
+
 - User-supplied Aviation and Scuba photos in `Pics/`, approved for their respective galleries. Six Aviation images and two Scuba images are published as locally optimised JPEG copies, with 640px and 1280px variants. EXIF/GPS metadata is removed; originals are unchanged and ignored by Git.
 - Aviation source order: `IMG_9942.JPG`, `IMG_9961.JPG`, `IMG_9963.JPG`, `IMG_5074.jpg`, `IMG_5075.jpg`, `IMG_5076.jpg`. Last three are explicitly captioned as flight simulation, not real-world pilot qualifications.
 - Scuba source order: `IMG_5072.jpg`, `IMG_5073.jpg`.

@@ -13,6 +13,7 @@ photos = [
     ("Scuba/IMG_5072.jpg", "scuba-01"),
     ("Scuba/IMG_5073.jpg", "scuba-02"),
 ]
+photos += [(f"HBK/IMG_{number}.jpg", f"photography-{number}") for number in range(5077, 5093)]
 output = root / "public/photos"
 output.mkdir(parents=True, exist_ok=True)
 for source, name in photos:

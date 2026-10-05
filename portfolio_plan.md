@@ -243,6 +243,8 @@ Example prompt:
 
 ## 19. Personal photo galleries
 
+- Photography follows Scuba within About Me, with all 16 supplied HBK photos, a two-sentence travel/photography introduction and the same manually cycled gallery. Show a subtle corner HBK watermark as a website overlay on every photograph; originals remain untouched. Keep the three-item main navigation unchanged.
+
 - Use all six supplied Aviation photos and both Scuba photos in their respective alternating image/text stories. Clearly distinguish the three flight-simulation images from real flying.
 - Show one photograph at a time after hydration, with a photo count and subtle Next photo button slightly below. Each gallery cycles independently back to its first image; no automatic advancement.
 - Preserve whole images without cropping, meaningful alternative text and keyboard-operable controls. Without JavaScript, all photographs and captions remain visible.

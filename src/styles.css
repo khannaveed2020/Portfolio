@@ -60,7 +60,8 @@ h2 { font-size: clamp(38px, 4.5vw, 60px); font-weight: 550; line-height: 1.12; l
 .story-gallery { min-width: 0; background: transparent; }
 .story-gallery.flying, .story-gallery.diving { background: transparent; }
 .story-reverse .story-gallery { grid-column: 2; grid-row: 1; }
-.gallery-slide { margin: 0; }
+.gallery-slide { margin: 0; position: relative; }
+.photo-watermark { position: absolute; right: 16px; bottom: 48px; color: rgb(255 255 255 / .42); font-size: 15px; font-weight: 600; letter-spacing: .18em; text-shadow: 0 1px 3px rgb(0 0 0 / .5); pointer-events: none; }
 .gallery-slide + .gallery-slide { margin-top: 24px; }
 .gallery-slide[hidden] + .gallery-slide { margin-top: 0; }
 .photo-frame { aspect-ratio: 4 / 3; overflow: hidden; border: 1px solid #9c7b60; border-radius: 5px 52px 5px 5px; background: #111b22; }
