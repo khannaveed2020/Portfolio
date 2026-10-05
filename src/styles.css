@@ -171,6 +171,46 @@ button:focus-visible { outline: 2px solid #f7d7b1; outline-offset: 5px; }
 .lab-card:nth-child(2) { border-left-color: #e5ba87; }
 .lab-card:hover, .lab-card:focus-within { background: #203c3b; }
 .lab-card h3 { max-width: 270px; }
+.company-heading { display: flex; align-items: center; gap: 14px; }
+.company-logo { object-fit: contain; flex-shrink: 0; width: 64px; height: 40px; }
+.microsoft-logo, .azure-logo { width: 28px; height: 28px; }
+.wipro-logo { width: 54px; height: 40px; }
+.mphasis-logo { width: 78px; padding: 5px; background: #fff; border-radius: 3px; }
+.experience p, details ul { font-size: 15px; }
+.role-meta > span { font-size: 12px; }
+/* Neutral chapter surface and explicit, high-contrast text hierarchy. */
+#credentials { background: #19232f; color: #f5f2e9; --accent: #bceee0; --muted: #ced4dc; --line: #526172; }
+#credentials .section-heading > p:last-child { font-size: 16px; color: #ced4dc; }
+.chapter-heading { display: flex; flex-wrap: wrap; gap: 12px 28px; align-items: baseline; font-size: 32px; padding-bottom: 22px; margin-bottom: 0; border-bottom: 1px solid #526172; }
+.chapter-heading > span { font-family: 'Avenir Next', Avenir, 'Segoe UI', sans-serif; font-size: 13px; letter-spacing: 0; color: #ced4dc; font-weight: 400; }
+.credential-list { margin-top: 0; }
+.credential-group { display: grid; grid-template-columns: minmax(160px, .7fr) 2fr; gap: 35px; border-bottom: 1px solid #526172; padding: 28px 0; }
+.credential-group h4 { display: flex; align-items: center; gap: 12px; font-size: 19px; line-height: 1.4; color: #f5f2e9; margin: 0; }
+.credential-group ul { margin: 0; padding-left: 20px; color: #e0e5eb; font-size: 15px; line-height: 1.65; }
+.credential-group li { padding-left: 4px; margin-bottom: 8px; list-style: disc; }
+.credential-group li:last-child { margin-bottom: 0; }
+.credential-group li::marker { color: #bceee0; }
+.credential-footer { border: 0; }
+.credential-footer p { font-size: 13px; color: #ced4dc; }
+.projects-block { margin-top: 65px; }
+.featured-project { display: grid; grid-template-columns: .85fr 1.5fr; gap: 42px; padding: 40px 0; align-items: start; border-bottom: 1px solid #526172; }
+.project-visual { background: #263646; border: 1px solid #617080; border-radius: 4px 36px 4px 4px; overflow: hidden; }
+.project-visual svg { display: block; width: 100%; }
+.project-visual > span { display: block; font: 11px Consolas, monospace; padding: 18px; color: #e0e5eb; }
+.project-copy h4 { font-size: 26px; color: #f5f2e9; line-height: 1.3; margin-bottom: 15px; }
+.project-copy .eyebrow { margin-bottom: 16px; }
+.project-copy p { font-size: 15px; color: #ced4dc; }
+.technology-list { display: flex; flex-wrap: wrap; gap: 8px 16px; padding: 0; margin-block: 22px; color: #bceee0; font: 12px Consolas, monospace; list-style: none; }
+.project-links { display: flex; flex-wrap: wrap; gap: 24px; margin-block: 24px; }
+.project-copy details { padding-top: 8px; }
+.project-copy summary { font-size: 14px; }
+.project-limitation { border-left: 2px solid #ecc595; padding-left: 16px; }
+#credentials .labs-grid { gap: 35px; margin-top: 35px; }
+#credentials .lab-card { padding: 20px 25px; border-left-color: #bceee0; }
+#credentials .lab-card:nth-child(2) { border-left-color: #ecc595; }
+#credentials .lab-card:hover, #credentials .lab-card:focus-within { background: #243545; }
+#credentials .lab-card p:not(.eyebrow) { font-size: 15px; color: #ced4dc; }
+#credentials .lab-card .card-note { font-size: 13px !important; color: #bceee0 !important; }
 .contact-section { background: #28222a; --accent: #efbaa6; border-top-color: #66505c; position: relative; overflow: hidden; }
 .contact-section::after { content: 'Hello.'; position: absolute; right: -10px; bottom: -35px; font-family: Georgia, serif; font-style: italic; font-size: clamp(110px, 20vw, 260px); line-height: 1; color: #eebda810; pointer-events: none; }
 .contact-section .shell { position: relative; z-index: 1; }
@@ -222,6 +262,10 @@ button:focus-visible { outline: 2px solid #f7d7b1; outline-offset: 5px; }
   .labs-grid { grid-template-columns: 1fr; } .lab-card { padding: 25px; }
   .credential-footer { flex-direction: column; align-items: flex-start; gap: 7px; }
   .credential-list summary { font-size: 17px; }
+  .credential-group, .featured-project { grid-template-columns: 1fr; gap: 22px; }
+  .chapter-heading { font-size: 29px; }
+  .company-heading { gap: 10px; flex-wrap: wrap; }
+  .project-copy h4 { font-size: 25px; }
   .contact-email { font-size: 16px; gap: 8px; overflow-wrap: anywhere; }
   footer { flex-wrap: wrap; } footer span:nth-child(2) { display: none; }
 }

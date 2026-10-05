@@ -4,7 +4,7 @@ Personal portfolio built with Vite, React, strict TypeScript, Tailwind CSS and M
 
 ## Local development
 
-Use Node 24 and npm. Run `npm ci`, then `npm run dev`. Open the printed URL with `/portfolio/` appended.
+Use Node 24 and npm. Run `npm ci`, then `npm run dev`. Open the printed URL with `/Portfolio/` appended.
 
 Run `npm run build` and `npm run check` before reviewing the production output with `npm run preview`.
 
@@ -12,13 +12,15 @@ The build renders the React page to static HTML before hydration. Content, navig
 
 ## GitHub Pages
 
-Repository name: `portfolio`. Default branch: `main`. In repository Settings → Pages, select GitHub Actions as the source. The included workflow builds, verifies and deploys `dist/` on pushes to main or manual dispatch. Vite is configured for `/portfolio/`.
+Repository: `khannaveed2020/Portfolio`. Default branch: `main`. Pushes run build verification. When ready to publish, select GitHub Actions as the Pages source and run the workflow manually; manual dispatch builds, verifies and deploys `dist/`. Vite is configured for `/Portfolio/` (case-sensitive).
 
-No GitHub remote or repository is created automatically. Connect the intended GitHub repository before pushing. A live deployment must be verified after the workflow completes.
+A live deployment must be verified after the workflow completes; a successful push alone does not confirm hosting.
 
 ## Content and assets
 
 - Professional facts: `src/content.ts`, derived from `public/Naveed_Khan_Resume.pdf`.
+- RoadLens project facts: inspected public README and implementation in `khannaveed2020/intelligent-car-dashcam`; hackathon prototype, not production. No repository licence was declared at review time.
+- Brand asset provenance: `ASSET_SOURCES.md`.
 - Personal copy: provisional; review before launch.
 - Portrait: SVG placeholder, not an accurate likeness. Replace only after photo-based concept approval.
 - Flying and scuba pictures: labelled layout placeholders pending user assets.

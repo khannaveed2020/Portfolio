@@ -34,3 +34,13 @@ No public deployment was made during this implementation.
 - Latest Chrome Lighthouse: performance 99, accessibility 100, best practices 100, SEO 100. Illustration visible/accessibility label match passes. Reports remain local under `.qa/`.
 - Reduced-motion and coarse-pointer fallbacks are implemented; actual OS reduced-motion and touch hardware still need direct testing. Firefox/Safari and live GitHub Pages checks remain pending.
 - Lovable used only for design critique (one credit), not remote code edits or deployment.
+
+## Repository-content and credentials revision — 5 October 2026
+
+- RoadLens README, `app/search.py`, `app/detector.py` and package metadata reviewed live. Website labels it as a public-source hackathon prototype with deterministic keyword search and explicit limitations. No declared repository licence found; no production or sole-contributor claims added.
+- Credentials now have real section/group headings and visible lists. Chapter text contrast against `#19232f`: body 10.64:1, headings 14.18:1, accent 12.43:1.
+- Employer marks and Azure logo verified loaded in the browser; provenance recorded in `ASSET_SOURCES.md`. Microsoft employer mark is an inline SVG.
+- Project inline details and narrow layouts at 320/390 pixels checked. No horizontal overflow. Desktop credentials visually inspected; screenshot `.qa/credentials-review.jpg`.
+- Strict build, static-output/private-file checks and diff whitespace checks pass. Local Chrome Lighthouse: performance 99, accessibility 100, best practices 100, SEO 100; no failed binary audits.
+- Public repository `khannaveed2020/Portfolio` created. Base path changed to `/Portfolio/`; all local asset and résumé checks pass with matching case. Private source documents are absent from tracked files and Git history.
+- Push builds run automatically; deployment is manual so incomplete cross-browser/content review does not publish a release. Earlier lowercase-path and no-remote observations above are historical.

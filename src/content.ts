@@ -55,3 +55,20 @@ export const credentials = [
   ['Security & networking', 'ISC2 Certified in Cybersecurity; Check Point CCSA R77; Cisco CCNA; CCNA Security; Cisco Certified Specialist — Web Content Security.'],
   ['Professional development', 'Kepner-Tregoe Problem Solver; Linux Academy and Linux Foundation learning; Wireshark.'],
 ] as const
+
+// Source inspected 5 October 2026: README, detector.py, search.py, pyproject.toml.
+// Public-source hackathon prototype. No repository licence is declared.
+export const roadLens = {
+  title: 'RoadLens — Intelligent Car Dashcam',
+  url: 'https://github.com/khannaveed2020/intelligent-car-dashcam',
+  demo: 'https://github.com/khannaveed2020/intelligent-car-dashcam/blob/main/demo/RoadLens_demo.mp4',
+  summary: 'A local hackathon prototype that turns short dashcam clips into searchable object detections. Upload an MP4, process sampled frames and find people or vehicles with simple keyword queries.',
+  technologies: ['Python', 'Streamlit', 'YOLO', 'OpenCV', 'Docker'],
+  details: [
+    'Uses Ultralytics YOLO to detect people, bicycles, cars, motorcycles, buses and trucks in sampled video frames.',
+    'Maps supported query terms to object labels and returns results in timestamp order. Search is deterministic keyword matching, not an LLM or unrestricted natural-language search.',
+    'Packages the demo with Docker Compose, cross-platform setup scripts and an installable Python package. Includes pytest tests and Ruff checks.',
+    'Videos and thumbnails stay on the local machine. The demo can run offline after dependencies and model weights are prepared; Clear session removes local session data.',
+  ],
+  limitation: 'Hackathon MVP, not a production safety system. Model detections are not verified facts. No face recognition, identity inference or collision detection.',
+} as const

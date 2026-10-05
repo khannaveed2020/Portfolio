@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from 'react'
 import { motion, MotionConfig, useReducedMotion, useScroll, useInView, useAnimate } from 'motion/react'
 import { Character } from './Character'
-import { StoryArt, ProfileLogo } from './Visuals'
-import { credentials, experience, expertise, profileLinks } from './content'
+import { StoryArt, ProfileLogo, CompanyLogo } from './Visuals'
+import { credentials, experience, expertise, profileLinks, roadLens } from './content'
 
 const resume = `${import.meta.env.BASE_URL}Naveed_Khan_Resume.pdf`
 const navigation = [['about', 'About Me'], ['work', 'About My Work'], ['credentials', 'Credentials & Labs']] as const
@@ -71,17 +71,27 @@ export function App() {
       <section id="work" className="work-section section-pad"><div className="shell">
         <Reveal><div className="section-heading"><p className="eyebrow">02 / About my work</p><h2>Making sense of<br/>complex problems.</h2><p>Senior Support Escalation Engineer at Microsoft, with more than 15 years across Azure networking, enterprise networking, network security and technical escalations.</p></div></Reveal>
         <Reveal className="work-intro"><p className="lead">From the first investigation to a practical way forward.</p><p>My work combines technical diagnosis, customer communication and collaboration with engineering teams. I also publish PowerShell tools and continue learning through practical labs.</p></Reveal>
-        <div className="experience-list">{experience.map((job, i) => <Reveal key={`${job.company}-${job.date}`}><article className="experience"><div className="experience-index">0{i + 1}</div><div className="experience-content"><div className="role-meta"><h3>{job.company}</h3><span>{job.date}</span></div><h4>{job.role}</h4><p>{job.summary}</p><details><summary>View experience details <span aria-hidden="true">+</span></summary><ul>{job.bullets.map(b => <li key={b}>{b}</li>)}</ul></details></div></article></Reveal>)}</div>
+        <div className="experience-list">{experience.map((job, i) => <Reveal key={`${job.company}-${job.date}`}><article className="experience"><div className="experience-index">0{i + 1}</div><div className="experience-content"><div className="role-meta"><h3 className="company-heading"><CompanyLogo name={job.company}/>{job.company}</h3><span>{job.date}</span></div><h4>{job.role}</h4><p>{job.summary}</p><details><summary>View experience details <span aria-hidden="true">+</span></summary><ul>{job.bullets.map(b => <li key={b}>{b}</li>)}</ul></details></div></article></Reveal>)}</div>
         <Reveal><details className="expertise"><summary>Explore technical capabilities <span aria-hidden="true">+</span></summary><dl>{expertise.map(([name, text]) => <div key={name}><dt>{name}</dt><dd>{text}</dd></div>)}</dl></details></Reveal>
       </div></section>
       <section id="credentials" className="section-pad"><div className="shell">
-        <Reveal><div className="section-heading"><p className="eyebrow">03 / Credentials & Labs</p><h2>Keep learning.<br/>Make things useful.</h2><p>Professional credentials, open-source tools and hands-on experiments. Lab experience is labelled separately from production work.</p></div></Reveal>
+        <Reveal><div className="section-heading"><p className="eyebrow">03 / Continuous learning</p><h2>Credentials & Labs.</h2><p>Professional credentials, public projects and hands-on experiments. Lab experience is labelled separately from production work.</p></div></Reveal>
+        <section className="credentials-block" aria-labelledby="credentials-heading">
+          <Reveal><h3 id="credentials-heading" className="chapter-heading">Credentials<span>Certifications & professional development</span></h3></Reveal>
+          <div className="credential-list">{credentials.map(([name, text]) => <Reveal key={name}><article className="credential-group"><h4>{name === 'Microsoft' && <CompanyLogo name="Azure"/>}{name === 'Microsoft' ? 'Microsoft & Azure' : name}</h4><ul>{text.split('; ').map(item => <li key={item}>{item.replace(/\.$/, '')}</li>)}</ul></article></Reveal>)}</div>
+          <div className="credential-footer"><p>Credentials are listed as recorded in my résumé.</p><a className="text-link" href={profileLinks[2][1]} target="_blank" rel="noopener noreferrer"><ProfileLogo name="Credly"/>View credential badges <span aria-hidden="true">↗</span></a></div>
+        </section>
+        <section className="projects-block" aria-labelledby="projects-heading">
+          <Reveal><h3 id="projects-heading" className="chapter-heading">Public projects & tools<span>Source code, practical experiments & contributions</span></h3></Reveal>
+          <Reveal><article className="featured-project">
+            <div className="project-visual" aria-hidden="true"><svg viewBox="0 0 360 230"><path d="M0 165 78 86l57 59 90-100 135 121v64H0z" fill="#364656"/><path d="m155 230 21-103h10l35 103" fill="#10191f"/><path d="m182 145 2 13m1 14 2 17m2 16 3 24" stroke="#f4cf9c" strokeWidth="3"/><rect x="68" y="108" width="34" height="38" rx="2" fill="none" stroke="#92dbcb" strokeWidth="2"/><rect x="209" y="150" width="62" height="31" rx="2" fill="none" stroke="#92dbcb" strokeWidth="2"/><text x="68" y="102" fill="#d7f3eb" fontSize="9">person</text><text x="209" y="144" fill="#d7f3eb" fontSize="9">car</text></svg><span>RoadLens / local object search</span></div>
+            <div className="project-copy"><p className="eyebrow">Public-source / Hackathon prototype</p><h4>{roadLens.title}</h4><p>{roadLens.summary}</p><ul className="technology-list" aria-label="Project technologies">{roadLens.technologies.map(t => <li key={t}>{t}</li>)}</ul><div className="project-links"><a className="text-link" href={roadLens.url} target="_blank" rel="noopener noreferrer"><ProfileLogo name="GitHub"/>View source <span aria-hidden="true">↗</span></a><a className="text-link" href={roadLens.demo} target="_blank" rel="noopener noreferrer">Watch walkthrough <span aria-hidden="true">↗</span></a></div><details><summary>View implementation & limitations <span aria-hidden="true">+</span></summary><ul>{roadLens.details.map(d => <li key={d}>{d}</li>)}</ul><p className="project-limitation">{roadLens.limitation}</p></details></div>
+          </article></Reveal>
         <div className="labs-grid">
           <Reveal className="lab-card"><p className="eyebrow">Open source / PowerShell</p><h3>Tools built to investigate.</h3><p>NetTrace for Windows diagnostics, DebugURL for DNS, TLS and HTTP analysis, and PrivateDNSZones for Azure DNS automation.</p><p className="card-note">Three published modules · 400+ combined downloads</p><a className="text-link" href={profileLinks[3][1]} target="_blank" rel="noopener noreferrer">Explore PowerShell modules <span aria-hidden="true">↗</span></a></Reveal>
           <Reveal className="lab-card"><p className="eyebrow">Applied learning / Homelab</p><h3>Learning by building.</h3><p>Ubuntu LTS and Docker for testing and hobby projects. Terraform and Git for repeatable lab deployments, version control and technical investigation.</p><p className="card-note">Lab experience only</p><details><summary>View lab and learning details <span aria-hidden="true">+</span></summary><p>These projects support my learning; they do not imply production ownership. I also built practical solutions at Microsoft Global Hackathon in 2024, 2025 and 2026.</p></details></Reveal>
         </div>
-        <div className="credential-list">{credentials.map(([name, text]) => <Reveal key={name}><details><summary>{name}<span aria-hidden="true">+</span></summary><p>{text}</p></details></Reveal>)}</div>
-        <div className="credential-footer"><p>Credentials are listed as recorded in my résumé.</p><a className="text-link" href={profileLinks[2][1]} target="_blank" rel="noopener noreferrer">View credential badges <span aria-hidden="true">↗</span></a></div>
+        </section>
       </div></section>
       <section id="contact" className="contact-section section-pad"><div className="shell"><Reveal><p className="eyebrow">04 / Let’s connect</p><h2>A conversation<br/>is a good start.</h2><p>Want to talk about my work, exchange ideas or explore working together?</p><a className="contact-email" href="mailto:khannaveed2020@outlook.com">Send me an email <span aria-hidden="true">↗</span></a><div className="social-links">{profileLinks.map(([label, url]) => <a key={label} href={url} target="_blank" rel="noopener noreferrer"><ProfileLogo name={label} />{label}<span aria-hidden="true">↗</span></a>)}</div></Reveal></div></section>
     </main>

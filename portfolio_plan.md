@@ -38,7 +38,7 @@ Audience: recruiters and hiring managers. Country-specific job-search, relocatio
 - ChatGPT Plus (chat and Codex in VS Code)
 - VS Code, Git, GitHub
 - Lovable: optional bounded design critique or scaffold. Keep the local project authoritative; do not publish a duplicate or spend credits debugging. A critique-only pass does not require a second scaffold or GitHub sync.
-- Primary hosting: GitHub Pages, repository `portfolio`, base path `/portfolio/`. Home-server hosting may follow after the site is stable.
+- Primary hosting: GitHub Pages, public repository `khannaveed2020/Portfolio`, base path `/Portfolio/` (case-sensitive). Home-server hosting may follow after the site is stable.
 
 ### UI and animation library policy for v1
 
@@ -89,7 +89,7 @@ Before finalising the artwork, compare two concepts in the actual hero layout: t
 - Layout density: use large, open editorial sections with generous spacing. Use bordered or elevated cards selectively for work entries, certifications, experiments, and other content that genuinely benefits from grouping; avoid a card grid across the whole page.
 - Personal imagery: use authentic photos supplied by me, including flying and scuba-diving images, in the About Me section. Treat each interest as its own short visual story rather than combining them. Use alternating split layouts with the photograph on one side and text on a solid surface on the other, plus a restrained fade-in or gentle image scale. The images must support the narrative without becoming persistent backgrounds.
 - Shape language: use moderately rounded corners for buttons, expandable panels, and cards. Avoid both sharp dashboard-like rectangles and excessive pill-shaped controls.
-- Palette: dark-first, using deep navy or charcoal, off-white text, and a restrained Azure-blue or cyan accent. A muted teal or violet may be used sparingly as a secondary accent.
+- Palette: dark-only with charcoal/navy surfaces and off-white text. The approved revision adds sand/amber in the hero, muted indigo for work and rose for contact. Credentials use a neutral navy surface with explicit off-white headings, light-grey body text and restrained mint accents; avoid low-contrast green-on-green content.
 - Accent treatment: use solid accent colours for buttons, links, focus states, and important labels. Limit blue-to-teal gradients or glows to the hero character area and one or two large decorative elements; do not apply gradients broadly to headings and controls.
 - Theme scope: dark-only for v1. Reconsider a light theme only after the completed dark design has been tested.
 - Interaction rule: never hide important information behind hover-only effects, unlabelled icons, or ambiguous controls.
@@ -116,14 +116,14 @@ The personal story should demonstrate, rather than merely claim, determined prob
 
 Content boundary for v1: do not publicly disclose disability. This does not change the requirement to provide complete and accurate information in any official employment, medical, or immigration process.
 
-Professional content is sourced from `public/Naveed_Khan_Resume.pdf`. Include current roles, dates, technical capabilities, credentials, PowerShell projects and accurately labelled labs. Initial personal copy, portrait and flying/scuba images are explicitly provisional. They do not block development.
+Professional content is sourced from `public/Naveed_Khan_Resume.pdf`. Include current roles, dates, technical capabilities, credentials, PowerShell projects and accurately labelled labs. Project content may also come from inspected user-owned public repositories. RoadLens is a local hackathon prototype with YOLO object detection and deterministic keyword search, not a production safety system or LLM search. No licence is declared, so label it public-source. Initial personal copy, portrait and flying/scuba images are explicitly provisional. They do not block development.
 
 ### Public résumé
 
 - Public download: `public/Naveed_Khan_Resume.pdf`; title `Naveed Khan Resume`.
 - Editable local source: `assets/source-documents/Naveed_Khan_Public_Resume.docx`; exclude this directory from Git and deployment.
 - Persistent header control: accessible label `Open Naveed Khan résumé PDF`, opens in a new tab with `rel="noopener noreferrer"`.
-- Use Vite's base URL so the deployed link is `/portfolio/Naveed_Khan_Resume.pdf`.
+- Use Vite's base URL so the deployed link is `/Portfolio/Naveed_Khan_Resume.pdf`.
 - Public safety changes: India only, no phone/address/postcode, no scuba depth, no Master Resume label; professional profile links retained.
 - Latest additions include Traffic Manager, Bastion, Azure NAT Gateway, Azure PaaS deployment/configuration, and Wipro user-access requests, first-level analysis and monthly MIS reporting. Copilot Studio agent descriptions remain purpose-neutral.
 
@@ -163,7 +163,7 @@ Example prompt:
 ## 10. Deployment
 
 - Local: `npm run dev`, then `npm run build && npm run preview` to test the production build
-- GitHub Pages: `base: '/portfolio/'` in `vite.config.ts`; deploy `dist/` through GitHub Actions. Connect the intended repository and enable Pages with GitHub Actions before publishing.
+- GitHub Pages: `base: '/Portfolio/'` in `vite.config.ts`; deploy `dist/` through GitHub Actions. Repository created as `khannaveed2020/Portfolio` on 5 October 2026. Verify deployment separately from successful Git push.
 - Linux home server: nginx serving `dist/`, HTTPS via Let's Encrypt, domain or tunnel decision needed. Provide step-by-step guidance when I ask.
 
 ## 11. Testing checklist
@@ -188,7 +188,7 @@ Example prompt:
 - Supply and approve final About Me introduction and individual hobby stories.
 - Supply a clear source portrait and flying/scuba photographs. Approve character concepts in the hero before preparing animation layers.
 - Final character treatment: preferred soft editorial; compare a restrained pixel option when source photo is available.
-- Connect the GitHub `portfolio` repository and enable GitHub Pages; verify live workflow and résumé link after publishing.
+- Push verified changes to `khannaveed2020/Portfolio`; verify live workflow and résumé link after publishing.
 - Complete cross-browser and Lighthouse verification before calling the first release ready.
 
 ## 14. Initial implementation
@@ -208,3 +208,11 @@ Example prompt:
 - Make scroll entrances visibly intentional, add a reading-progress line, scroll-linked story illustration movement and keyboard/touch-operable aircraft/diving controls. Reduced motion removes movement; static HTML stays readable.
 - Use original aviation/ocean vector studies instead of empty placeholder boxes, clearly labelled as illustrations pending real photographs. Character likeness still awaits the user-supplied portrait.
 - Lovable critique-only pass used one credit; no remote project code changes or publishing requested.
+
+## 16. Project content, credentials and branding revision
+
+- Credentials & Labs is an explicit section heading. Credentials appear first with visible grouped lists, then public projects/tools and separately labelled homelab learning.
+- Add RoadLens with repository and demo links, inspected stack, implementation details and limitations. Do not infer individual contribution scope, production adoption or unimplemented features.
+- Use employer marks beside company names and an Azure mark beside Microsoft/Azure credentials. Preserve role names and dates; logos are identification, not endorsement.
+- Keep Craftz.dog-inspired personal warmth and Brittany Chiang-inspired readable hierarchy. Avoid a stock grid or hiding certificate names behind disclosure controls.
+- Existing public résumé remains unchanged; private editable documents remain excluded from all Git history and deployment.

@@ -1,6 +1,12 @@
 import { useEffect, useRef, useState } from 'react'
 import { motion, useReducedMotion, useScroll, useTransform } from 'motion/react'
 
+export function CompanyLogo({ name }: { name: string }) {
+  if (name === 'Microsoft') return <svg className="company-logo microsoft-logo" viewBox="0 0 24 24" aria-hidden="true"><path fill="#f25022" d="M1 1h10v10H1z"/><path fill="#7fba00" d="M13 1h10v10H13z"/><path fill="#00a4ef" d="M1 13h10v10H1z"/><path fill="#ffb900" d="M13 13h10v10H13z"/></svg>
+  const file = name.startsWith('Wipro') ? 'wipro' : name.startsWith('HCL') ? 'hcl' : name === 'Azure' ? 'azure' : 'mphasis'
+  return <img className={`company-logo ${file}-logo`} src={`${import.meta.env.BASE_URL}logos/${file}.svg`} alt="" width="64" height="40" />
+}
+
 export function ProfileLogo({ name }: { name: string }) {
   // Local vector marks: no external requests or icon-library runtime.
   if (name === 'Credly') return <img className="profile-logo credly-logo" src={`${import.meta.env.BASE_URL}credly.svg`} alt="" width="44" height="24" />
