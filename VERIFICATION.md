@@ -1,5 +1,12 @@
 # Initial portfolio verification
 
+## Personal summary and Work transition — 5 October 2026
+
+- Added a semantic personal-interest summary before Aviation, grounded in the user's travel, photography, aviation and scuba interests. It makes no inferred qualifications or professional-performance claims.
+- Added a compact personal-to-professional bridge with a gradual dark-to-indigo colour shift, existing Motion reveal and explicit Work anchor. No dependencies or scroll hijacking added; existing reduced-motion and static-HTML foundations remain intact.
+- Desktop summary and bridge visually inspected. At 320px the summary is readable and document width equals viewport width. Bridge link navigates to `/Portfolio/#work`.
+- Production build, static section/order assertions and whitespace checks pass. Screenshots: `.qa/personal-summary.jpg`, `.qa/chapter-transition.jpg`. No new Lighthouse, OS reduced-motion, cross-browser or live Pages audit.
+
 Verified on 5 October 2026 against the production build served at `http://127.0.0.1:4173/portfolio/`.
 
 ## Completed

@@ -14,6 +14,8 @@ assert(!html.replace(/<[^>]*>/g, '').includes('khannaveed2020@outlook.com'), 'Vi
 assert(html.includes('aria-label="Next aviation photo"') && html.includes('aria-label="Next scuba photo"'), 'Missing accessible photo controls')
 assert(html.includes('/Portfolio/photos/aviation-06.jpg') && html.includes('/Portfolio/photos/scuba-02.jpg'), 'Missing story photo galleries')
 assert(html.includes('id="photography-heading"') && html.includes('aria-label="Next photography photo"'), 'Missing Photography section or control')
+assert(html.includes('id="personal-summary-heading"') && html.indexOf('id="personal-summary-heading"') < html.indexOf('aviation-photos'), 'Personal summary must precede Aviation')
+assert(html.includes('id="chapter-bridge-heading"') && html.indexOf('id="chapter-bridge-heading"') < html.indexOf('id="work"'), 'Missing personal-to-professional transition')
 assert((html.match(/class="photo-watermark"/g) || []).length === 16, 'Every HBK photo must have its website watermark')
 for (let number = 5077; number <= 5092; number++) {
   assert(html.includes(`/Portfolio/photos/photography-${number}.jpg`), `Missing HBK photo ${number}`)

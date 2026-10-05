@@ -243,6 +243,9 @@ Example prompt:
 
 ## 19. Personal photo galleries
 
+- Precede Aviation with an editorial personal summary tying together user-confirmed travel, photography, aviation and scuba/adventure interests. Do not infer personality assessments, achievements or professional ability from the photographs.
+- Bridge About Me to Work with a spacious, scroll-revealed transition: “A different setting. The same curiosity.” Shift the background gradually toward the indigo work chapter and provide a clear Work anchor. Preserve native scrolling, reduced-motion and static-content fallbacks; no new dependencies.
+
 - Photography follows Scuba within About Me, with all 16 supplied HBK photos, a two-sentence travel/photography introduction and the same manually cycled gallery. Show a subtle corner HBK watermark as a website overlay on every photograph; originals remain untouched. Keep the three-item main navigation unchanged.
 
 - Use all six supplied Aviation photos and both Scuba photos in their respective alternating image/text stories. Clearly distinguish the three flight-simulation images from real flying.
