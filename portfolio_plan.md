@@ -223,11 +223,14 @@ Example prompt:
 
 - Add `testimonials` near the bottom, immediately before Contact, preserving the three-item sticky navigation.
 - Received LinkedIn recommendations verified in the signed-in profile on 5 October 2026: Ratnavo Dutta (10 January 2026) and Ankush G (22 September 2025).
-- Use short verbatim excerpts, author names, profile links, source dates and observed working relationships. Do not rewrite quotes, infer companies or imply corporate endorsement. Do not import pending/given recommendations or unrelated profile content.
+- Use the complete recommendation text supplied by the user, author names, profile links, source dates and observed working relationships. Preserve the original wording, including typos; do not rewrite quotes, infer companies or imply corporate endorsement. Do not import pending/given recommendations or unrelated profile content.
+- Use a vibrant plum chapter surface, warm-white readable quotations and peach highlights; keep paragraphs fully visible without line clamps, scrolling boxes or Read more truncation.
 - Link to the full recommendations; disclose that LinkedIn may require sign-in. Latest interaction: manually cycled two-item quote tape. Click the quote or labelled Next testimonial button to switch 1 → 2 → 1; no auto-rotation. Keep author links separate. Without JavaScript, both quotations remain readable.
 
 ## 18. Skills tape
 
 - Add a continuously moving skills tape near the bottom, above the footer, using selected résumé-supported skills. Lab-only tools remain labelled as lab experience; do not add inferred LinkedIn skills.
-- Provide a visible pause/resume control; also pause on hover/focus. Reduced-motion preferences show a static wrapped list. Exclude the duplicated visual loop from assistive technology.
+- Latest user revision supersedes the pause requirement: no stop/resume controls and no hover/focus pausing. Reduced-motion preferences still show static wrapped lists, as does the no-JavaScript fallback. Exclude duplicated visual loops from assistive technology. Continuous non-essential motion without a pause/stop/hide mechanism is an acknowledged WCAG 2.2.2 trade-off, not full accessibility conformance.
+- Tape A uses smaller 15–18px skills text and moves left. Tape B contains only four employer logos and credential artwork, moving right. Both run at 34.814 pixels/second, 5% above the measured previous tape speed; measure each loop's width to preserve travel speed after resizing.
+- Use authentic Credly badge artwork and the official Microsoft Learn fundamentals mark for AI-900. Preserve original logos and optimise assets locally. Clearly disclose historical badges rather than implying renewal/current certification status. Linux learning and Wireshark are not invented certification marks.
 - Use existing CSS/React only, with no new dependencies. Preserve contrast, normal scrolling and the three primary navigation links.

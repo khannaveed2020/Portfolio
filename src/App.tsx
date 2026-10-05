@@ -95,7 +95,7 @@ export function App() {
         </section>
       </div></section>
       <section id="testimonials" className="testimonials-section section-pad" aria-labelledby="testimonials-heading"><div className="shell">
-        <Reveal><div className="section-heading"><p className="eyebrow">04 / Working together</p><h2 id="testimonials-heading">Testimonials.</h2><p>Short excerpts from recommendations shared by people I’ve worked with.</p></div></Reveal>
+        <Reveal><div className="section-heading"><p className="eyebrow">04 / Working together</p><h2 id="testimonials-heading">Testimonials.</h2><p>Recommendations shared by people I’ve worked with, in their own words.</p></div></Reveal>
         <TestimonialTicker />
       </div></section>
       <section id="contact" className="contact-section section-pad"><div className="shell"><Reveal><p className="eyebrow">05 / Let’s connect</p><h2>A conversation<br/>is a good start.</h2><p>Want to talk about my work, exchange ideas or explore working together?</p><a className="contact-email" href="mailto:khannaveed2020@outlook.com">Send me an email <span aria-hidden="true">↗</span></a><div className="social-links">{profileLinks.map(([label, url]) => <a key={label} href={url} target="_blank" rel="noopener noreferrer"><ProfileLogo name={label} />{label}<span aria-hidden="true">↗</span></a>)}</div></Reveal></div></section>

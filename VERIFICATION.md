@@ -62,3 +62,14 @@ No public deployment was made during this implementation.
 - Without JavaScript, both quotations and the skills remain in static HTML. CSS reduced-motion fallback presents a wrapped static skills list; actual OS preference and touch-device testing remain pending.
 - Strict build, static-output and whitespace checks pass. Local Chrome Lighthouse: performance 99, accessibility 100, best practices 100, SEO 100; no failed binary audits. Report: `.qa/ticker-lighthouse.json`.
 - No public deployment or Firefox/Safari verification was performed in this revision.
+
+## Full recommendations and opposing tapes — 5 October 2026
+
+- Both complete recommendations now use the text pasted by the user. Original wording and typos are retained, with paragraph breaks for readability. No line clamp, scroll box or excerpt truncation is applied. The manually cycled quotation/Next control and keyboard cycle remain verified.
+- Testimonials use a plum chapter surface, warm-white quotations and peach accents, retaining the editorial layout and attribution/source links.
+- Skills tape A uses 15–18px text and moves left. Logos-only tape B moves right, with four employer marks and 13 recorded credential/professional-development marks. Browser checks confirmed opposite animation directions and no text items in tape B.
+- Previous measured loop width was 3315.648px over 100 seconds. Both new loops target 34.814px/second (5% faster), with timing measured independently after resizing. Both report running while the tape is hovered; there is no pause/resume control or hover/focus pause rule.
+- Credly badge artwork verified on the public wallet; resized locally to 240px maximum. AI-900 uses the official Microsoft Learn fundamentals mark. Dark badge lettering has light backplates. Historical expired badges are disclosed rather than represented as current.
+- No horizontal overflow at 320, 390 or 1440 pixels. Screenshots: `.qa/opposing-tapes.jpg` and `.qa/full-testimonial.jpg`. Static/reduced-motion fallbacks remain implemented; actual OS reduced-motion testing is still pending.
+- Build, static/private-output checks and whitespace checks pass. Local Chrome Lighthouse: performance 99, accessibility 100, best practices 100, SEO 100, with no failed binary audits. Report: `.qa/opposing-tapes-lighthouse.json`.
+- The user's explicit removal of pause/stop/hide controls for continuous motion is an acknowledged WCAG 2.2.2 limitation; a Lighthouse score of 100 does not establish complete WCAG conformance. No new dependencies, public deployment or Firefox/Safari verification.

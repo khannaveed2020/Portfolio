@@ -6,7 +6,7 @@ export const profileLinks = [
 ] as const
 
 // Received LinkedIn recommendations verified in the profile UI on 5 October 2026.
-// Short verbatim excerpts only; no inferred company endorsements or rewritten quotes.
+// Full recommendation text supplied by the user; retain the original wording.
 export const testimonials = [
   {
     name: 'Ratnavo Dutta',
@@ -14,7 +14,7 @@ export const testimonials = [
     relationship: 'Worked together on the same team at Microsoft',
     date: '2026-01-10',
     displayDate: '10 January 2026',
-    quote: 'His positive attitude and professionalism make him a dependable team member.',
+    quote: 'I worked with Naveed Khan at Microsoft in the same team, and he is a great co-worker with strong technical depth in his domain. He has been a valuable asset to the team and performs very well in critical situations.\n\nOne of his standout qualities is his ability to collaborate effectively and support others. He is always approachable, willing to help, and ensures smooth coordination within the team. His positive attitude and professionalism make him a dependable team member.\n\nNaveed has a strong track record of achieving his targets through disciplined execution and clear ownership. He is genuinely passionate about exploring emerging technologies and strengthening technical depth. He also carries strong senior qualities—mentoring team members, leading technical discussions, and driving alignment across the team.\n\nI wish him great success in his career and future roles.',
     profile: 'https://www.linkedin.com/in/ratnavo-dutta-933517113/',
   },
   {
@@ -23,12 +23,29 @@ export const testimonials = [
     relationship: 'Worked together on the same team',
     date: '2025-09-22',
     displayDate: '22 September 2025',
-    quote: 'a true team player, always bringing a positive attitude, clear communication',
+    quote: "I had the pleasure of working with Naveed on several projects, where he consistently demonstrated exceptional skill in remotely managing clients IT infrastructure. This customers were based out of of India & Middle East and the support framework was through shared services model on Network and Security domains.\n\nLooking at Naveed's way of life, like a true team player, always bringing a positive attitude, clear communication, and an ability to stay highly focused, which made him an invaluable asset to our team. His growth was exponential in those two year of our working and as i can see today.\n\nIt's always pleasure to recall those earlier days working with people like Naveee who have always been with team and have earned a place/respect for them self within the organization and even with customer's.",
     profile: 'https://www.linkedin.com/in/ankush-g-2b62a3150/',
   },
 ] as const
 
 export const recommendationsUrl = 'https://www.linkedin.com/in/naveedkhan0266/details/recommendations/'
+
+// Authentic artwork; historical badges are disclosed beside the tape.
+export const tickerBadges = [
+  ['az-700.png', 'AZ-700 Azure Network Engineer Associate — historical badge'],
+  ['az-104.png', 'AZ-104 Azure Administrator Associate — historical badge'],
+  ['az-720.png', 'AZ-720 Azure Support Engineer for Connectivity — historical badge'],
+  ['az-900.png', 'AZ-900 Azure Fundamentals'],
+  ['ai-900.svg', 'AI-900 Azure AI Fundamentals — official fundamentals mark'],
+  ['ab-730.png', 'AB-730 AI Business Professional'],
+  ['ab-731.png', 'AB-731 AI Transformation Leader'],
+  ['isc2-cc.png', 'ISC2 Certified in Cybersecurity'],
+  ['ccsa.png', 'Check Point CCSA R77 — historical badge'],
+  ['ccna.png', 'Cisco CCNA — historical badge'],
+  ['ccna-security.png', 'Cisco CCNA Security — historical badge'],
+  ['cisco-web.png', 'Cisco Web Content Security — historical badge'],
+  ['kt.png', 'Kepner-Tregoe Problem Solver'],
+] as const
 
 // Selected from résumé-derived expertise and role bullets above/below.
 // Lab-only tools retain their boundary on the visible tape.
