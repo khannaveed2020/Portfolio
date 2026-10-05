@@ -3,8 +3,8 @@ import { motion, useMotionValue, useReducedMotion, useSpring, useTransform } fro
 
 const portrait = `${import.meta.env.BASE_URL}character/naveed-anime.webp`
 const eyes = [
-  { x: 427, y: 507, shape: 'M372 506 Q421 467 472 502 Q451 529 414 527 Q389 526 372 506Z', lid: 'M374 507 Q423 535 471 503' },
-  { x: 638, y: 526, shape: 'M591 522 Q630 491 668 516 Q680 526 680 535 Q644 554 615 539Z', lid: 'M591 523 Q638 554 681 535' },
+  { x: 449, y: 509, shape: 'M401 504 Q449 461 495 507 Q484 533 448 530 Q419 527 401 504Z', lid: 'M402 505 Q448 538 494 508' },
+  { x: 646, y: 525, shape: 'M599 521 Q643 475 686 524 Q690 533 676 540 Q639 553 610 535Z', lid: 'M600 522 Q643 554 687 529' },
 ]
 
 export function Character() {
@@ -79,13 +79,13 @@ export function Character() {
           <image href={portrait} width="1024" height="1536" clipPath={`url(#${id}-head)`}/>
           {eyes.map((eye, index) => <g key={index} clipPath={`url(#${id}-eye-${index})`}>
             <motion.g className="portrait-pupils" style={{ x: pupilX, y: pupilY }}>
-              <ellipse cx={eye.x} cy={eye.y} rx="21" ry="23" fill={`url(#${id}-iris)`}/>
+              <ellipse cx={eye.x} cy={eye.y} rx="23" ry="26" fill={`url(#${id}-iris)`}/>
               <ellipse cx={eye.x} cy={eye.y} rx="10" ry="13" fill="#191b1b"/>
               <circle cx={eye.x - 6} cy={eye.y - 8} r="5" fill="#fff5df"/>
               <circle cx={eye.x + 7} cy={eye.y + 8} r="2" fill="#dcb886"/>
             </motion.g>
             <g className="portrait-blink">
-              <path d={eye.shape} fill="#c99163"/>
+              <path d={eye.shape} fill="#dba477"/>
               <path d={eye.lid} fill="none" stroke="#483329" strokeWidth="5"/>
             </g>
           </g>)}

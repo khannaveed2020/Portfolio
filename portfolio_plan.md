@@ -56,7 +56,7 @@ Audience: recruiters and hiring managers. Country-specific job-search, relocatio
 
 **Selected direction for v1 (updated 5 October):** a recognisable anime portrait based on my supplied Sample Self Pictures, guided by the supplied Ghibli-style illustration. Preserve adult likeness, hairstyle and facial hair with warm colours, controlled linework and a transparent background. Keep it professional, not childish or a generic mascot.
 
-The explicit anime request supersedes the earlier illustrated-versus-pixel comparison. Review likeness in the working hero; further artwork refinement remains possible without blocking animation.
+The explicit anime request supersedes the earlier illustrated-versus-pixel comparison. The user selected the softer animated direction; use warm hand-drawn shading and gentle linework close to the supplied illustrated reference. Review further likeness refinements in the working hero.
 
 **Alternative concept: pixel-art avatar from my own image**
 - Source: my own photo or drawing, converted to pixel art, then cleaned up by hand.

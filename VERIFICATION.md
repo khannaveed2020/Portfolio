@@ -1,5 +1,11 @@
 # Initial portfolio verification
 
+## Softer character refinement — 5 October 2026
+
+- Applied the user's preference for the softer illustrated direction. Replaced the portrait WebP with a fresh image based primarily on the supplied illustration treatment and the actual photograph for likeness; realigned eye clips, pupil positions and eyelid colour.
+- Desktop hero visually inspected and pointer movement verified against the new eye positions. No browser console errors observed. Screenshot: `.qa/softer-anime-character.png`.
+- Production build, static checks and whitespace checks pass. Animation behaviour, responsive sizing and reduced-motion rules are unchanged; previous physical-touch and OS reduced-motion verification limitations still apply.
+
 ## Personal anime character — 5 October 2026
 
 - Replaced the stock placeholder with a photo-derived anime portrait using the user's supplied photographs and illustration reference. A transparent 1024 × 1536 WebP asset is approximately 131 KiB; source photographs remain ignored and unchanged.
