@@ -211,6 +211,19 @@ button:focus-visible { outline: 2px solid #f7d7b1; outline-offset: 5px; }
 #credentials .lab-card:hover, #credentials .lab-card:focus-within { background: #243545; }
 #credentials .lab-card p:not(.eyebrow) { font-size: 15px; color: #ced4dc; }
 #credentials .lab-card .card-note { font-size: 13px !important; color: #bceee0 !important; }
+.testimonials-section { background: #232329; color: #f5f2e9; --accent: #efc797; --muted: #ced0d8; --line: #54515d; }
+.testimonials-list { border-top: 1px solid var(--line); }
+.testimonial { display: grid; grid-template-columns: 1.6fr 1fr; gap: 60px; padding: 40px 0; margin: 0; border-bottom: 1px solid var(--line); }
+.testimonial blockquote { margin: 0; }
+.testimonial blockquote p { font-family: Georgia, 'Times New Roman', serif; font-size: clamp(24px, 2.8vw, 35px); line-height: 1.5; letter-spacing: -.02em; color: #f5eadb; margin: 0; }
+.testimonial figcaption { display: flex; flex-direction: column; gap: 9px; align-self: center; }
+.testimonial-author { font-size: 18px; font-weight: 600; }
+.testimonial-author span { color: var(--accent); padding-left: 8px; }
+.testimonial-title { color: #e1e2e8; font-size: 14px; line-height: 1.5; }
+.testimonial-relationship { color: #ced0d8; font-size: 13px; line-height: 1.5; }
+.testimonial-source { color: #ced0d8; font-size: 11px; line-height: 1.6; margin-top: 5px; }
+.recommendation-link { margin-top: 30px; flex-wrap: wrap; line-height: 1.6; }
+.recommendation-note { font-size: 12px; color: #ced0d8; margin-bottom: 0; }
 .contact-section { background: #28222a; --accent: #efbaa6; border-top-color: #66505c; position: relative; overflow: hidden; }
 .contact-section::after { content: 'Hello.'; position: absolute; right: -10px; bottom: -35px; font-family: Georgia, serif; font-style: italic; font-size: clamp(110px, 20vw, 260px); line-height: 1; color: #eebda810; pointer-events: none; }
 .contact-section .shell { position: relative; z-index: 1; }
@@ -266,6 +279,7 @@ button:focus-visible { outline: 2px solid #f7d7b1; outline-offset: 5px; }
   .chapter-heading { font-size: 29px; }
   .company-heading { gap: 10px; flex-wrap: wrap; }
   .project-copy h4 { font-size: 25px; }
+  .testimonial { grid-template-columns: 1fr; gap: 22px; padding-block: 30px; }
   .contact-email { font-size: 16px; gap: 8px; overflow-wrap: anywhere; }
   footer { flex-wrap: wrap; } footer span:nth-child(2) { display: none; }
 }

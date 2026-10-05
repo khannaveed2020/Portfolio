@@ -108,7 +108,8 @@ Sources for inspiration: Awwwards, Godly, Dribbble, Codrops, Pinterest (mood boa
 1. Hero / About Me: name and personal introduction first, connecting determined problem-solving, curiosity, and continuous learning to professional value. The character is prominent here. Do not show the formal role title in this opening area.
 2. About My Work: introduce the professional role title here, followed by selected experience, projects, and technical capabilities with concise summaries and clearly labelled inline details.
 3. Credentials & Labs: certifications, homelab work, learning, and relevant experiments grouped together.
-4. Contact: clear links and call to action; mailto or another no-backend option in v1.
+4. Testimonials: attributed excerpts from verified received LinkedIn recommendations, before Contact. No additional top navigation item.
+5. Contact: clear links and call to action; mailto or another no-backend option in v1.
 
 The top navigation uses the explicit labels `About Me`, `About My Work`, and `Credentials & Labs`, and scrolls through the single page. Work experience and other dense content may use accessible inline expansion, but the summary must remain visible without interaction.
 
@@ -217,3 +218,10 @@ Example prompt:
 - Keep Craftz.dog-inspired personal warmth and Brittany Chiang-inspired readable hierarchy. Avoid a stock grid or hiding certificate names behind disclosure controls.
 - Existing public résumé remains unchanged; private editable documents remain excluded from all Git history and deployment.
 - Repository created and verified code pushed to `https://github.com/khannaveed2020/Portfolio`; GitHub build run `37302299316` passed for implementation commit `6f4780c`. Publishing remains manual; Pages has not been activated in this revision.
+
+## 17. Testimonials
+
+- Add `testimonials` near the bottom, immediately before Contact, preserving the three-item sticky navigation.
+- Received LinkedIn recommendations verified in the signed-in profile on 5 October 2026: Ratnavo Dutta (10 January 2026) and Ankush G (22 September 2025).
+- Use short verbatim excerpts, author names, profile links, source dates and observed working relationships. Do not rewrite quotes, infer companies or imply corporate endorsement. Do not import pending/given recommendations or unrelated profile content.
+- Link to the full recommendations; disclose that LinkedIn may require sign-in. Use open editorial quote rows with clear contrast and existing reduced-motion reveal behaviour, not a carousel or auto-rotation.

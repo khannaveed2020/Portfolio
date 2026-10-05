@@ -21,6 +21,7 @@ A live deployment must be verified after the workflow completes; a successful pu
 - Professional facts: `src/content.ts`, derived from `public/Naveed_Khan_Resume.pdf`.
 - RoadLens project facts: inspected public README and implementation in `khannaveed2020/intelligent-car-dashcam`; hackathon prototype, not production. No repository licence was declared at review time.
 - Brand asset provenance: `ASSET_SOURCES.md`.
+- Testimonials: short unchanged excerpts from received LinkedIn recommendations, verified 5 October 2026, with attribution and source links. Viewing originals may require LinkedIn sign-in.
 - Personal copy: provisional; review before launch.
 - Portrait: SVG placeholder, not an accurate likeness. Replace only after photo-based concept approval.
 - Flying and scuba pictures: labelled layout placeholders pending user assets.

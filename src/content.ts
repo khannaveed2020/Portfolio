@@ -5,6 +5,31 @@ export const profileLinks = [
   ['PowerShell Gallery', 'https://www.powershellgallery.com/profiles/TheLastHorcrux'],
 ] as const
 
+// Received LinkedIn recommendations verified in the profile UI on 5 October 2026.
+// Short verbatim excerpts only; no inferred company endorsements or rewritten quotes.
+export const testimonials = [
+  {
+    name: 'Ratnavo Dutta',
+    title: 'Senior Infrastructure & Cloud Network Engineer',
+    relationship: 'Worked together on the same team at Microsoft',
+    date: '2026-01-10',
+    displayDate: '10 January 2026',
+    quote: 'His positive attitude and professionalism make him a dependable team member.',
+    profile: 'https://www.linkedin.com/in/ratnavo-dutta-933517113/',
+  },
+  {
+    name: 'Ankush G',
+    title: 'Cloud and Cyber Security Consultant',
+    relationship: 'Worked together on the same team',
+    date: '2025-09-22',
+    displayDate: '22 September 2025',
+    quote: 'a true team player, always bringing a positive attitude, clear communication',
+    profile: 'https://www.linkedin.com/in/ankush-g-2b62a3150/',
+  },
+] as const
+
+export const recommendationsUrl = 'https://www.linkedin.com/in/naveedkhan0266/details/recommendations/'
+
 export const experience = [
   { company: 'Microsoft', date: 'May 2024 — Present', role: 'Senior Support Escalation Engineer', summary: 'Complex Azure networking escalations, engineering investigations and customer communication.', bullets: [
     'Resolve complex Azure networking escalations for strategic enterprise customers and coordinate frontline support and engineering investigations to diagnose production failures and restore service.',
