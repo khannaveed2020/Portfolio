@@ -132,11 +132,11 @@ footer { padding-block: 32px; display: flex; justify-content: space-between; gap
   .site-header { flex-wrap: wrap; gap: 12px; padding: 14px 24px 0; }
   .wordmark { font-size: 26px; } .resume-link { padding: 7px 12px; font-size: 11px; }
   nav { order: 3; width: 100%; justify-content: space-between; gap: 8px; font-size: 11px; padding-block: 6px 10px; }
-  .hero { grid-template-columns: 1fr; min-height: auto; gap: 28px; padding-top: 55px; padding-bottom: 95px; }
-  h1 { font-size: 88px; } .hero-line { font-size: 24px; } .eyebrow { font-size: 9px; }
-  .hero-actions { gap: 20px; } .button { font-size: 12px; gap: 17px; padding: 13px 16px; }
+  .hero { grid-template-columns: minmax(0, 1fr); min-height: auto; gap: 28px; padding-top: 55px; padding-bottom: 95px; }
+  h1 { font-size: clamp(72px, 22vw, 88px); } .hero-line { font-size: 24px; } .eyebrow { font-size: 9px; }
+  .hero-actions { gap: 20px; flex-wrap: wrap; } .button { font-size: 12px; gap: 17px; padding: 13px 16px; }
   .text-link { font-size: 12px; }
-  .character-slot { height: 290px; } .character { width: 290px; height: 290px; }
+  .character-slot { height: 290px; min-width: 0; } .character { width: min(100%, 290px); height: 290px; }
   .portrait-halo { width: 240px; height: 240px; }
   .hero-bottom { inset-inline: 24px; font-size: 9px; gap: 18px; } .hero-bottom > span { white-space: nowrap; }
   .hero-bottom a { text-align: right; max-width: 190px; }

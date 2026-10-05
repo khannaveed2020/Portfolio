@@ -198,3 +198,4 @@ Example prompt:
 - Section IDs: `about`, `work`, `credentials`, `contact`. Three sticky navigation labels; Contact at the end.
 - Dark editorial layout, CSS focus/hover states, Motion reveals and SVG placeholder character with desktop tracking, touch/reduced-motion fallbacks and quiet desktop corner behavior.
 - Build outputs only public assets. Source documents stay local. Run `npm run build` and `npm run check` for each verified phase.
+- Initial implementation completed locally on 5 October 2026. Git initialized; strict production build and public-output checks pass. GitHub Pages workflow is prepared. See `VERIFICATION.md` for actual browser checks, Lighthouse results and remaining launch tasks. No remote or live deployment is configured yet.

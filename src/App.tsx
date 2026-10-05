@@ -30,7 +30,7 @@ export function App() {
   return <MotionConfig reducedMotion="user">
     <a className="skip-link" href="#main">Skip to content</a>
     <header className="site-header">
-      <a className="wordmark" href="#about" aria-label="Naveed Khan, back to introduction">nk<span>.</span></a>
+      <a className="wordmark" href="#about" aria-label="nk. — Naveed Khan, back to introduction">nk<span>.</span></a>
       <nav aria-label="Main navigation">{navigation.map(([id, label]) => <a key={id} href={`#${id}`} aria-current={active === id ? 'location' : undefined}>{label}</a>)}</nav>
       <a className="resume-link" href={resume} target="_blank" rel="noopener noreferrer" aria-label="Open Naveed Khan résumé PDF">Résumé <span aria-hidden="true">↗</span></a>
     </header>
