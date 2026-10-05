@@ -1,5 +1,10 @@
 # Initial portfolio verification
 
+## Hero portrait frame — 5 October 2026
+
+- Narrowed the hero frame around the portrait and replaced fixed square character sizing with the SVG's aspect ratio. Removed the background EXPLORE text and dashed rings, added proportional padding and kept the caption below the image.
+- Desktop framing inspected: 380px frame, 342px portrait viewport, no artwork/caption overlap. Mobile 320px and tablet 768px checks show contained portrait viewports and no horizontal overflow. Build, static checks and whitespace checks pass.
+
 ## Softer character refinement — 5 October 2026
 
 - Applied the user's preference for the softer illustrated direction. Replaced the portrait WebP with a fresh image based primarily on the supplied illustration treatment and the actual photograph for likeness; realigned eye clips, pupil positions and eyelid colour.

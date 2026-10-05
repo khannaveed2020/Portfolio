@@ -60,7 +60,7 @@ export function App() {
             <p className="intro">I learn how things work, explore new possibilities and keep looking for a way forward.</p>
             <div className="hero-actions"><a className="button" href="#work">Explore my work <span aria-hidden="true">↗</span></a><a className="text-link" href="#interests">Meet the person <span aria-hidden="true">↓</span></a></div>
           </div>
-          <div className="hero-scene"><span className="scene-word" aria-hidden="true">EXPLORE</span><Character /><span className="scene-caption">A curious mind. A personal perspective.</span></div>
+          <div className="hero-scene"><Character /><span className="scene-caption">A curious mind. A personal perspective.</span></div>
           <div className="hero-bottom"><span>Based in India</span><a href="#interests">A few things that keep me curious <span aria-hidden="true">↓</span></a><span className="edition">Personal portfolio / 01</span></div>
         </div>
         <div id="interests" className="shell interests">
