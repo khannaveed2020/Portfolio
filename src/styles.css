@@ -253,8 +253,6 @@ button:focus-visible { outline: 2px solid #f7d7b1; outline-offset: 5px; }
 .logos-run .microsoft-logo { width: 48px; height: 48px; }
 .logos-run .mphasis-logo { padding: 8px; }
 .credential-tape-logo img { display: block; width: 92px; height: 92px; object-fit: contain; background: #faf8f2; border-radius: 6px; padding: 5px; }
-.badge-tape-note { font-size: 12px; line-height: 1.7; color: #d5e4da; margin-top: 18px; margin-bottom: 0; }
-.badge-tape-note a { color: #bcf0de; text-decoration: underline; text-underline-offset: 3px; }
 @keyframes skills-travel { to { transform: translateX(-50%); } }
 .skills-ticker:not(.skills-enabled) .skills-window { overflow: visible; }
 .skills-ticker:not(.skills-enabled) .skills-track { width: auto; }

@@ -30,20 +30,20 @@ export const testimonials = [
 
 export const recommendationsUrl = 'https://www.linkedin.com/in/naveedkhan0266/details/recommendations/'
 
-// Authentic artwork; historical badges are disclosed beside the tape.
+// Authentic credential artwork; labels identify credentials without status claims.
 export const tickerBadges = [
-  ['az-700.png', 'AZ-700 Azure Network Engineer Associate — historical badge'],
-  ['az-104.png', 'AZ-104 Azure Administrator Associate — historical badge'],
-  ['az-720.png', 'AZ-720 Azure Support Engineer for Connectivity — historical badge'],
+  ['az-700.png', 'AZ-700 Azure Network Engineer Associate'],
+  ['az-104.png', 'AZ-104 Azure Administrator Associate'],
+  ['az-720.png', 'AZ-720 Azure Support Engineer for Connectivity'],
   ['az-900.png', 'AZ-900 Azure Fundamentals'],
-  ['ai-900.svg', 'AI-900 Azure AI Fundamentals — official fundamentals mark'],
+  ['ai-900.svg', 'AI-900 Azure AI Fundamentals'],
   ['ab-730.png', 'AB-730 AI Business Professional'],
   ['ab-731.png', 'AB-731 AI Transformation Leader'],
   ['isc2-cc.png', 'ISC2 Certified in Cybersecurity'],
-  ['ccsa.png', 'Check Point CCSA R77 — historical badge'],
-  ['ccna.png', 'Cisco CCNA — historical badge'],
-  ['ccna-security.png', 'Cisco CCNA Security — historical badge'],
-  ['cisco-web.png', 'Cisco Web Content Security — historical badge'],
+  ['ccsa.png', 'Check Point CCSA R77'],
+  ['ccna.png', 'Cisco CCNA'],
+  ['ccna-security.png', 'Cisco CCNA Security'],
+  ['cisco-web.png', 'Cisco Web Content Security'],
   ['kt.png', 'Kepner-Tregoe Problem Solver'],
 ] as const
 

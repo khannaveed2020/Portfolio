@@ -25,6 +25,7 @@ assert(!/Pause skills ticker|Resume skills ticker|skills-pause/.test(html), 'Tic
 assert(html.includes('Terraform · lab'), 'Skills ticker must preserve lab boundary')
 assert(html.includes('logos-track'), 'Missing opposite-direction logo tape')
 assert(html.includes('certifications/az-700.png'), 'Missing authentic certification artwork')
+assert(!/historical badge|marked expired|badge-tape-note/.test(html), 'Badge status wording removed by user request')
 assert(html.includes('I wish him great success in his career and future roles.'), 'Ratnavo recommendation is truncated')
 assert(html.includes('have earned a place/respect'), 'Ankush recommendation is truncated')
 const hero = html.slice(html.indexOf('id="about"'), html.indexOf('id="work"'))

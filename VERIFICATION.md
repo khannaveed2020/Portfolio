@@ -73,3 +73,9 @@ No public deployment was made during this implementation.
 - No horizontal overflow at 320, 390 or 1440 pixels. Screenshots: `.qa/opposing-tapes.jpg` and `.qa/full-testimonial.jpg`. Static/reduced-motion fallbacks remain implemented; actual OS reduced-motion testing is still pending.
 - Build, static/private-output checks and whitespace checks pass. Local Chrome Lighthouse: performance 99, accessibility 100, best practices 100, SEO 100, with no failed binary audits. Report: `.qa/opposing-tapes-lighthouse.json`.
 - The user's explicit removal of pause/stop/hide controls for continuous motion is an acknowledged WCAG 2.2.2 limitation; a Lighthouse score of 100 does not establish complete WCAG conformance. No new dependencies, public deployment or Firefox/Safari verification.
+
+## Badge-label revision — 5 October 2026
+
+- Removed historical/expired wording from badge names, tooltips and accessible labels, and removed the note below the tape per user request. Credential-name labels remain; no current/renewed status claims were added. This supersedes the earlier status-disclosure presentation above.
+- Browser confirmed the note is absent and labels contain credential names without historical status. Screenshot: `.qa/badges-no-status.jpg`.
+- Build, static-output/private-file checks and whitespace checks pass. No changes to tape speed, motion or résumé content.

@@ -50,6 +50,5 @@ export function SkillsTicker() {
         {tickerBadges.map(([file, label]) => <li className="credential-tape-logo" key={file} title={label}><img src={`${import.meta.env.BASE_URL}logos/certifications/${file}`} alt={label} width="92" height="92" loading="lazy" decoding="async"/></li>)}
       </Tape>
     </div>
-    <p className="badge-tape-note shell">Credential artwork includes historical badges: AZ-104, AZ-700, AZ-720, Cisco and CCSA are marked expired on Credly. <a href="https://www.credly.com/users/naveed-khan.bc5811d0/badges" target="_blank" rel="noopener noreferrer">View badge records <span aria-hidden="true">↗</span></a></p>
   </section>
 }

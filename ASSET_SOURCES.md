@@ -13,7 +13,7 @@ The page does not request brand assets from external servers at runtime.
 
 ## Credential tape artwork
 
-- Credly images observed on the user's public badge wallet on 5 October 2026, resized to a maximum of 240px without redrawing. These identify recorded credentials; expired historical badges are disclosed beside the tape.
+- Credly images observed on the user's public badge wallet on 5 October 2026, resized to a maximum of 240px without redrawing. These identify recorded credentials. Per the latest user decision, the tape has no credential-status labels or explanatory note and makes no current/renewal claims.
   - az-700: https://images.credly.com/images/c3a2e51d-7984-48cc-a4cb-88d4e8487037/azure-network-engineer-associate-600x600.png
   - az-104: https://images.credly.com/images/336eebfc-0ac3-4553-9a67-b402f491f185/azure-administrator-associate-600x600.png
   - az-720: https://images.credly.com/images/963586bb-5903-400b-9b0a-33ebcf7f4313/image.png
