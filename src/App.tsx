@@ -7,7 +7,7 @@ import { credentials, experience, expertise, profileLinks, roadLens } from './co
 import { TestimonialTicker, SkillsTicker } from './Tickers'
 
 const resume = `${import.meta.env.BASE_URL}Naveed_Khan_Resume.pdf`
-const navigation = [['about', 'About Me'], ['work', 'About My Work'], ['credentials', 'Credentials & Labs']] as const
+const navigation = [['about', 'About Me'], ['work', 'About My Work'], ['credentials', 'Credentials']] as const
 
 function Reveal({ children, className = '' }: { children: React.ReactNode; className?: string }) {
   const reduced = useReducedMotion()
@@ -79,29 +79,29 @@ export function App() {
         <Reveal><section className="expertise" aria-labelledby="expertise-heading"><h3 id="expertise-heading">Technical capabilities</h3><dl>{expertise.map(([name, text]) => <div key={name}><dt>{name}</dt><dd>{text}</dd></div>)}</dl></section></Reveal>
       </div></section>
       <section id="credentials" className="section-pad"><div className="shell">
-        <Reveal><div className="section-heading"><p className="eyebrow">03 / Continuous learning</p><h2>Credentials & Labs.</h2><p>Professional credentials, public projects and hands-on experiments. Lab experience is labelled separately from production work.</p></div></Reveal>
+        <Reveal><div className="section-heading"><p className="eyebrow">03 / Professional development</p><h2>Credentials.</h2><p>Certifications and learning across cloud, networking and security.</p></div></Reveal>
         <section className="credentials-block" aria-labelledby="credentials-heading">
           <Reveal><h3 id="credentials-heading" className="chapter-heading">Credentials<span>Certifications & professional development</span></h3></Reveal>
           <div className="credential-list">{credentials.map(([name, text]) => <Reveal key={name}><article className="credential-group"><div className="credential-identity"><h4>{name === 'Microsoft' && <CompanyLogo name="Azure"/>}{name === 'Microsoft' ? 'Microsoft & Azure' : name}</h4>{name !== 'Microsoft' && <CredentialSymbols group={name}/>}</div><ul>{text.split('; ').map(item => <li key={item}>{item.replace(/\.$/, '')}</li>)}</ul></article></Reveal>)}</div>
           <div className="credential-footer"><p>Credentials are listed as recorded in my résumé.</p><a className="text-link" href={profileLinks[2][1]} target="_blank" rel="noopener noreferrer"><ProfileLogo name="Credly"/>View credential badges <span aria-hidden="true">↗</span></a></div>
         </section>
-        <section className="projects-block" aria-labelledby="projects-heading">
-          <Reveal><h3 id="projects-heading" className="chapter-heading">Public projects & tools<span>Source code, practical experiments & contributions</span></h3></Reveal>
+      </div></section>
+      <section id="labs" className="practical-section section-pad" aria-labelledby="projects-heading"><div className="shell">
+          <Reveal><div className="section-heading"><p className="eyebrow">04 / Building & exploring</p><h2 id="projects-heading">Projects & Practical Learning.</h2><p>I build tools to investigate technical problems and use my homelab to explore new ideas. Here are the projects, published modules and hands-on experiments behind that learning.</p></div></Reveal>
           <Reveal><article className="featured-project">
-            <div className="project-visual" aria-hidden="true"><svg viewBox="0 0 360 230"><path d="M0 165 78 86l57 59 90-100 135 121v64H0z" fill="#364656"/><path d="m155 230 21-103h10l35 103" fill="#10191f"/><path d="m182 145 2 13m1 14 2 17m2 16 3 24" stroke="#f4cf9c" strokeWidth="3"/><rect x="68" y="108" width="34" height="38" rx="2" fill="none" stroke="#92dbcb" strokeWidth="2"/><rect x="209" y="150" width="62" height="31" rx="2" fill="none" stroke="#92dbcb" strokeWidth="2"/><text x="68" y="102" fill="#d7f3eb" fontSize="9">person</text><text x="209" y="144" fill="#d7f3eb" fontSize="9">car</text></svg><span>RoadLens / local object search</span></div>
+            <figure className="project-visual"><img src={`${import.meta.env.BASE_URL}photos/roadlens-preview.jpg`} srcSet={`${import.meta.env.BASE_URL}photos/roadlens-preview-small.jpg 640w, ${import.meta.env.BASE_URL}photos/roadlens-preview.jpg 1280w`} sizes="(max-width: 720px) calc(100vw - 48px), 40vw" width="1280" height="737" loading="lazy" decoding="async" alt="RoadLens preview showing dashcam footage alongside vehicle counts and search results"/><figcaption>RoadLens · User-supplied preview</figcaption></figure>
             <div className="project-copy"><p className="eyebrow">Public source / Computer vision</p><h4>{roadLens.title}</h4><p>{roadLens.summary}</p><ul className="project-benefits" aria-label="RoadLens benefits">{roadLens.benefits.map(([title, text]) => <li key={title}><strong>{title}</strong><span>{text}</span></li>)}</ul><ul className="technology-list" aria-label="Project technologies">{roadLens.technologies.map(t => <li key={t}>{t}</li>)}</ul><div className="project-links"><a className="text-link" href={roadLens.url} target="_blank" rel="noopener noreferrer"><ProfileLogo name="GitHub"/>View source <span aria-hidden="true">↗</span></a><a className="text-link" href={roadLens.demo} target="_blank" rel="noopener noreferrer">Watch walkthrough <span aria-hidden="true">↗</span></a></div></div>
           </article></Reveal>
         <div className="labs-grid">
           <Reveal className="lab-card"><p className="eyebrow">Open source / PowerShell</p><h3>Tools built to investigate.</h3><p>NetTrace for Windows diagnostics, DebugURL for DNS, TLS and HTTP analysis, and PrivateDNSZones for Azure DNS automation.</p><p className="card-note">Three published modules · 400+ combined downloads</p><a className="text-link" href={profileLinks[3][1]} target="_blank" rel="noopener noreferrer">Explore PowerShell modules <span aria-hidden="true">↗</span></a></Reveal>
           <Reveal className="lab-card"><p className="eyebrow">Applied learning / Homelab</p><h3>Learning by building.</h3><p>Ubuntu LTS and Docker for testing and hobby projects. Terraform and Git for repeatable lab deployments, version control and technical investigation.</p><p className="card-note">Lab experience only</p><details><summary>View lab and learning details <span aria-hidden="true">+</span></summary><p>These projects support my learning; they do not imply production ownership. I also built practical solutions at Microsoft Global Hackathon in 2024, 2025 and 2026.</p></details></Reveal>
         </div>
-        </section>
       </div></section>
       <section id="testimonials" className="testimonials-section section-pad" aria-labelledby="testimonials-heading"><div className="shell">
-        <Reveal><div className="section-heading"><p className="eyebrow">04 / Working together</p><h2 id="testimonials-heading">Testimonials.</h2><p>Recommendations shared by people I’ve worked with, in their own words.</p></div></Reveal>
+        <Reveal><div className="section-heading"><p className="eyebrow">05 / Working together</p><h2 id="testimonials-heading">Testimonials.</h2><p>Recommendations shared by people I’ve worked with, in their own words.</p></div></Reveal>
         <TestimonialTicker />
       </div></section>
-      <section id="contact" className="contact-section section-pad"><div className="shell"><Reveal><p className="eyebrow">05 / Let’s connect</p><h2>A conversation<br/>is a good start.</h2><p>Want to talk about my work, exchange ideas or explore working together?</p><a className="contact-email" href="mailto:khannaveed2020@outlook.com">Send me an email <span aria-hidden="true">↗</span></a><div className="social-links">{profileLinks.map(([label, url]) => <a key={label} href={url} target="_blank" rel="noopener noreferrer"><ProfileLogo name={label} />{label}<span aria-hidden="true">↗</span></a>)}</div></Reveal></div></section>
+      <section id="contact" className="contact-section section-pad"><div className="shell"><Reveal><p className="eyebrow">06 / Let’s connect</p><h2>A conversation<br/>is a good start.</h2><p>Want to talk about my work, exchange ideas or explore working together?</p><a className="contact-email" href="mailto:khannaveed2020@outlook.com">Send me an email <span aria-hidden="true">↗</span></a><div className="social-links">{profileLinks.map(([label, url]) => <a key={label} href={url} target="_blank" rel="noopener noreferrer"><ProfileLogo name={label} />{label}<span aria-hidden="true">↗</span></a>)}</div></Reveal></div></section>
     </main>
     <SkillsTicker />
     <footer className="shell"><span>Naveed Khan</span><span>Curiosity, in progress.</span><a href="#about">Back to top <span aria-hidden="true">↑</span></a></footer>

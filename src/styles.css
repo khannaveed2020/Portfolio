@@ -227,6 +227,13 @@ button:focus-visible { outline: 2px solid #f7d7b1; outline-offset: 5px; }
 .credential-footer { border: 0; }
 .credential-footer p { font-size: 13px; color: #ced4dc; }
 .projects-block { margin-top: 65px; }
+.practical-section { background: #182b2b; color: #f5f2e9; --accent: #bceee0; --muted: #cedbd8; --line: #45605c; }
+.practical-section .section-heading > p:last-child { max-width: 760px; color: #cedbd8; font-size: 16px; }
+.practical-section .labs-grid { margin-top: 40px; }
+.practical-section .lab-card p:not(.eyebrow) { color: #cedbd8; font-size: 15px; }
+.project-visual { margin: 0; }
+.project-visual img { display: block; width: 100%; height: auto; }
+.project-visual figcaption { padding: 14px 18px; color: #e0e5eb; font-size: 11px; }
 .featured-project { display: grid; grid-template-columns: .85fr 1.5fr; gap: 42px; padding: 40px 0; align-items: start; border-bottom: 1px solid #526172; }
 .project-visual { background: #263646; border: 1px solid #617080; border-radius: 4px 36px 4px 4px; overflow: hidden; }
 .project-visual svg { display: block; width: 100%; }

@@ -2,7 +2,10 @@ import assert from 'node:assert/strict'
 import { readFile, readdir, stat } from 'node:fs/promises'
 
 const html = await readFile('dist/index.html', 'utf8')
-for (const id of ['about', 'work', 'credentials', 'testimonials', 'contact']) assert(html.includes(`id="${id}"`), `Missing static section ${id}`)
+for (const id of ['about', 'work', 'credentials', 'labs', 'testimonials', 'contact']) assert(html.includes(`id="${id}"`), `Missing static section ${id}`)
+assert(!html.includes('Credentials &amp; Labs') && !html.includes('Lab experience is labelled separately'), 'Superseded combined heading or disclaimer')
+assert(html.indexOf('id="labs"') < html.indexOf('Tools built to investigate.'), 'Tools must be grouped with labs')
+assert(html.includes('/Portfolio/photos/roadlens-preview.jpg'), 'Missing RoadLens screenshot')
 for (const word of ['Microsoft', 'Wipro Infotech', 'Cessna 172', 'Traffic Manager', 'Bastion', 'Azure NAT Gateway', 'Lab experience only']) assert(html.includes(word), `Missing source-grounded content: ${word}`)
 assert(html.includes('aria-label="Open Naveed Khan résumé PDF"'))
 assert(html.includes('href="/Portfolio/Naveed_Khan_Resume.pdf"'))

@@ -243,6 +243,9 @@ Example prompt:
 
 ## 19. Personal photo galleries
 
+- Latest section structure: navigation label and chapter heading are Credentials only. Projects & Practical Learning is a separate `labs` section after Credentials, grouping RoadLens, published diagnostic PowerShell modules and homelab experiments. Remove the combined Credentials & Labs heading and introductory lab disclaimer; retain accurate homelab context in its own content.
+- RoadLens uses the user-approved screenshot from Pics/RoadLense in place of its decorative illustration. Publish only optimised metadata-free copies; do not infer additional functionality from the screenshot.
+
 - Precede Aviation with an editorial personal summary tying together user-confirmed travel, photography, aviation and scuba/adventure interests. Do not infer personality assessments, achievements or professional ability from the photographs.
 - Bridge About Me to Work with a spacious, scroll-revealed transition: “A different setting. The same curiosity.” Shift the background gradually toward the indigo work chapter and provide a clear Work anchor. Preserve native scrolling, reduced-motion and static-content fallbacks; no new dependencies.
 

@@ -14,6 +14,7 @@ photos = [
     ("Scuba/IMG_5073.jpg", "scuba-02"),
 ]
 photos += [(f"HBK/IMG_{number}.jpg", f"photography-{number}") for number in range(5077, 5093)]
+photos += [("RoadLense/Screenshot 2026-10-05 at 20.54.01.jpg", "roadlens-preview")]
 output = root / "public/photos"
 output.mkdir(parents=True, exist_ok=True)
 for source, name in photos:

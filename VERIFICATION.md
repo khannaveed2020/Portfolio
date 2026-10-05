@@ -1,5 +1,13 @@
 # Initial portfolio verification
 
+## Separate credentials and practical projects — 5 October 2026
+
+- Credentials has a standalone chapter and navigation label. Removed the combined heading and introductory “Lab experience is labelled separately…” sentence.
+- Added separate `labs` chapter, Projects & Practical Learning, containing RoadLens, published PowerShell diagnostic modules and homelab experiments. Homelab descriptions remain clearly learning-focused, without implying production ownership.
+- User-supplied RoadLens screenshot replaces the decorative SVG. Responsive JPEG copies have no EXIF metadata; the original remains ignored and unchanged. No new capabilities inferred from screenshot labels.
+- Desktop screenshot and section boundary visually inspected; grouped tools checked at 320px with document width 320px and no overflow. Production build, static section/grouping/asset assertions and whitespace checks pass.
+- Screenshots: `.qa/projects-learning.jpg`, `.qa/roadlens-screenshot.jpg`. No new Lighthouse, cross-browser or public Pages deployment.
+
 ## Personal summary and Work transition — 5 October 2026
 
 - Added a semantic personal-interest summary before Aviation, grounded in the user's travel, photography, aviation and scuba interests. It makes no inferred qualifications or professional-performance claims.
