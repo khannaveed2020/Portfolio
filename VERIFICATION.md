@@ -53,3 +53,12 @@ No public deployment was made during this implementation.
 - `testimonials` sits before Contact, uses semantic quotations/attribution and links to original recommendations and author profiles. The three-item navigation remains unchanged.
 - Strict build and static-output checks pass, including author names, quotation markup, placement and source link. Desktop section visually inspected; no horizontal overflow at 320/390 pixels. Screenshot `.qa/testimonials-review.jpg` remains local.
 - No new Lighthouse or Firefox/Safari audit was run for this contained section addition. Existing release limitations still apply.
+
+## Ticker revision — 5 October 2026
+
+- Testimonials now form a manually advanced two-item strip. Clicking the quotation or the labelled Next control cycles first → second → first; keyboard Enter on Next also works. Author/source links remain separate, and the current author/count is announced politely.
+- A continuous skills tape sits above the footer, using existing résumé-derived skills. Docker, Terraform and Git retain lab labels. No new experience claims or dependencies were added.
+- Browser checks confirmed running animation, pause/resume state and one visible quotation after hydration. Layout checked at 320/390 pixels with no horizontal overflow. Screenshot: `.qa/testimonial-tape.jpg`.
+- Without JavaScript, both quotations and the skills remain in static HTML. CSS reduced-motion fallback presents a wrapped static skills list; actual OS preference and touch-device testing remain pending.
+- Strict build, static-output and whitespace checks pass. Local Chrome Lighthouse: performance 99, accessibility 100, best practices 100, SEO 100; no failed binary audits. Report: `.qa/ticker-lighthouse.json`.
+- No public deployment or Firefox/Safari verification was performed in this revision.

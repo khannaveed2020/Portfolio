@@ -2,7 +2,8 @@ import { useEffect, useRef, useState } from 'react'
 import { motion, MotionConfig, useReducedMotion, useScroll, useInView, useAnimate } from 'motion/react'
 import { Character } from './Character'
 import { StoryArt, ProfileLogo, CompanyLogo } from './Visuals'
-import { credentials, experience, expertise, profileLinks, roadLens, testimonials, recommendationsUrl } from './content'
+import { credentials, experience, expertise, profileLinks, roadLens } from './content'
+import { TestimonialTicker, SkillsTicker } from './Tickers'
 
 const resume = `${import.meta.env.BASE_URL}Naveed_Khan_Resume.pdf`
 const navigation = [['about', 'About Me'], ['work', 'About My Work'], ['credentials', 'Credentials & Labs']] as const
@@ -95,14 +96,11 @@ export function App() {
       </div></section>
       <section id="testimonials" className="testimonials-section section-pad" aria-labelledby="testimonials-heading"><div className="shell">
         <Reveal><div className="section-heading"><p className="eyebrow">04 / Working together</p><h2 id="testimonials-heading">Testimonials.</h2><p>Short excerpts from recommendations shared by people I’ve worked with.</p></div></Reveal>
-        <div className="testimonials-list">{testimonials.map(person => <Reveal key={person.name}><figure className="testimonial">
-          <blockquote><p>“{person.quote}”</p></blockquote>
-          <figcaption><a className="testimonial-author" href={person.profile} target="_blank" rel="noopener noreferrer">{person.name} <span aria-hidden="true">↗</span></a><span className="testimonial-title">{person.title}</span><span className="testimonial-relationship">{person.relationship}</span><span className="testimonial-source">LinkedIn recommendation · <time dateTime={person.date}>{person.displayDate}</time> · Excerpt</span></figcaption>
-        </figure></Reveal>)}</div>
-        <a className="text-link recommendation-link" href={recommendationsUrl} target="_blank" rel="noopener noreferrer"><ProfileLogo name="LinkedIn"/>Read the full recommendations on LinkedIn <span aria-hidden="true">↗</span></a><p className="recommendation-note">LinkedIn may require sign-in to view the originals.</p>
+        <TestimonialTicker />
       </div></section>
       <section id="contact" className="contact-section section-pad"><div className="shell"><Reveal><p className="eyebrow">05 / Let’s connect</p><h2>A conversation<br/>is a good start.</h2><p>Want to talk about my work, exchange ideas or explore working together?</p><a className="contact-email" href="mailto:khannaveed2020@outlook.com">Send me an email <span aria-hidden="true">↗</span></a><div className="social-links">{profileLinks.map(([label, url]) => <a key={label} href={url} target="_blank" rel="noopener noreferrer"><ProfileLogo name={label} />{label}<span aria-hidden="true">↗</span></a>)}</div></Reveal></div></section>
     </main>
+    <SkillsTicker />
     <footer className="shell"><span>Naveed Khan</span><span>Curiosity, in progress.</span><a href="#about">Back to top <span aria-hidden="true">↑</span></a></footer>
   </MotionConfig>
 }

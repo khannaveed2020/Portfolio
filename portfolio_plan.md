@@ -224,4 +224,10 @@ Example prompt:
 - Add `testimonials` near the bottom, immediately before Contact, preserving the three-item sticky navigation.
 - Received LinkedIn recommendations verified in the signed-in profile on 5 October 2026: Ratnavo Dutta (10 January 2026) and Ankush G (22 September 2025).
 - Use short verbatim excerpts, author names, profile links, source dates and observed working relationships. Do not rewrite quotes, infer companies or imply corporate endorsement. Do not import pending/given recommendations or unrelated profile content.
-- Link to the full recommendations; disclose that LinkedIn may require sign-in. Use open editorial quote rows with clear contrast and existing reduced-motion reveal behaviour, not a carousel or auto-rotation.
+- Link to the full recommendations; disclose that LinkedIn may require sign-in. Latest interaction: manually cycled two-item quote tape. Click the quote or labelled Next testimonial button to switch 1 → 2 → 1; no auto-rotation. Keep author links separate. Without JavaScript, both quotations remain readable.
+
+## 18. Skills tape
+
+- Add a continuously moving skills tape near the bottom, above the footer, using selected résumé-supported skills. Lab-only tools remain labelled as lab experience; do not add inferred LinkedIn skills.
+- Provide a visible pause/resume control; also pause on hover/focus. Reduced-motion preferences show a static wrapped list. Exclude the duplicated visual loop from assistive technology.
+- Use existing CSS/React only, with no new dependencies. Preserve contrast, normal scrolling and the three primary navigation links.

@@ -30,6 +30,15 @@ export const testimonials = [
 
 export const recommendationsUrl = 'https://www.linkedin.com/in/naveedkhan0266/details/recommendations/'
 
+// Selected from résumé-derived expertise and role bullets above/below.
+// Lab-only tools retain their boundary on the visible tape.
+export const tickerSkills = [
+  'Azure networking', 'ExpressRoute', 'VPN', 'DNS', 'Azure Firewall',
+  'PowerShell', 'Azure CLI', 'ARM templates', 'BGP', 'OSPF',
+  'Network security', 'Wireshark', 'Incident analysis', 'Root-cause analysis',
+  'Engineer mentoring', 'Docker · lab', 'Terraform · lab', 'Git · lab',
+] as const
+
 export const experience = [
   { company: 'Microsoft', date: 'May 2024 — Present', role: 'Senior Support Escalation Engineer', summary: 'Complex Azure networking escalations, engineering investigations and customer communication.', bullets: [
     'Resolve complex Azure networking escalations for strategic enterprise customers and coordinate frontline support and engineering investigations to diagnose production failures and restore service.',
