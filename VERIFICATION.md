@@ -88,3 +88,12 @@ No public deployment was made during this implementation.
 - Skills tape now includes Copilot Studio, GitHub Copilot and AI Agents per user instruction. Measured browser timing matches 36.555px/second (+5%). Logo tape remains 34.814px/second, with requested employer → Cisco → Check Point → AZ-900/AZ-104/AZ-700/AZ-720/AI-900/AB-730/AB-731 sequence; opposite directions remain unchanged.
 - Build, static-output/private-file and whitespace checks pass. No new dependencies or résumé edits. Screenshots: `.qa/detail-controls.jpg` and `.qa/credential-symbols.jpg`. No new Lighthouse or cross-browser audit was run for this revision.
 - At 320px, Enter opens the experience disclosure and document width remains 320px, with no horizontal overflow.
+
+## Static capabilities and benefits-first project copy — 5 October 2026
+
+- Technical capabilities is an always-visible semantic section with all five category/description rows in a bordered panel. No disclosure control or collapse state remains.
+- Experience summaries now use compact 36px-high outlined controls with 12px text and restrained plus/minus indicators. Enter still opens details; mobile document width stays 320px with no overflow.
+- Removed the visitor-facing personal-introduction draft note. This was an editorial placeholder, not professional content.
+- Tightened HCL SVG viewBox around the original wordmark path and adjusted work-entry dimensions. Desktop inspection confirms the mark is legible without distortion.
+- Read the current RoadLens README from the repository's main branch. Public project copy now lists supported benefits (searching people/vehicles, local footage/session control, offline after setup and flexible installation) instead of the limitations disclosure and hackathon/MVP notice. No production, safety, accuracy or unrestricted AI-search claims were introduced.
+- Build, static/private-output and whitespace checks pass. Screenshots: `.qa/static-capabilities.jpg` and `.qa/roadlens-benefits.jpg`. No new Lighthouse or cross-browser audit. User-supplied untracked `Pics/` remains untouched and excluded from this commit.

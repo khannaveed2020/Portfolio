@@ -213,9 +213,11 @@ Example prompt:
 ## 16. Project content, credentials and branding revision
 
 - Credentials & Labs is an explicit section heading. Credentials appear first with visible grouped lists, then public projects/tools and separately labelled homelab learning.
-- Add RoadLens with repository and demo links, inspected stack, implementation details and limitations. Do not infer individual contribution scope, production adoption or unimplemented features.
+- Add RoadLens with repository/demo links, inspected stack and visible README-supported benefits: searchable people/vehicle detections, local footage/session control, offline use after setup and flexible cross-platform/Docker/package installation. Remove the visitor-facing hackathon/MVP label and limitations notice. Do not infer production adoption, individual contribution scope, accuracy guarantees, safety-system capabilities or unrestricted AI search.
 - Use employer marks beside company names and an Azure mark beside Microsoft/Azure credentials. Preserve role names and dates; logos are identification, not endorsement.
-- Experience detail and technical-capability summaries share a clearly visible soft-indigo control surface, border, 44px minimum height and plus/minus affordance, with native keyboard/expanded behaviour preserved.
+- Experience details use compact, subtly outlined boxes (12px text, 36px minimum height) with plus/minus indicators and visible keyboard focus. Avoid the earlier prominent filled pill treatment. Technical capabilities is an always-visible, properly headed bordered panel with category/description rows, not a disclosure control.
+- Remove the visitor-facing “Personal introduction in progress” draft marker. Personal copy can remain provisional in planning without exposing editorial reminders on the website.
+- HCL's original wordmark artwork remains unchanged; trim the SVG's excessive internal whitespace and size it for legibility in work experience and the logo tape.
 - Security & networking shows Cisco, Check Point and ISC2 organisation symbols. Professional development shows Kepner-Tregoe, Linux Academy, Linux Foundation and Wireshark symbols, not certification badges.
 - Keep Craftz.dog-inspired personal warmth and Brittany Chiang-inspired readable hierarchy. Avoid a stock grid or hiding certificate names behind disclosure controls.
 - Existing public résumé remains unchanged; private editable documents remain excluded from all Git history and deployment.

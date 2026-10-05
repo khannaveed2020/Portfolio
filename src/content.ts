@@ -113,13 +113,12 @@ export const roadLens = {
   title: 'RoadLens — Intelligent Car Dashcam',
   url: 'https://github.com/khannaveed2020/intelligent-car-dashcam',
   demo: 'https://github.com/khannaveed2020/intelligent-car-dashcam/blob/main/demo/RoadLens_demo.mp4',
-  summary: 'A local hackathon prototype that turns short dashcam clips into searchable object detections. Upload an MP4, process sampled frames and find people or vehicles with simple keyword queries.',
+  summary: 'A local video-search project that helps you find people and vehicles in dashcam footage. Upload an MP4, process sampled frames with YOLO and search the results with simple queries.',
   technologies: ['Python', 'Streamlit', 'YOLO', 'OpenCV', 'Docker'],
-  details: [
-    'Uses Ultralytics YOLO to detect people, bicycles, cars, motorcycles, buses and trucks in sampled video frames.',
-    'Maps supported query terms to object labels and returns results in timestamp order. Search is deterministic keyword matching, not an LLM or unrestricted natural-language search.',
-    'Packages the demo with Docker Compose, cross-platform setup scripts and an installable Python package. Includes pytest tests and Ruff checks.',
-    'Videos and thumbnails stay on the local machine. The demo can run offline after dependencies and model weights are prepared; Clear session removes local session data.',
+  benefits: [
+    ['Find what matters', 'Search for people, cars or vehicles in processed footage using straightforward queries.'],
+    ['Keep footage local', 'Videos and thumbnails stay on your computer; Clear session lets you remove session data.'],
+    ['Run offline after setup', 'Once dependencies and model weights are prepared, video processing can run without an internet connection.'],
+    ['Flexible setup', 'Windows, macOS and Linux setup scripts, Docker packaging and an installable Python package offer several ways to run the project.'],
   ],
-  limitation: 'Hackathon MVP, not a production safety system. Model detections are not verified facts. No face recognition, identity inference or collision detection.',
 } as const
