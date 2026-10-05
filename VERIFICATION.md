@@ -18,7 +18,7 @@ Verified on 5 October 2026 against the production build served at `http://127.0.
 
 ## Remaining before public launch
 
-- Review provisional personal introduction and photo placeholders; supply and approve portrait and personal imagery.
+- Review provisional personal introduction; supply and approve final portrait artwork. Aviation and Scuba photos are now integrated (see latest revision below).
 - Verify Firefox and Safari directly. The available in-app browser and Chrome Lighthouse run do not establish full cross-browser compatibility.
 - Exercise actual touch and reduced-motion preferences, plus browser back-button behavior across anchors.
 - Connect an accessible GitHub repository named `portfolio`. The local checkout has no remote; connector lookup of `khannaveed2020/portfolio` returned 404, which may indicate absence or lack of access.
@@ -97,3 +97,12 @@ No public deployment was made during this implementation.
 - Tightened HCL SVG viewBox around the original wordmark path and adjusted work-entry dimensions. Desktop inspection confirms the mark is legible without distortion.
 - Read the current RoadLens README from the repository's main branch. Public project copy now lists supported benefits (searching people/vehicles, local footage/session control, offline after setup and flexible installation) instead of the limitations disclosure and hackathon/MVP notice. No production, safety, accuracy or unrestricted AI-search claims were introduced.
 - Build, static/private-output and whitespace checks pass. Screenshots: `.qa/static-capabilities.jpg` and `.qa/roadlens-benefits.jpg`. No new Lighthouse or cross-browser audit. User-supplied untracked `Pics/` remains untouched and excluded from this commit.
+
+## Personal photo galleries — 5 October 2026
+
+- Six supplied Aviation photographs and two Scuba photographs replace interim story illustrations. Flight-simulation captions distinguish those images from real-world flying.
+- Desktop browser confirms Next advances Aviation through its six photos and wraps to the first. Scuba wraps after two; Enter also advances its button. Each gallery operates independently, without autoplay.
+- Desktop layout visually inspected; mobile 320px layout inspected with document width exactly 320px and no horizontal overflow. Full photos remain uncropped, with counts and Next controls below. Screenshot: `.qa/story-photos.jpg`.
+- Build and static-output checks pass. All eight photos/captions exist in pre-rendered HTML, with interactive controls hidden until hydration. A browser with JavaScript disabled was not separately tested.
+- Sixteen responsive JPEG exports are metadata-free, verified during preparation. Original `Pics/` sources are ignored and unchanged; MOV videos and unrelated source folders are absent from deployment output.
+- No new dependencies, public deployment, Lighthouse or cross-browser audit in this revision.

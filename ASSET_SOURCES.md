@@ -8,9 +8,16 @@ Marks identify employers and linked platforms; they do not imply endorsement. Re
 - Mphasis: official PNG from `https://www.mphasis.com/content/dam/mphasis-com/global/logo/mphasis-logo.png`, preserved inside a local SVG image wrapper. Not a vector redraw; displayed on a white plate to preserve legibility.
 - Azure: Devicon Azure vector (`https://github.com/devicons/devicon/blob/master/icons/azure/azure-original.svg`), Devicon MIT collection; Microsoft trademark.
 - Microsoft four-square mark, LinkedIn, GitHub and PowerShell marks: local SVG representations used with visible identifying text.
-- Hobby and RoadLens illustrations: original decorative SVG studies, not photographs or screenshots of project output.
+- RoadLens illustration: original decorative SVG study, not a screenshot of project output. Earlier hobby studies are superseded by the supplied photographs.
 
 The page does not request brand assets from external servers at runtime.
+
+## Personal story photographs
+
+- User-supplied Aviation and Scuba photos in `Pics/`, approved for their respective galleries. Six Aviation images and two Scuba images are published as locally optimised JPEG copies, with 640px and 1280px variants. EXIF/GPS metadata is removed; originals are unchanged and ignored by Git.
+- Aviation source order: `IMG_9942.JPG`, `IMG_9961.JPG`, `IMG_9963.JPG`, `IMG_5074.jpg`, `IMG_5075.jpg`, `IMG_5076.jpg`. Last three are explicitly captioned as flight simulation, not real-world pilot qualifications.
+- Scuba source order: `IMG_5072.jpg`, `IMG_5073.jpg`.
+- `scripts/prepare-story-photos.py` reproducibly prepares these eight approved files only. Aviation MOV clips, unrelated portraits and other source folders are not published.
 
 ## Credential-group organisation symbols
 

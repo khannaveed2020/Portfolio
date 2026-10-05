@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from 'react'
 import { motion, MotionConfig, useReducedMotion, useScroll, useInView, useAnimate } from 'motion/react'
 import { Character } from './Character'
-import { StoryArt, ProfileLogo, CompanyLogo, CredentialSymbols } from './Visuals'
+import { ProfileLogo, CompanyLogo, CredentialSymbols } from './Visuals'
+import { StoryGallery } from './StoryGallery'
 import { credentials, experience, expertise, profileLinks, roadLens } from './content'
 import { TestimonialTicker, SkillsTicker } from './Tickers'
 
@@ -64,8 +65,8 @@ export function App() {
         </div>
         <div id="interests" className="shell interests">
           <Reveal><div className="section-heading"><p className="eyebrow">01 / Beyond the work</p><h2>Room for curiosity.</h2><p>Learning also happens away from a screen.</p></div></Reveal>
-          <Reveal className="story"><StoryArt kind="flying" /><div className="story-copy"><p className="eyebrow">A different perspective</p><h3>Learning to fly.</h3><p>More than 10 hours of hands-on flight experience in a Cessna 172. My interest in aviation continues through flight simulation on VATSIM and IVAO.</p><span className="small-label">General aviation · Flight simulation</span></div></Reveal>
-          <Reveal className="story story-reverse"><StoryArt kind="diving" /><div className="story-copy"><p className="eyebrow">Another world to explore</p><h3>Below the surface.</h3><p>Scuba diving in the Indian Ocean is another part of my story. A personal photograph and the story behind it will follow.</p><span className="small-label">Scuba diving · Indian Ocean</span></div></Reveal>
+          <Reveal className="story"><StoryGallery kind="flying" /><div className="story-copy"><p className="eyebrow">A different perspective</p><h3>Learning to fly.</h3><p>More than 10 hours of hands-on flight experience in a Cessna 172. My interest in aviation continues through flight simulation on VATSIM and IVAO.</p><span className="small-label">General aviation · Flight simulation</span></div></Reveal>
+          <Reveal className="story story-reverse"><StoryGallery kind="diving" /><div className="story-copy"><p className="eyebrow">Another world to explore</p><h3>Below the surface.</h3><p>Scuba diving in the Indian Ocean is another part of my story.</p><span className="small-label">Scuba diving · Indian Ocean</span></div></Reveal>
         </div>
       </section>
       <section id="work" className="work-section section-pad"><div className="shell">

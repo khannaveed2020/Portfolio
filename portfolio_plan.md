@@ -117,7 +117,7 @@ The personal story should demonstrate, rather than merely claim, determined prob
 
 Content boundary for v1: do not publicly disclose disability. This does not change the requirement to provide complete and accurate information in any official employment, medical, or immigration process.
 
-Professional content is sourced from `public/Naveed_Khan_Resume.pdf`. Include current roles, dates, technical capabilities, credentials, PowerShell projects and accurately labelled labs. Project content may also come from inspected user-owned public repositories. RoadLens is a local hackathon prototype with YOLO object detection and deterministic keyword search, not a production safety system or LLM search. No licence is declared, so label it public-source. Initial personal copy, portrait and flying/scuba images are explicitly provisional. They do not block development.
+Professional content is sourced from `public/Naveed_Khan_Resume.pdf`. Include current roles, dates, technical capabilities, credentials, PowerShell projects and accurately labelled labs. Project content may also come from inspected user-owned public repositories. RoadLens is a local hackathon prototype with YOLO object detection and deterministic keyword search, not a production safety system or LLM search. No licence is declared, so label it public-source. Personal copy and portrait remain provisional; supplied Aviation and Scuba photographs are integrated. Remaining content does not block development.
 
 ### Public résumé
 
@@ -187,7 +187,7 @@ Example prompt:
 ## 13. Remaining content and launch tasks
 
 - Supply and approve final About Me introduction and individual hobby stories.
-- Supply a clear source portrait and flying/scuba photographs. Approve character concepts in the hero before preparing animation layers.
+- Aviation and Scuba photographs are supplied and integrated. Supply a clear source portrait and approve character concepts in the hero before preparing animation layers.
 - Final character treatment: preferred soft editorial; compare a restrained pixel option when source photo is available.
 - Push verified changes to `khannaveed2020/Portfolio`; verify live workflow and résumé link after publishing.
 - Complete cross-browser and Lighthouse verification before calling the first release ready.
@@ -207,7 +207,7 @@ Example prompt:
 - Use labelled profile logos for LinkedIn, GitHub, Credly and PowerShell Gallery.
 - Expand the palette with warm sand/amber, indigo work accents, ocean teal and a muted rose contact chapter, while remaining dark-only.
 - Make scroll entrances visibly intentional, add a reading-progress line, scroll-linked story illustration movement and keyboard/touch-operable aircraft/diving controls. Reduced motion removes movement; static HTML stays readable.
-- Use original aviation/ocean vector studies instead of empty placeholder boxes, clearly labelled as illustrations pending real photographs. Character likeness still awaits the user-supplied portrait.
+- Aviation/ocean vector studies were interim artwork, now replaced by the supplied photo galleries. Character likeness still awaits the user-supplied portrait.
 - Lovable critique-only pass used one credit; no remote project code changes or publishing requested.
 
 ## 16. Project content, credentials and branding revision
@@ -240,3 +240,10 @@ Example prompt:
 - Tape B sequence: Wipro, HCL, Mphasis, Microsoft; Cisco CCNA, CCNA Security and Web Content Security badges; Check Point CCSA; AZ-900, AZ-104, AZ-700, AZ-720, AI-900, AB-730, AB-731. ISC2 and Kepner-Tregoe are no longer on this tape, but their credential entries remain unchanged.
 - Use authentic Credly badge artwork and the official Microsoft Learn fundamentals mark for AI-900. Preserve original logos and optimise assets locally. Latest user decision: show logos with credential-name-only accessible labels/tooltips and no old/new/historical/expired wording or status note. Do not add current/active/renewed claims. Linux learning and Wireshark are not invented certification marks.
 - Use existing CSS/React only, with no new dependencies. Preserve contrast, normal scrolling and the three primary navigation links.
+
+## 19. Personal photo galleries
+
+- Use all six supplied Aviation photos and both Scuba photos in their respective alternating image/text stories. Clearly distinguish the three flight-simulation images from real flying.
+- Show one photograph at a time after hydration, with a photo count and subtle Next photo button slightly below. Each gallery cycles independently back to its first image; no automatic advancement.
+- Preserve whole images without cropping, meaningful alternative text and keyboard-operable controls. Without JavaScript, all photographs and captions remain visible.
+- Publish responsive, optimised, metadata-free copies only; ignore `Pics/` and leave original files unchanged. Exclude MOV clips and unrelated portraits.

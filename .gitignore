@@ -6,3 +6,4 @@ assets/source-documents/
 *.log
 .env*
 .qa/
+Pics/
