@@ -2,6 +2,9 @@ import assert from 'node:assert/strict'
 import { readFile, readdir, stat } from 'node:fs/promises'
 
 const html = await readFile('dist/index.html', 'utf8')
+assert(html.includes('/Portfolio/character/naveed-anime.webp'), 'Missing personal character asset')
+assert((html.match(/class="portrait-pupils"/g) || []).length === 2, 'Both pupils must exist without JavaScript')
+assert(!html.includes('Portrait study · placeholder'), 'Old portrait placeholder label returned')
 for (const id of ['about', 'work', 'credentials', 'labs', 'testimonials', 'contact']) assert(html.includes(`id="${id}"`), `Missing static section ${id}`)
 assert(!html.includes('Credentials &amp; Labs') && !html.includes('Lab experience is labelled separately'), 'Superseded combined heading or disclaimer')
 assert(html.indexOf('id="labs"') < html.indexOf('Tools built to investigate.'), 'Tools must be grouped with labs')

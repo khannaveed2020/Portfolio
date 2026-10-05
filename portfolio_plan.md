@@ -54,9 +54,9 @@ Audience: recruiters and hiring managers. Country-specific job-search, relocatio
 
 ## 4. Character plan
 
-**Selected direction for v1:** a recognisable, closely stylised portrait based on my own photo. The preferred treatment is a soft editorial, hand-drawn illustration with controlled linework, muted colours, restrained shading, and a transparent background. It should look professional rather than strongly anime, childish, or like a generic mascot.
+**Selected direction for v1 (updated 5 October):** a recognisable anime portrait based on my supplied Sample Self Pictures, guided by the supplied Ghibli-style illustration. Preserve adult likeness, hairstyle and facial hair with warm colours, controlled linework and a transparent background. Keep it professional, not childish or a generic mascot.
 
-Before finalising the artwork, compare two concepts in the actual hero layout: the preferred soft illustrated portrait and one restrained pixel-art alternative. Do not choose based on the character in isolation.
+The explicit anime request supersedes the earlier illustrated-versus-pixel comparison. Review likeness in the working hero; further artwork refinement remains possible without blocking animation.
 
 **Alternative concept: pixel-art avatar from my own image**
 - Source: my own photo or drawing, converted to pixel art, then cleaned up by hand.
@@ -67,7 +67,7 @@ Before finalising the artwork, compare two concepts in the actual hero layout: t
 
 **Preferred concept: soft editorial character**
 - Concept art from my own photo, cleaned and separated into transparent layers (head, eyes or pupils, eyelids, mouth, body) using free tools such as Inkscape where practical.
-- Production owner: create concepts here after I supply a clear photo; I approve the concept before cleanup and layer preparation. Start with a clearly labelled SVG placeholder. No additional subscription is required to begin; available generation and layer quality must be checked at that stage.
+- Production owner: create artwork here using built-in image generation from the supplied photographs, then integrate code-controlled pupils, eyelids and a gently moving head over a static body. No additional subscription or animation dependency is needed. The first integrated anime version is ready for likeness review.
 
 **Rules for both**
 - Pinterest is for inspiration and a mood board only. Do not use other artists' artwork directly.
@@ -187,8 +187,8 @@ Example prompt:
 ## 13. Remaining content and launch tasks
 
 - Supply and approve final About Me introduction and individual hobby stories.
-- Aviation and Scuba photographs are supplied and integrated. Supply a clear source portrait and approve character concepts in the hero before preparing animation layers.
-- Final character treatment: preferred soft editorial; compare a restrained pixel option when source photo is available.
+- Aviation, Scuba and Photography photographs are supplied and integrated. Source portraits are now supplied and used for the anime character.
+- Review the integrated character likeness and illustration treatment; cursor tracking and restrained head movement are implemented.
 - Push verified changes to `khannaveed2020/Portfolio`; verify live workflow and résumé link after publishing.
 - Complete cross-browser and Lighthouse verification before calling the first release ready.
 
@@ -207,7 +207,7 @@ Example prompt:
 - Use labelled profile logos for LinkedIn, GitHub, Credly and PowerShell Gallery.
 - Expand the palette with warm sand/amber, indigo work accents, ocean teal and a muted rose contact chapter, while remaining dark-only.
 - Make scroll entrances visibly intentional, add a reading-progress line, scroll-linked story illustration movement and keyboard/touch-operable aircraft/diving controls. Reduced motion removes movement; static HTML stays readable.
-- Aviation/ocean vector studies were interim artwork, now replaced by the supplied photo galleries. Character likeness still awaits the user-supplied portrait.
+- Aviation/ocean vector studies were interim artwork, now replaced by the supplied photo galleries. The original character placeholder is now replaced by a personal anime portrait derived from supplied photographs.
 - Lovable critique-only pass used one credit; no remote project code changes or publishing requested.
 
 ## 16. Project content, credentials and branding revision

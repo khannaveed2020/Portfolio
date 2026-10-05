@@ -1,5 +1,12 @@
 # Brand assets
 
+## Personal character
+
+- `public/character/naveed-anime.webp`: generated here from user-approved photographs in `Pics/Sample Self Pictures/`, with the supplied illustration in `Pics/Animated/` as a style reference. Built-in image generation, then metadata-free WebP export; original photos are not published.
+- Full art direction and prompt set: `assets/character-art-direction.md`. Pupils, highlights and eyelids are rendered separately in `src/Character.tsx`; the raster alone is an animation base, not the finished portrait.
+
+## Logos and marks
+
 Marks identify employers and linked platforms; they do not imply endorsement. Respective trademarks belong to their owners.
 
 - Wipro and historical HCL wordmark: Simple Icons (`https://simpleicons.org/`), CC0 vector collection, local monochrome marks from `https://cdn.simpleicons.org/wipro/FFFFFF` and `https://cdn.simpleicons.org/hcl/FFFFFF`.

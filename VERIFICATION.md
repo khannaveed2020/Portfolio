@@ -1,5 +1,14 @@
 # Initial portfolio verification
 
+## Personal anime character — 5 October 2026
+
+- Replaced the stock placeholder with a photo-derived anime portrait using the user's supplied photographs and illustration reference. A transparent 1024 × 1536 WebP asset is approximately 131 KiB; source photographs remain ignored and unchanged.
+- Desktop browser inspection confirms clipped pupil movement changes with pointer position, separate head rotation, readable hero framing and the small fixed companion after navigating to Work. No browser console warnings/errors observed.
+- Mobile layouts inspected at 390px and 320px: portrait stays in its hero, no horizontal overflow, no corner companion. These viewport checks do not emulate an actual touch device.
+- Pointer tracking is restricted to fine pointers and ignores touch events. Reduced-motion preference changes reset eyes/head and undock the portrait; CSS blink is enabled only for fine pointers with no reduced-motion preference. Actual OS reduced-motion, physical touch, Firefox and Safari testing remain pending.
+- Static build checks require both pupil layers and the base-path-correct portrait asset in pre-rendered HTML. No-JavaScript appearance is covered by static output inspection, not a separate JavaScript-disabled browser session.
+- Production build, static content/privacy checks and whitespace checks pass. No new dependencies. First integrated likeness remains subject to user feedback.
+
 ## Separate credentials and practical projects — 5 October 2026
 
 - Credentials has a standalone chapter and navigation label. Removed the combined heading and introductory “Lab experience is labelled separately…” sentence.
