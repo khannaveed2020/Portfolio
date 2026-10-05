@@ -20,7 +20,7 @@ Build an interactive, visually distinctive static personal portfolio website wit
 
 Finish a content-complete version first. Add animation polish afterward.
 
-Audience: recruiters and hiring managers, especially New Zealand employers in Auckland and the North Island open to employer-supported AEWV candidates. The website should also communicate personal curiosity and character through authentic stories.
+Audience: recruiters and hiring managers. Country-specific job-search, relocation and visa requirements are private context for applications, not public website content. The website should communicate personal curiosity and character through authentic stories.
 
 ## 2. Stack
 
@@ -37,7 +37,7 @@ Audience: recruiters and hiring managers, especially New Zealand employers in Au
 
 - ChatGPT Plus (chat and Codex in VS Code)
 - VS Code, Git, GitHub
-- Lovable (100 credits): optional, for a fast layout scaffold only. Sync to GitHub immediately if used, then continue in VS Code. Do not spend credits on debugging.
+- Lovable: optional bounded design critique or scaffold. Keep the local project authoritative; do not publish a duplicate or spend credits debugging. A critique-only pass does not require a second scaffold or GitHub sync.
 - Primary hosting: GitHub Pages, repository `portfolio`, base path `/portfolio/`. Home-server hosting may follow after the site is stable.
 
 ### UI and animation library policy for v1
@@ -199,3 +199,12 @@ Example prompt:
 - Dark editorial layout, CSS focus/hover states, Motion reveals and SVG placeholder character with desktop tracking, touch/reduced-motion fallbacks and quiet desktop corner behavior.
 - Build outputs only public assets. Source documents stay local. Run `npm run build` and `npm run check` for each verified phase.
 - Initial implementation completed locally on 5 October 2026. Git initialized; strict production build and public-output checks pass. GitHub Pages workflow is prepared. See `VERIFICATION.md` for actual browser checks, Lighthouse results and remaining launch tasks. No remote or live deployment is configured yet.
+
+## 15. Design revision agreed 5 October 2026
+
+- Remove public relocation/visa copy and education. Retain résumé unchanged. Email is a labelled mailto control, not visible address text (the address necessarily remains in the link target).
+- Use labelled profile logos for LinkedIn, GitHub, Credly and PowerShell Gallery.
+- Expand the palette with warm sand/amber, indigo work accents, ocean teal and a muted rose contact chapter, while remaining dark-only.
+- Make scroll entrances visibly intentional, add a reading-progress line, scroll-linked story illustration movement and keyboard/touch-operable aircraft/diving controls. Reduced motion removes movement; static HTML stays readable.
+- Use original aviation/ocean vector studies instead of empty placeholder boxes, clearly labelled as illustrations pending real photographs. Character likeness still awaits the user-supplied portrait.
+- Lovable critique-only pass used one credit; no remote project code changes or publishing requested.

@@ -25,3 +25,12 @@ Verified on 5 October 2026 against the production build served at `http://127.0.
 - Select GitHub Actions in repository Pages settings, push the committed code, observe the deployment workflow and verify the live `/portfolio/` page and résumé URL.
 
 No public deployment was made during this implementation.
+# Design revision — 5 October 2026
+
+- Strict build and static-output checks pass after content removal and visual revisions.
+- Public HTML excludes relocation/visa content and education; visible email removed, labelled mailto retained. Public résumé unchanged.
+- Aircraft and diving toggle controls verified in the in-app browser; pressed state changes and the aircraft transform responds. Local Credly vector loads; other profile marks are inline vectors with text labels.
+- No horizontal overflow measured at 320, 390, 768 pixels; desktop and mobile hero visually inspected. Screenshot: `.qa/revised-stories.jpg`.
+- Latest Chrome Lighthouse: performance 99, accessibility 100, best practices 100, SEO 100. Illustration visible/accessibility label match passes. Reports remain local under `.qa/`.
+- Reduced-motion and coarse-pointer fallbacks are implemented; actual OS reduced-motion and touch hardware still need direct testing. Firefox/Safari and live GitHub Pages checks remain pending.
+- Lovable used only for design critique (one credit), not remote code edits or deployment.
