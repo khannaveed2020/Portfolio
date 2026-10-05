@@ -7,7 +7,7 @@ export const profileLinks = [
 
 // Received LinkedIn recommendations verified in the profile UI on 5 October 2026.
 // Full recommendation text supplied by the user; retain the original wording.
-export const testimonials = [
+const receivedTestimonials = [
   {
     name: 'Ratnavo Dutta',
     title: 'Senior Infrastructure & Cloud Network Engineer',
@@ -29,22 +29,21 @@ export const testimonials = [
 ] as const
 
 export const recommendationsUrl = 'https://www.linkedin.com/in/naveedkhan0266/details/recommendations/'
+export const testimonials = [receivedTestimonials[1], receivedTestimonials[0]] as const
 
 // Authentic credential artwork; labels identify credentials without status claims.
 export const tickerBadges = [
-  ['az-700.png', 'AZ-700 Azure Network Engineer Associate'],
-  ['az-104.png', 'AZ-104 Azure Administrator Associate'],
-  ['az-720.png', 'AZ-720 Azure Support Engineer for Connectivity'],
-  ['az-900.png', 'AZ-900 Azure Fundamentals'],
-  ['ai-900.svg', 'AI-900 Azure AI Fundamentals'],
-  ['ab-730.png', 'AB-730 AI Business Professional'],
-  ['ab-731.png', 'AB-731 AI Transformation Leader'],
-  ['isc2-cc.png', 'ISC2 Certified in Cybersecurity'],
-  ['ccsa.png', 'Check Point CCSA R77'],
   ['ccna.png', 'Cisco CCNA'],
   ['ccna-security.png', 'Cisco CCNA Security'],
   ['cisco-web.png', 'Cisco Web Content Security'],
-  ['kt.png', 'Kepner-Tregoe Problem Solver'],
+  ['ccsa.png', 'Check Point CCSA R77'],
+  ['az-900.png', 'AZ-900 Azure Fundamentals'],
+  ['az-104.png', 'AZ-104 Azure Administrator Associate'],
+  ['az-700.png', 'AZ-700 Azure Network Engineer Associate'],
+  ['az-720.png', 'AZ-720 Azure Support Engineer for Connectivity'],
+  ['ai-900.svg', 'AI-900 Azure AI Fundamentals'],
+  ['ab-730.png', 'AB-730 AI Business Professional'],
+  ['ab-731.png', 'AB-731 AI Transformation Leader'],
 ] as const
 
 // Selected from résumé-derived expertise and role bullets above/below.
@@ -53,7 +52,8 @@ export const tickerSkills = [
   'Azure networking', 'ExpressRoute', 'VPN', 'DNS', 'Azure Firewall',
   'PowerShell', 'Azure CLI', 'ARM templates', 'BGP', 'OSPF',
   'Network security', 'Wireshark', 'Incident analysis', 'Root-cause analysis',
-  'Engineer mentoring', 'Docker · lab', 'Terraform · lab', 'Git · lab',
+  'Engineer mentoring', 'Copilot Studio', 'GitHub Copilot', 'AI Agents',
+  'Docker · lab', 'Terraform · lab', 'Git · lab',
 ] as const
 
 export const experience = [

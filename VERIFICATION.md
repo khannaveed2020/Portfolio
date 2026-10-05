@@ -79,3 +79,12 @@ No public deployment was made during this implementation.
 - Removed historical/expired wording from badge names, tooltips and accessible labels, and removed the note below the tape per user request. Credential-name labels remain; no current/renewed status claims were added. This supersedes the earlier status-disclosure presentation above.
 - Browser confirmed the note is absent and labels contain credential names without historical status. Screenshot: `.qa/badges-no-status.jpg`.
 - Build, static-output/private-file checks and whitespace checks pass. No changes to tape speed, motion or résumé content.
+
+## Detail controls, symbols and ordering — 5 October 2026
+
+- Experience and technical-capability summaries share a high-contrast indigo surface, outline, 44px minimum target and plus/minus affordance. Native disclosure keyboard behaviour remains intact.
+- Security & networking uses Cisco, Check Point and ISC2 organisation marks; Professional development uses Kepner-Tregoe, Linux Academy, Linux Foundation and Wireshark organisation marks, not certification badges. Browser confirmed all seven images load. The white Kepner-Tregoe wordmark uses a dark plate; Check Point uses a light plate.
+- Full recommendation text is unchanged; Ankush now appears first, Ratnavo second. Browser confirmed initial status `1 / 2 · Ankush G`.
+- Skills tape now includes Copilot Studio, GitHub Copilot and AI Agents per user instruction. Measured browser timing matches 36.555px/second (+5%). Logo tape remains 34.814px/second, with requested employer → Cisco → Check Point → AZ-900/AZ-104/AZ-700/AZ-720/AI-900/AB-730/AB-731 sequence; opposite directions remain unchanged.
+- Build, static-output/private-file and whitespace checks pass. No new dependencies or résumé edits. Screenshots: `.qa/detail-controls.jpg` and `.qa/credential-symbols.jpg`. No new Lighthouse or cross-browser audit was run for this revision.
+- At 320px, Enter opens the experience disclosure and document width remains 320px, with no horizontal overflow.

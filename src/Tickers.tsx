@@ -25,14 +25,15 @@ function Tape({ logos = false, children }: { logos?: boolean; children: ReactNod
   useEffect(() => {
     const group = track.current?.firstElementChild
     if (!group) return
-    // Previous tape: 3315.648px / 100s. Maintain exactly 1.05 times that
-    // travel speed even after reducing type size or changing the viewport.
-    const measure = () => setDuration(group.getBoundingClientRect().width / 34.8143086)
+    // Keep logo tape B at its existing travel speed. The latest revision adds
+    // another 5% to skills tape A, independently of list length/viewport width.
+    const speed = logos ? 34.8143086 : 34.8143086 * 1.05
+    const measure = () => setDuration(group.getBoundingClientRect().width / speed)
     measure()
     const observer = new ResizeObserver(measure)
     observer.observe(group)
     return () => observer.disconnect()
-  }, [])
+  }, [logos])
   return <div className="skills-window"><div className={`skills-track ${logos ? 'logos-track' : ''}`} ref={track} style={{ animationDuration: `${duration}s` }}>
     {[false, true].map(duplicate => <ul className={`skills-run ${logos ? 'logos-run' : ''}`} aria-hidden={duplicate || undefined} key={String(duplicate)}>{children}</ul>)}
   </div></div>
@@ -46,7 +47,7 @@ export function SkillsTicker() {
     <Tape>{tickerSkills.map(skill => <li key={skill}>{skill}<span aria-hidden="true">✦</span></li>)}</Tape>
     <div className="logo-tape" role="region" aria-label="Employers and recorded credential logos">
       <Tape logos>
-        {['Microsoft', 'Mphasis', 'HCL Infotech', 'Wipro Infotech'].map(company => <li className="employer-tape-logo" key={company} aria-label={company} title={company}><CompanyLogo name={company}/></li>)}
+        {['Wipro Infotech', 'HCL Infotech', 'Mphasis', 'Microsoft'].map(company => <li className="employer-tape-logo" key={company} aria-label={company} title={company}><CompanyLogo name={company}/></li>)}
         {tickerBadges.map(([file, label]) => <li className="credential-tape-logo" key={file} title={label}><img src={`${import.meta.env.BASE_URL}logos/certifications/${file}`} alt={label} width="92" height="92" loading="lazy" decoding="async"/></li>)}
       </Tape>
     </div>

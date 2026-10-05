@@ -11,6 +11,13 @@ Marks identify employers and linked platforms; they do not imply endorsement. Re
 
 The page does not request brand assets from external servers at runtime.
 
+## Credential-group organisation symbols
+
+- Cisco, ISC2, Linux Foundation and Wireshark: Simple Icons CC0 collection, retrieved as white SVG marks from `https://cdn.simpleicons.org/{cisco,isc2,linuxfoundation,wireshark}/FFFFFF`.
+- Check Point: official company SVG from `https://www.checkpoint.com/wp-content/themes/checkpoint-theme-v2/images/checkpoint-logo.svg`; displayed on a light plate to preserve the wordmark colours.
+- Kepner-Tregoe: official wordmark observed on its homepage, exported from `https://kepner-tregoe.com/wp-content/uploads/2025/06/kepner-tregoe-logo.png`.
+- Linux Academy: archived organisation symbol from `https://seeklogo.com/vector-logo/388319/linux-academy`, image `https://images.seeklogo.com/logo-png/38/1/linux-academy-logo-png_seeklogo-388319.png`, resized to 160px. This is an organisation mark, not a certificate badge; trademark belongs to its owner.
+
 ## Credential tape artwork
 
 - Credly images observed on the user's public badge wallet on 5 October 2026, resized to a maximum of 240px without redrawing. These identify recorded credentials. Per the latest user decision, the tape has no credential-status labels or explanatory note and makes no current/renewal claims.

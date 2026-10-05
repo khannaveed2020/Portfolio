@@ -15,6 +15,16 @@ export function ProfileLogo({ name }: { name: string }) {
   </svg>
 }
 
+export function OrganisationLogo({ name }: { name: string }) {
+  const files: Record<string, string> = { Cisco: 'cisco.svg', 'Check Point': 'checkpoint.svg', ISC2: 'isc2.svg', 'Kepner-Tregoe': 'kepner-tregoe.png', 'Linux Academy': 'linuxacademy.png', 'Linux Foundation': 'linuxfoundation.svg', Wireshark: 'wireshark.svg' }
+  return <img className={`organisation-logo organisation-${name.toLowerCase().replaceAll(' ', '-')}`} src={`${import.meta.env.BASE_URL}logos/${files[name]}`} alt={name} title={name} width="64" height="32" loading="lazy" decoding="async" />
+}
+
+export function CredentialSymbols({ group }: { group: string }) {
+  const names = group === 'Security & networking' ? ['Cisco', 'Check Point', 'ISC2'] : ['Kepner-Tregoe', 'Linux Academy', 'Linux Foundation', 'Wireshark']
+  return <div className="credential-symbols">{names.map(name => <OrganisationLogo name={name} key={name}/>)}</div>
+}
+
 export function StoryArt({ kind }: { kind: 'flying' | 'diving' }) {
   const [exploring, setExploring] = useState(false)
   const reduced = useReducedMotion()

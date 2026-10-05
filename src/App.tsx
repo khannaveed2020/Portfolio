@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { motion, MotionConfig, useReducedMotion, useScroll, useInView, useAnimate } from 'motion/react'
 import { Character } from './Character'
-import { StoryArt, ProfileLogo, CompanyLogo } from './Visuals'
+import { StoryArt, ProfileLogo, CompanyLogo, CredentialSymbols } from './Visuals'
 import { credentials, experience, expertise, profileLinks, roadLens } from './content'
 import { TestimonialTicker, SkillsTicker } from './Tickers'
 
@@ -79,7 +79,7 @@ export function App() {
         <Reveal><div className="section-heading"><p className="eyebrow">03 / Continuous learning</p><h2>Credentials & Labs.</h2><p>Professional credentials, public projects and hands-on experiments. Lab experience is labelled separately from production work.</p></div></Reveal>
         <section className="credentials-block" aria-labelledby="credentials-heading">
           <Reveal><h3 id="credentials-heading" className="chapter-heading">Credentials<span>Certifications & professional development</span></h3></Reveal>
-          <div className="credential-list">{credentials.map(([name, text]) => <Reveal key={name}><article className="credential-group"><h4>{name === 'Microsoft' && <CompanyLogo name="Azure"/>}{name === 'Microsoft' ? 'Microsoft & Azure' : name}</h4><ul>{text.split('; ').map(item => <li key={item}>{item.replace(/\.$/, '')}</li>)}</ul></article></Reveal>)}</div>
+          <div className="credential-list">{credentials.map(([name, text]) => <Reveal key={name}><article className="credential-group"><div className="credential-identity"><h4>{name === 'Microsoft' && <CompanyLogo name="Azure"/>}{name === 'Microsoft' ? 'Microsoft & Azure' : name}</h4>{name !== 'Microsoft' && <CredentialSymbols group={name}/>}</div><ul>{text.split('; ').map(item => <li key={item}>{item.replace(/\.$/, '')}</li>)}</ul></article></Reveal>)}</div>
           <div className="credential-footer"><p>Credentials are listed as recorded in my résumé.</p><a className="text-link" href={profileLinks[2][1]} target="_blank" rel="noopener noreferrer"><ProfileLogo name="Credly"/>View credential badges <span aria-hidden="true">↗</span></a></div>
         </section>
         <section className="projects-block" aria-labelledby="projects-heading">

@@ -215,6 +215,8 @@ Example prompt:
 - Credentials & Labs is an explicit section heading. Credentials appear first with visible grouped lists, then public projects/tools and separately labelled homelab learning.
 - Add RoadLens with repository and demo links, inspected stack, implementation details and limitations. Do not infer individual contribution scope, production adoption or unimplemented features.
 - Use employer marks beside company names and an Azure mark beside Microsoft/Azure credentials. Preserve role names and dates; logos are identification, not endorsement.
+- Experience detail and technical-capability summaries share a clearly visible soft-indigo control surface, border, 44px minimum height and plus/minus affordance, with native keyboard/expanded behaviour preserved.
+- Security & networking shows Cisco, Check Point and ISC2 organisation symbols. Professional development shows Kepner-Tregoe, Linux Academy, Linux Foundation and Wireshark symbols, not certification badges.
 - Keep Craftz.dog-inspired personal warmth and Brittany Chiang-inspired readable hierarchy. Avoid a stock grid or hiding certificate names behind disclosure controls.
 - Existing public résumé remains unchanged; private editable documents remain excluded from all Git history and deployment.
 - Repository created and verified code pushed to `https://github.com/khannaveed2020/Portfolio`; GitHub build run `37302299316` passed for implementation commit `6f4780c`. Publishing remains manual; Pages has not been activated in this revision.
@@ -223,6 +225,7 @@ Example prompt:
 
 - Add `testimonials` near the bottom, immediately before Contact, preserving the three-item sticky navigation.
 - Received LinkedIn recommendations verified in the signed-in profile on 5 October 2026: Ratnavo Dutta (10 January 2026) and Ankush G (22 September 2025).
+- Latest display order: Ankush first, Ratnavo second; preserve full supplied quotations.
 - Use the complete recommendation text supplied by the user, author names, profile links, source dates and observed working relationships. Preserve the original wording, including typos; do not rewrite quotes, infer companies or imply corporate endorsement. Do not import pending/given recommendations or unrelated profile content.
 - Use a vibrant plum chapter surface, warm-white readable quotations and peach highlights; keep paragraphs fully visible without line clamps, scrolling boxes or Read more truncation.
 - Link to the full recommendations; disclose that LinkedIn may require sign-in. Latest interaction: manually cycled two-item quote tape. Click the quote or labelled Next testimonial button to switch 1 → 2 → 1; no auto-rotation. Keep author links separate. Without JavaScript, both quotations remain readable.
@@ -231,6 +234,7 @@ Example prompt:
 
 - Add a continuously moving skills tape near the bottom, above the footer, using selected résumé-supported skills. Lab-only tools remain labelled as lab experience; do not add inferred LinkedIn skills.
 - Latest user revision supersedes the pause requirement: no stop/resume controls and no hover/focus pausing. Reduced-motion preferences still show static wrapped lists, as does the no-JavaScript fallback. Exclude duplicated visual loops from assistive technology. Continuous non-essential motion without a pause/stop/hide mechanism is an acknowledged WCAG 2.2.2 trade-off, not full accessibility conformance.
-- Tape A uses smaller 15–18px skills text and moves left. Tape B contains only four employer logos and credential artwork, moving right. Both run at 34.814 pixels/second, 5% above the measured previous tape speed; measure each loop's width to preserve travel speed after resizing.
+- Tape A uses smaller 15–18px skills text and moves left. Include user-requested Copilot Studio, GitHub Copilot and AI Agents. Latest speed is 36.555 pixels/second, another 5% increase. Tape B still moves right at 34.814 pixels/second; measure each loop's width independently to preserve speed after resizing.
+- Tape B sequence: Wipro, HCL, Mphasis, Microsoft; Cisco CCNA, CCNA Security and Web Content Security badges; Check Point CCSA; AZ-900, AZ-104, AZ-700, AZ-720, AI-900, AB-730, AB-731. ISC2 and Kepner-Tregoe are no longer on this tape, but their credential entries remain unchanged.
 - Use authentic Credly badge artwork and the official Microsoft Learn fundamentals mark for AI-900. Preserve original logos and optimise assets locally. Latest user decision: show logos with credential-name-only accessible labels/tooltips and no old/new/historical/expired wording or status note. Do not add current/active/renewed claims. Linux learning and Wireshark are not invented certification marks.
 - Use existing CSS/React only, with no new dependencies. Preserve contrast, normal scrolling and the three primary navigation links.
