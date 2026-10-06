@@ -55,18 +55,15 @@ function Tape({ logos = false, children }: { logos?: boolean; children: ReactNod
 
 export function SkillsTicker() {
   const [enabled, setEnabled] = useState(false)
-  const [paused, setPaused] = useState(false)
   useEffect(() => setEnabled(true), [])
-  return <section className={`skills-ticker ${enabled ? 'skills-enabled' : ''} ${paused ? 'skills-paused' : ''}`} aria-labelledby="skills-ticker-heading">
-    <div className="skills-ticker-header shell"><h2 id="skills-ticker-heading">Skills & tools</h2><button className="skills-pause" hidden={!enabled} aria-controls="skills-tapes" aria-pressed={paused} onClick={() => setPaused(current => !current)}>{paused ? 'Resume moving lists' : 'Pause moving lists'}</button></div>
-    <div id="skills-tapes">
+  return <section className={`skills-ticker ${enabled ? 'skills-enabled' : ''}`} aria-labelledby="skills-ticker-heading">
+    <h2 className="shell" id="skills-ticker-heading">Skills & tools</h2>
     <Tape>{tickerSkills.map(skill => <li key={skill}>{skill}<span aria-hidden="true">✦</span></li>)}</Tape>
     <div className="logo-tape" role="region" aria-label="Employers and recorded credential logos">
       <Tape logos>
         {['Wipro Infotech', 'HCL Infotech', 'Mphasis', 'Microsoft'].map(company => <li className="employer-tape-logo" key={company} aria-label={company} title={company}><CompanyLogo name={company}/></li>)}
         {tickerBadges.map(([file, label]) => <li className="credential-tape-logo" key={file} title={label}><img draggable={false} src={`${import.meta.env.BASE_URL}logos/certifications/${file}`} alt={label} width="92" height="92" loading="lazy" decoding="async"/></li>)}
       </Tape>
-    </div>
     </div>
   </section>
 }

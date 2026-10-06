@@ -46,7 +46,6 @@ export function StoryGallery({ kind }: { kind: keyof typeof photos }) {
     <div id={id} className="gallery-slides">
       {items.map(([file, alt, caption], i) => <figure className="gallery-slide" key={file} hidden={enhanced && index !== i}>
         <div className="photo-frame"><img draggable={false} src={`${base}${file}.jpg`} srcSet={`${base}${file}-small.jpg 640w, ${base}${file}.jpg 1280w`} sizes="(max-width: 720px) calc(100vw - 48px), (max-width: 1100px) 45vw, 550px" alt={alt} width="1280" height={kind === 'diving' ? '1280' : '960'} loading="lazy" decoding="async" /></div>
-        <span className="photo-watermark" aria-hidden="true">HBK</span>
         <figcaption>{caption}</figcaption>
       </figure>)}
     </div>

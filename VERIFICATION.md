@@ -159,3 +159,11 @@ No public deployment was made during this implementation.
 - Deleted four unused local MOV/MP4 files. Source photographs remain private. Removed the external RoadLens demo link; the separate project repository is unchanged.
 - Removed AGENTS.md from all 20 active commits and force-pushed with a lease. Current GitHub path returns 404; an old commit URL still serves the file. Server-side cache deletion is not verified. No pull-request refs were advertised.
 - Pixel-imprinted HBK watermarks remain pending the image-scope question; current gallery watermarks are still overlays. Physical touch, actual OS reduced motion, Safari/Firefox and a fresh Lighthouse audit remain unverified. The latest viewport override did not produce the requested 320px DOM viewport, so it is not recorded as a new mobile pass.
+
+## Final ticker and watermark revision — 6 October 2026
+
+- Removed ticker pause controls at the user's request; reduced-motion/no-JavaScript fallbacks retained. Earlier pause-control verification is historical. Continuous animation retains the documented WCAG 2.2.2 limitation.
+- Imprinted HBK in the lower-right image pixels of all 48 Aviation, Scuba and Photography exports, regenerated from private originals without modifying them. No overlay remains. Compared dimensions and lower-right pixel differences for all 48; visually checked direct Aviation, Scuba and Photography JPEGs.
+- Portrait, RoadLens previews and all logo/badge assets remain byte-identical to the previous commit. Production checker validates the stamped asset hashes; all 66 raster metadata checks pass.
+- Build, strict TypeScript, output/privacy and whitespace checks pass. Main JavaScript: 407.03 KB / 129.95 KB gzip; separate mascot: 88.19 KB / 32.28 KB gzip.
+- GitHub cache cleanup requires authenticated Support access. Sign-in page reached; no ticket submitted. Local draft and pending items remain in the ignored review folder.

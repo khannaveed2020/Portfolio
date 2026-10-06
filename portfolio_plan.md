@@ -259,3 +259,7 @@ Example prompt:
 ## Review follow-up — 6 October 2026
 
 This revision supersedes the earlier no-pause and portrait-docking decisions. The skills/logo lists now share a pause/resume button. The portrait stays in the hero; the separate cat loads after hydration and uses native scrolling for its corner threshold. Unused MOV/MP4 files and the external walkthrough link are removed. Agent guidance is local and ignored.
+
+## Final media and ticker revision — 6 October 2026
+
+The latest user decision supersedes the review-follow-up pause controls: remove them and restore continuous ticker motion. Reduced-motion and no-JavaScript fallbacks remain static. This retains the documented WCAG 2.2.2 limitation. HBK must be imprinted in all Aviation, Scuba and Photography JPEG variants, replacing the former website overlays. Leave the portrait, project preview, logos and certification artwork unchanged.

@@ -1,3 +1,4 @@
+import { createHash } from 'node:crypto'
 import assert from 'node:assert/strict'
 import { readFile, readdir, stat } from 'node:fs/promises'
 import { checkMedia } from './check-media.mjs'
@@ -5,6 +6,14 @@ import { execFileSync } from 'node:child_process'
 
 const trackedFiles = execFileSync('git', ['ls-files', '-z'], { encoding: 'utf8' }).split('\0')
 assert(!trackedFiles.some(file => /(?:^|\/)agents\.md$|\.(?:mov|mp4)$/i.test(file)), 'Private agent instructions or videos are tracked')
+
+const watermarks = JSON.parse(await readFile('scripts/story-watermarks.json', 'utf8'))
+assert(Object.keys(watermarks).length === 48, 'Expected 24 watermarked story photos in two sizes')
+for (const [file, hash] of Object.entries(watermarks)) {
+  assert(/^(?:aviation-0[1-6]|scuba-0[12]|photography-50(?:7[7-9]|8[0-9]|9[0-2]))(?:-small)?\.jpg$/.test(file), `Unexpected watermarked asset: ${file}`)
+  const pixels = await readFile(`dist/photos/${file}`)
+  assert(createHash('sha256').update(pixels).digest('hex') === hash, `Watermarked export changed: ${file}; regenerate approved derivatives`)
+}
 
 const html = await readFile('dist/index.html', 'utf8')
 for (const image of html.matchAll(/<img\b[^>]*>/g)) assert(image[0].includes('draggable="false"'), 'Public images must disable native dragging before hydration')
@@ -28,7 +37,7 @@ assert(html.includes('/Portfolio/photos/aviation-06.jpg') && html.includes('/Por
 assert(html.includes('id="photography-heading"') && html.includes('aria-label="Next photography photo"'), 'Missing Photography section or control')
 assert(html.includes('id="personal-summary-heading"') && html.indexOf('id="personal-summary-heading"') < html.indexOf('aviation-photos'), 'Personal summary must precede Aviation')
 assert(html.includes('id="chapter-bridge-heading"') && html.indexOf('id="chapter-bridge-heading"') < html.indexOf('id="work"'), 'Missing personal-to-professional transition')
-assert((html.match(/class="photo-watermark"/g) || []).length === 24, 'Every Aviation, Scuba and Photography photo must have its HBK watermark')
+assert(!html.includes('photo-watermark'), 'Story watermarks must be embedded in image pixels')
 for (let number = 5077; number <= 5092; number++) {
   assert(html.includes(`/Portfolio/photos/photography-${number}.jpg`), `Missing HBK photo ${number}`)
   await stat(`dist/photos/photography-${number}-small.jpg`)
@@ -45,7 +54,7 @@ assert(html.includes('Ratnavo Dutta') && html.includes('Ankush G'), 'Missing ver
 assert(html.indexOf('id="testimonials"') < html.indexOf('id="contact"'), 'Testimonials must precede Contact')
 assert(html.includes('details/recommendations/'), 'Missing LinkedIn recommendation source link')
 assert(html.includes('Next testimonial'), 'Missing explicit testimonial control')
-assert(html.includes('Pause moving lists') && html.includes('aria-controls="skills-tapes"'), 'Moving lists need an explicit pause control')
+assert(!/Pause moving lists|Resume moving lists|skills-pause/.test(html), 'Ticker pause control must remain removed')
 assert(!html.includes('cat-mascot-layer'), 'Mascot must not create an inert control before hydration')
 assert(!/RoadLens_demo\.mp4|Watch walkthrough/.test(html), 'Removed video link returned')
 assert(html.includes('Terraform · lab'), 'Skills ticker must preserve lab boundary')

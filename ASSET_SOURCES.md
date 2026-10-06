@@ -23,14 +23,14 @@ The page does not request brand assets from external servers at runtime.
 
 - RoadLens preview: user-approved `Pics/RoadLense/Screenshot 2026-10-05 at 20.54.01.jpg`, replacing the decorative study. Optimised 1280px/640px JPEG exports strip metadata and preserve the original composition. Screenshot content is illustrative, not evidence of extra capabilities or production deployment.
 
-- Photography: all sixteen user-approved `Pics/HBK/IMG_5077.jpg` through `IMG_5092.jpg`, exported as `photography-{number}.jpg` and `-small.jpg`. Landscape, architecture and everyday-detail captions describe inspected images without inferring locations. HBK is a small, translucent website overlay, not baked into downloadable JPEG pixels. Originals remain unchanged and ignored.
+- Photography: all sixteen user-approved `Pics/HBK/IMG_5077.jpg` through `IMG_5092.jpg`, exported as `photography-{number}.jpg` and `-small.jpg`. Landscape, architecture and everyday-detail captions describe inspected images without inferring locations. HBK is baked as a small translucent bottom-right mark into both JPEG variants. Originals remain unchanged and ignored.
 
 - User-supplied Aviation and Scuba photos in `Pics/`, approved for their respective galleries. Six Aviation images and two Scuba images are published as locally optimised JPEG copies, with 640px and 1280px variants. EXIF/GPS metadata is removed; originals are unchanged and ignored by Git.
 - Aviation source order: `IMG_9942.JPG`, `IMG_9961.JPG`, `IMG_9963.JPG`, `IMG_5074.jpg`, `IMG_5075.jpg`, `IMG_5076.jpg`. Last three are explicitly captioned as flight simulation, not real-world pilot qualifications.
 - Scuba source order: `IMG_5072.jpg`, `IMG_5073.jpg`.
 - `scripts/prepare-story-photos.py` prepares six Aviation photos, two Scuba photos, sixteen HBK photos and one RoadLens screenshot, each in two sizes. Aviation MOV clips, unrelated portraits and other source folders are not published.
 
-- Metadata hygiene verified 6 October 2026: all 50 JPEG derivatives and the portrait contain no EXIF/XMP. Embedded metadata was removed from 14 PNG logo/badge derivatives and the PNG inside the Mphasis SVG, without changing source photographs. The build check covers all 66 raster payloads. HBK remains a subtle website overlay, not a baked-in image watermark.
+- Metadata hygiene verified 6 October 2026: all 50 JPEG derivatives and the portrait contain no EXIF/XMP. Embedded metadata was removed from 14 PNG logo/badge derivatives and the PNG inside the Mphasis SVG, without changing source photographs. The build check covers all 66 raster payloads. HBK is pixel-imprinted on the 48 Aviation, Scuba and Photography variants only. Logos, badges, portrait and RoadLens preview are unchanged.
 
 ## Credential-group organisation symbols
 
