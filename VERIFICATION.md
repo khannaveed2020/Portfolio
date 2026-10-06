@@ -149,3 +149,13 @@ No public deployment was made during this implementation.
 - Build and static-output checks pass. All eight photos/captions exist in pre-rendered HTML, with interactive controls hidden until hydration. A browser with JavaScript disabled was not separately tested.
 - Sixteen responsive JPEG exports are metadata-free, verified during preparation. Original `Pics/` sources are ignored and unchanged; MOV videos and unrelated source folders are absent from deployment output.
 - No new dependencies, public deployment, Lighthouse or cross-browser audit in this revision.
+
+## Review follow-up — 6 October 2026
+
+- Implemented shared keyboard-operable pause/resume controls; browser state confirmed both transitions. Earlier no-pause entries are historical.
+- Lazy-loaded the mascot after hydration, removed ScrollTrigger, stopped settled pointer animation, and removed obsolete portrait docking and unused StoryArt. Initial JavaScript is 407.44 KB / 130.04 KB gzip; mascot chunk is 88.19 KB / 32.28 KB gzip.
+- Application-script-free fixture preserves 24 gallery photos, testimonials and native details; Enter opens the first experience detail. No inert mascot is rendered. This is a script-free fixture test, not a global JavaScript-disabled browser setting.
+- Build, strict TypeScript, metadata/privacy checks and whitespace checks pass. Remote workflow run 37479442514 succeeded; deploy was skipped. Actions are pinned and deployment permissions are scoped to the deploy job.
+- Deleted four unused local MOV/MP4 files. Source photographs remain private. Removed the external RoadLens demo link; the separate project repository is unchanged.
+- Removed AGENTS.md from all 20 active commits and force-pushed with a lease. Current GitHub path returns 404; an old commit URL still serves the file. Server-side cache deletion is not verified. No pull-request refs were advertised.
+- Pixel-imprinted HBK watermarks remain pending the image-scope question; current gallery watermarks are still overlays. Physical touch, actual OS reduced motion, Safari/Firefox and a fresh Lighthouse audit remain unverified. The latest viewport override did not produce the requested 320px DOM viewport, so it is not recorded as a new mobile pass.

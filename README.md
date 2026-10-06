@@ -24,7 +24,7 @@ A live deployment must be verified after the workflow completes; a successful pu
 - Testimonials: short unchanged excerpts from received LinkedIn recommendations, verified 5 October 2026, with attribution and source links. Viewing originals may require LinkedIn sign-in.
 - Personal copy: provisional; review before launch.
 - Portrait: approved photo-derived anime WebP, with separately animated SVG eyes.
-- Aviation, scuba and photography: approved responsive JPEG derivatives; original photographs and videos remain private in ignored `Pics/`.
+- Aviation, scuba and photography: approved responsive JPEG derivatives; original photographs remain private in ignored `Pics/`; unused MOV/MP4 files were deleted.
 - Editable résumé source: `assets/source-documents/`, ignored by Git and excluded from `dist/`.
 - Typography: locally available Avenir Next/Avenir with Segoe UI and system fallbacks; no remote font requests.
 

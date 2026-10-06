@@ -255,3 +255,7 @@ Example prompt:
 - Show one photograph at a time after hydration, with a photo count and subtle Next photo button slightly below. Each gallery cycles independently back to its first image; no automatic advancement.
 - Preserve whole images without cropping, meaningful alternative text and keyboard-operable controls. Without JavaScript, all photographs and captions remain visible.
 - Publish responsive, optimised, metadata-free copies only; ignore `Pics/` and leave original files unchanged. Exclude MOV clips and unrelated portraits.
+
+## Review follow-up — 6 October 2026
+
+This revision supersedes the earlier no-pause and portrait-docking decisions. The skills/logo lists now share a pause/resume button. The portrait stays in the hero; the separate cat loads after hydration and uses native scrolling for its corner threshold. Unused MOV/MP4 files and the external walkthrough link are removed. Agent guidance is local and ignored.
