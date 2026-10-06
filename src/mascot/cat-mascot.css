@@ -1,0 +1,134 @@
+.cat-mascot-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 22;
+  pointer-events: none;
+  contain: layout style;
+}
+
+.cat-mascot {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 76px;
+  height: 68px;
+  padding: 0;
+  border: 0;
+  border-radius: 16px;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  pointer-events: auto;
+  touch-action: manipulation;
+  transform-origin: 0 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.cat-mascot svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  transform-origin: center;
+}
+
+.cat-mascot:focus-visible {
+  outline: 2px solid #d9f45c;
+  outline-offset: 5px;
+}
+
+.cat-mascot #catArt,
+.cat-mascot #headRig {
+  transform-box: fill-box;
+  transform-origin: 50% 80%;
+}
+
+.cat-mascot #bodyRig {
+  transform-box: fill-box;
+  transform-origin: 50% 65%;
+}
+
+.cat-mascot #earL,
+.cat-mascot #earR {
+  transform-box: fill-box;
+  transform-origin: 50% 100%;
+}
+
+.cat-mascot #tail {
+  transform-box: fill-box;
+  transform-origin: 4% 72%;
+}
+
+.cat-mascot #legFL,
+.cat-mascot #legFR,
+.cat-mascot #legBL,
+.cat-mascot #legBR {
+  transform-box: fill-box;
+  transform-origin: 50% 5%;
+}
+
+.cat-mascot #upperFL,
+.cat-mascot #upperFR,
+.cat-mascot #upperBL,
+.cat-mascot #upperBR,
+.cat-mascot #lowerFL,
+.cat-mascot #lowerFR,
+.cat-mascot #lowerBL,
+.cat-mascot #lowerBR {
+  transform-box: fill-box;
+  transform-origin: 50% 0;
+}
+
+.cat-mascot #pawFL,
+.cat-mascot #pawFR,
+.cat-mascot #pawBL,
+.cat-mascot #pawBR {
+  transform-box: fill-box;
+  transform-origin: 35% 45%;
+}
+
+.cat-mascot #pupilL,
+.cat-mascot #pupilR,
+.cat-mascot #eyelidL,
+.cat-mascot #eyelidR,
+.cat-mascot .mouth-open {
+  transform-box: fill-box;
+  transform-origin: 50% 0;
+}
+
+/* Keep the portrait in its hero layout even while its component reports a docked state. */
+.hero-scene .character.character-docked {
+  position: relative;
+  inset: auto;
+  width: 100%;
+  height: 100%;
+  z-index: auto;
+  opacity: 1;
+}
+
+.hero-scene .character.character-docked .portrait-halo {
+  width: 90%;
+  height: auto;
+  aspect-ratio: 1;
+  border: 0;
+  background: radial-gradient(circle at 50% 50%, #d6a06d30, #a57e9c16 65%, transparent 74%);
+}
+
+@media (max-width: 650px) {
+  .cat-mascot {
+    width: 68px;
+    height: 61px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cat-mascot {
+    transition: none;
+  }
+}
+
+@media print {
+  .cat-mascot-layer {
+    display: none;
+  }
+}

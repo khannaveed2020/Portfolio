@@ -1,7 +1,9 @@
 import assert from 'node:assert/strict'
 import { readFile, readdir, stat } from 'node:fs/promises'
+import { checkMedia } from './check-media.mjs'
 
 const html = await readFile('dist/index.html', 'utf8')
+for (const image of html.matchAll(/<img\b[^>]*>/g)) assert(image[0].includes('draggable="false"'), 'Public images must disable native dragging before hydration')
 assert(html.includes('/Portfolio/character/naveed-anime.webp'), 'Missing personal character asset')
 assert((html.match(/class="portrait-pupils"/g) || []).length === 2, 'Both pupils must exist without JavaScript')
 assert(!html.includes('Portrait study · placeholder'), 'Old portrait placeholder label returned')
@@ -22,7 +24,7 @@ assert(html.includes('/Portfolio/photos/aviation-06.jpg') && html.includes('/Por
 assert(html.includes('id="photography-heading"') && html.includes('aria-label="Next photography photo"'), 'Missing Photography section or control')
 assert(html.includes('id="personal-summary-heading"') && html.indexOf('id="personal-summary-heading"') < html.indexOf('aviation-photos'), 'Personal summary must precede Aviation')
 assert(html.includes('id="chapter-bridge-heading"') && html.indexOf('id="chapter-bridge-heading"') < html.indexOf('id="work"'), 'Missing personal-to-professional transition')
-assert((html.match(/class="photo-watermark"/g) || []).length === 16, 'Every HBK photo must have its website watermark')
+assert((html.match(/class="photo-watermark"/g) || []).length === 24, 'Every Aviation, Scuba and Photography photo must have its HBK watermark')
 for (let number = 5077; number <= 5092; number++) {
   assert(html.includes(`/Portfolio/photos/photography-${number}.jpg`), `Missing HBK photo ${number}`)
   await stat(`dist/photos/photography-${number}-small.jpg`)
@@ -58,9 +60,10 @@ for (const match of html.matchAll(/(?:src|href)="(\/Portfolio\/[^\"#]+)"/g)) awa
 async function audit(path) {
   for (const entry of await readdir(path, { withFileTypes: true })) {
     const file = `${path}/${entry.name}`
-    assert(!/\.docx$|master.resume|source-documents/i.test(file), `Private file in output: ${file}`)
+    assert(!/\.(?:docx|mov|mp4|m4v|avi|webm)$|master.resume|source-documents|sample.self.pictures/i.test(file), `Private file in output: ${file}`)
     if (entry.isDirectory()) await audit(file)
   }
 }
 await audit('dist')
+console.log(`PASS: ${await checkMedia('dist')} raster assets have no EXIF, XMP, embedded profiles or text metadata.`)
 console.log('PASS: static content, native details, asset URLs, résumé and public-output privacy checks.')

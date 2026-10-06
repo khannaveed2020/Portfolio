@@ -4,6 +4,8 @@
 
 :root { font-family: 'Avenir Next', Avenir, 'Segoe UI', sans-serif; color: #f1efe7; background: #10191c; font-synthesis: none; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; --muted: #a9b7b7; --line: #304044; --accent: #8fe1d5; }
 * { box-sizing: border-box; }
+.portfolio-root { display: contents; }
+img, svg { -webkit-user-drag: none; -webkit-touch-callout: none; }
 html { scroll-behavior: smooth; scroll-padding-top: 112px; }
 body { margin: 0; min-width: 320px; }
 a { color: inherit; text-decoration: none; }
@@ -25,7 +27,7 @@ nav a[aria-current] { color: var(--accent); border-color: var(--accent); }
 .skip-link { position: fixed; top: -100px; left: 20px; background: #f1efe7; color: #10191c; padding: 12px 20px; z-index: 100; }
 .skip-link:focus { top: 16px; }
 .hero { display: grid; grid-template-columns: 1.1fr 1fr; position: relative; align-items: center; min-height: calc(100svh - 88px); padding-top: 68px; padding-bottom: 106px; gap: 24px; }
-.eyebrow { font-family: 'SFMono-Regular', Consolas, monospace; text-transform: uppercase; font-size: 10px; letter-spacing: .16em; color: var(--accent); margin: 0 0 25px; }
+.eyebrow { font-family: 'Avenir Next', Avenir, 'Segoe UI', sans-serif; text-transform: uppercase; font-size: 12px; font-weight: 650; line-height: 1.45; letter-spacing: .08em; color: var(--accent); margin: 0 0 25px; }
 .small-line { display: inline-block; width: 28px; height: 1px; vertical-align: middle; margin-right: 12px; background: var(--accent); }
 h1 { font-size: clamp(78px, 8.9vw, 122px); line-height: .95; letter-spacing: -.065em; font-weight: 650; margin: 24px 0 28px; }
 h1 span { color: var(--accent); }
@@ -34,6 +36,8 @@ h1 span { color: var(--accent); }
 .hero-actions { display: flex; gap: 24px; align-items: center; margin-top: 30px; }
 .button { background: var(--accent); color: #142225; padding: 14px 20px; border-radius: 7px; font-size: 13px; font-weight: 650; display: inline-flex; gap: 25px; }
 .button:hover { color: #142225; background: #b9f1e7; }
+.button-secondary { color: #f4eee2; background: #2a292e; border: 1px solid #9d846b; }
+.button-secondary:hover { color: #201c24; background: #f4d5b1; border-color: #f4d5b1; }
 .text-link { font-size: 13px; display: inline-flex; align-items: center; gap: 16px; }
 .text-link span { color: var(--accent); }
 .hero-bottom { position: absolute; inset: auto 64px 29px; display: flex; align-items: center; justify-content: space-between; font-size: 10px; color: #b6c3c3; padding-top: 23px; border-top: 1px solid var(--line); }
@@ -81,6 +85,13 @@ h2 { font-size: clamp(38px, 4.5vw, 60px); font-weight: 550; line-height: 1.12; l
 .gallery-controls { display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-top: 14px; color: #bdcbc9; font-size: 12px; }
 .gallery-controls button { background: #1d2b31; border: 1px solid #6b8386; border-radius: 4px; padding: 9px 14px; min-height: 40px; color: #f4eee2; cursor: pointer; font: inherit; }
 .gallery-controls button:hover { background: #2c4147; border-color: #a8c1c1; }
+.carousel-range { --carousel-progress: 0%; flex: 1; min-width: 90px; height: 28px; margin: 0; appearance: none; background: transparent; cursor: pointer; }
+.carousel-range::-webkit-slider-runnable-track { height: 5px; border-radius: 999px; border: 1px solid #798886; background: linear-gradient(90deg, var(--accent) 0 var(--carousel-progress), #354348 var(--carousel-progress) 100%); }
+.carousel-range::-webkit-slider-thumb { width: 18px; height: 18px; margin-top: -7px; appearance: none; border: 2px solid #1b2528; border-radius: 50%; background: #f4eee2; box-shadow: 0 0 0 2px var(--accent); }
+.carousel-range::-moz-range-track { height: 5px; border: 1px solid #798886; border-radius: 999px; background: #354348; }
+.carousel-range::-moz-range-progress { height: 5px; border-radius: 999px; background: var(--accent); }
+.carousel-range::-moz-range-thumb { width: 15px; height: 15px; border: 2px solid #1b2528; border-radius: 50%; background: #f4eee2; box-shadow: 0 0 0 2px var(--accent); }
+.carousel-range:focus-visible { outline: 2px solid var(--accent); outline-offset: 5px; border-radius: 999px; }
 .photo-placeholder { min-height: 290px; position: relative; overflow: hidden; border-radius: 12px; border: 1px solid #3d595c; background: #192e35; }
 .flying { background: linear-gradient(165deg, #294650, #213039 50%, #19282e 51%); }
 .horizon { position: absolute; left: 0; right: 0; top: 55%; height: 1px; background: #8ab3b242; transform: rotate(-8deg); }
@@ -269,7 +280,7 @@ button:focus-visible { outline: 2px solid #f7d7b1; outline-offset: 5px; }
 .recommendation-link { margin-top: 30px; flex-wrap: wrap; line-height: 1.6; }
 .recommendation-note { font-size: 12px; color: #ced0d8; margin-bottom: 0; }
 [hidden] { display: none !important; }
-.ticker-toolbar { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding-bottom: 20px; font: 12px Consolas, monospace; color: #e5d4bf; }
+.ticker-toolbar { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding-top: 20px; color: #e5d4bf; }
 .ticker-next { background: transparent; color: #fff7ef; border: 1px solid #d6acdd; border-radius: 5px; padding: 12px 16px; cursor: pointer; font: 13px 'Avenir Next', Avenir, 'Segoe UI', sans-serif; }
 .ticker-next:hover { background: #573365; }
 .testimonial { min-height: 240px; }
@@ -335,7 +346,7 @@ button:focus-visible { outline: 2px solid #f7d7b1; outline-offset: 5px; }
   .wordmark { font-size: 26px; } .resume-link { padding: 7px 12px; font-size: 11px; }
   nav { order: 3; width: 100%; justify-content: space-between; gap: 8px; font-size: 11px; padding-block: 6px 10px; }
   .hero { grid-template-columns: minmax(0, 1fr); min-height: auto; gap: 28px; padding-top: 55px; padding-bottom: 95px; }
-  h1 { font-size: clamp(72px, 22vw, 88px); } .hero-line { font-size: 24px; } .eyebrow { font-size: 9px; }
+  h1 { font-size: clamp(72px, 22vw, 88px); } .hero-line { font-size: 24px; } .eyebrow { font-size: 11px; }
   .hero-actions { gap: 20px; flex-wrap: wrap; } .button { font-size: 12px; gap: 17px; padding: 13px 16px; }
   .text-link { font-size: 12px; }
   .hero-scene { width: min(100%, 320px); padding: 14px 14px 0; }

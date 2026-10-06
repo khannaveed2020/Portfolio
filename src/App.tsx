@@ -1,6 +1,7 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState, type SyntheticEvent } from 'react'
 import { motion, MotionConfig, useReducedMotion, useScroll, useInView, useAnimate } from 'motion/react'
 import { Character } from './Character'
+import { CatMascot } from './mascot/CatMascot'
 import { ProfileLogo, CompanyLogo, CredentialSymbols } from './Visuals'
 import { StoryGallery } from './StoryGallery'
 import { credentials, experience, expertise, profileLinks, roadLens } from './content'
@@ -8,6 +9,11 @@ import { TestimonialTicker, SkillsTicker } from './Tickers'
 
 const resume = `${import.meta.env.BASE_URL}Naveed_Khan_Resume.pdf`
 const navigation = [['about', 'About Me'], ['work', 'About My Work'], ['credentials', 'Credentials']] as const
+
+// A casual-saving deterrent only; public assets remain retrievable.
+function preventImageSave(event: SyntheticEvent) {
+  if (event.target instanceof Element && event.target.closest('img, svg')) event.preventDefault()
+}
 
 function Reveal({ children, className = '' }: { children: React.ReactNode; className?: string }) {
   const reduced = useReducedMotion()
@@ -43,6 +49,7 @@ export function App() {
   }, [])
 
   return <MotionConfig reducedMotion="user">
+    <div className="portfolio-root" onContextMenuCapture={preventImageSave} onDragStartCapture={preventImageSave}>
     <a className="skip-link" href="#main">Skip to content</a>
     <header className="site-header">
       <motion.div className="reading-progress" style={{ scaleX: scrollYProgress }} aria-hidden="true" />
@@ -50,6 +57,7 @@ export function App() {
       <nav aria-label="Main navigation">{navigation.map(([id, label]) => <a key={id} href={`#${id}`} aria-current={active === id ? 'location' : undefined}>{label}</a>)}</nav>
       <a className="resume-link" href={resume} target="_blank" rel="noopener noreferrer" aria-label="Open Naveed Khan résumé PDF">Résumé <span aria-hidden="true">↗</span></a>
     </header>
+    <CatMascot />
     <main id="main">
       <section id="about" className="about-section">
         <div className="hero shell">
@@ -58,7 +66,7 @@ export function App() {
             <h1>Naveed<br/><span>Khan.</span></h1>
             <p className="hero-line">Curious by nature.<br/>Determined in practice.</p>
             <p className="intro">I learn how things work, explore new possibilities and keep looking for a way forward.</p>
-            <div className="hero-actions"><a className="button" href="#work">Explore my work <span aria-hidden="true">↗</span></a><a className="text-link" href="#interests">Meet the person <span aria-hidden="true">↓</span></a></div>
+            <div className="hero-actions"><a className="button" href="#work">Explore my work <span aria-hidden="true">↗</span></a><a className="button button-secondary" href="#interests">Meet the person <span aria-hidden="true">↓</span></a></div>
           </div>
           <div className="hero-scene"><Character /><span className="scene-caption">A curious mind. A personal perspective.</span></div>
           <div className="hero-bottom"><span>Based in India</span><a href="#interests">A few things that keep me curious <span aria-hidden="true">↓</span></a><span className="edition">Personal portfolio / 01</span></div>
@@ -89,7 +97,7 @@ export function App() {
       <section id="labs" className="practical-section section-pad" aria-labelledby="projects-heading"><div className="shell">
           <Reveal><div className="section-heading"><p className="eyebrow">04 / Building & exploring</p><h2 id="projects-heading">Projects & Practical Learning.</h2><p>I build tools to investigate technical problems and use my homelab to explore new ideas. Here are the projects, published modules and hands-on experiments behind that learning.</p></div></Reveal>
           <Reveal><article className="featured-project">
-            <figure className="project-visual"><img src={`${import.meta.env.BASE_URL}photos/roadlens-preview.jpg`} srcSet={`${import.meta.env.BASE_URL}photos/roadlens-preview-small.jpg 640w, ${import.meta.env.BASE_URL}photos/roadlens-preview.jpg 1280w`} sizes="(max-width: 720px) calc(100vw - 48px), 40vw" width="1280" height="737" loading="lazy" decoding="async" alt="RoadLens preview showing dashcam footage alongside vehicle counts and search results"/><figcaption>RoadLens · User-supplied preview</figcaption></figure>
+            <figure className="project-visual"><img draggable={false} src={`${import.meta.env.BASE_URL}photos/roadlens-preview.jpg`} srcSet={`${import.meta.env.BASE_URL}photos/roadlens-preview-small.jpg 640w, ${import.meta.env.BASE_URL}photos/roadlens-preview.jpg 1280w`} sizes="(max-width: 720px) calc(100vw - 48px), 40vw" width="1280" height="737" loading="lazy" decoding="async" alt="RoadLens preview showing dashcam footage alongside vehicle counts and search results"/><figcaption>RoadLens · User-supplied preview</figcaption></figure>
             <div className="project-copy"><p className="eyebrow">Public source / Computer vision</p><h4>{roadLens.title}</h4><p>{roadLens.summary}</p><ul className="project-benefits" aria-label="RoadLens benefits">{roadLens.benefits.map(([title, text]) => <li key={title}><strong>{title}</strong><span>{text}</span></li>)}</ul><ul className="technology-list" aria-label="Project technologies">{roadLens.technologies.map(t => <li key={t}>{t}</li>)}</ul><div className="project-links"><a className="text-link" href={roadLens.url} target="_blank" rel="noopener noreferrer"><ProfileLogo name="GitHub"/>View source <span aria-hidden="true">↗</span></a><a className="text-link" href={roadLens.demo} target="_blank" rel="noopener noreferrer">Watch walkthrough <span aria-hidden="true">↗</span></a></div></div>
           </article></Reveal>
         <div className="labs-grid">
@@ -105,5 +113,6 @@ export function App() {
     </main>
     <SkillsTicker />
     <footer className="shell"><span>Naveed Khan</span><span>Curiosity, in progress.</span><a href="#about">Back to top <span aria-hidden="true">↑</span></a></footer>
+    </div>
   </MotionConfig>
 }

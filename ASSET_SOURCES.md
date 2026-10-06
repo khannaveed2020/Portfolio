@@ -28,7 +28,9 @@ The page does not request brand assets from external servers at runtime.
 - User-supplied Aviation and Scuba photos in `Pics/`, approved for their respective galleries. Six Aviation images and two Scuba images are published as locally optimised JPEG copies, with 640px and 1280px variants. EXIF/GPS metadata is removed; originals are unchanged and ignored by Git.
 - Aviation source order: `IMG_9942.JPG`, `IMG_9961.JPG`, `IMG_9963.JPG`, `IMG_5074.jpg`, `IMG_5075.jpg`, `IMG_5076.jpg`. Last three are explicitly captioned as flight simulation, not real-world pilot qualifications.
 - Scuba source order: `IMG_5072.jpg`, `IMG_5073.jpg`.
-- `scripts/prepare-story-photos.py` reproducibly prepares these eight approved files only. Aviation MOV clips, unrelated portraits and other source folders are not published.
+- `scripts/prepare-story-photos.py` prepares six Aviation photos, two Scuba photos, sixteen HBK photos and one RoadLens screenshot, each in two sizes. Aviation MOV clips, unrelated portraits and other source folders are not published.
+
+- Metadata hygiene verified 6 October 2026: all 50 JPEG derivatives and the portrait contain no EXIF/XMP. Embedded metadata was removed from 14 PNG logo/badge derivatives and the PNG inside the Mphasis SVG, without changing source photographs. The build check covers all 66 raster payloads. HBK remains a subtle website overlay, not a baked-in image watermark.
 
 ## Credential-group organisation symbols
 

@@ -1,6 +1,6 @@
 # Naveed Khan portfolio
 
-Personal portfolio built with Vite, React, strict TypeScript, Tailwind CSS and Motion. The initial design uses a temporary character and photo placeholders. Professional content is derived from the public résumé.
+Personal portfolio built with Vite, React, strict TypeScript, Tailwind CSS and Motion, with a GSAP cat mascot. Professional content is derived from the public résumé; personal galleries use approved optimised derivatives.
 
 ## Local development
 
@@ -23,11 +23,17 @@ A live deployment must be verified after the workflow completes; a successful pu
 - Brand asset provenance: `ASSET_SOURCES.md`.
 - Testimonials: short unchanged excerpts from received LinkedIn recommendations, verified 5 October 2026, with attribution and source links. Viewing originals may require LinkedIn sign-in.
 - Personal copy: provisional; review before launch.
-- Portrait: SVG placeholder, not an accurate likeness. Replace only after photo-based concept approval.
-- Flying and scuba pictures: labelled layout placeholders pending user assets.
+- Portrait: approved photo-derived anime WebP, with separately animated SVG eyes.
+- Aviation, scuba and photography: approved responsive JPEG derivatives; original photographs and videos remain private in ignored `Pics/`.
 - Editable résumé source: `assets/source-documents/`, ignored by Git and excluded from `dist/`.
 - Typography: locally available Avenir Next/Avenir with Segoe UI and system fallbacks; no remote font requests.
 
-Desktop fine pointers enable facial tracking and a quiet corner companion after scrolling. Touch and reduced-motion users retain a static portrait. Native scrolling and details are used throughout.
+Desktop fine pointers enable portrait tracking. The cat mascot walks in the header and docks after scrolling; reduced motion uses a static pose. Native scrolling and details are used throughout.
+
+Images disable native dragging in static HTML. React cancels context menus and drag events targeted at images/SVG artwork after hydration; other text and link targets retain normal behaviour. WebKit touch-callout suppression is a browser-specific extra deterrent. This does not prevent direct downloads, screenshots or copying from the public GitHub repository. Without JavaScript, context-menu blocking is unavailable.
+
+`npm run check` verifies deployment exclusions and checks JPEG/PNG/WebP metadata, including the PNG embedded in the Mphasis SVG. It checks valid generated assets, not arbitrary hostile image formats. The public résumé is intentionally downloadable and unchanged.
+
+To publish: open repository Settings → Pages, select GitHub Actions as the source, then open Actions → Deploy portfolio to GitHub Pages → Run workflow on `main`. Verify the deployment URL, `/Portfolio/` assets and résumé after success. Pushing alone does not publish. See [GitHub's workflow documentation](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages).
 
 See `portfolio_plan.md` for approved decisions and `VERIFICATION.md` for checks performed and launch tasks.

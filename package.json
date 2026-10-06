@@ -5,6 +5,6 @@
     "build": "npm run typecheck && vite build && vite build --ssr src/prerender.tsx --outDir dist-server && node scripts/prerender.mjs",
     "preview": "vite preview", "check": "node scripts/check-build.mjs"
   },
-  "dependencies": {"react": "latest", "react-dom": "latest", "motion": "latest"},
+  "dependencies": {"react": "latest", "react-dom": "latest", "motion": "latest", "gsap": "latest"},
   "devDependencies": {"@types/node": "latest", "@types/react": "latest", "@types/react-dom": "latest", "@vitejs/plugin-react": "latest", "vite": "latest", "typescript": "latest", "tailwindcss": "latest", "@tailwindcss/vite": "latest"}
 }
