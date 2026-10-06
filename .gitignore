@@ -7,3 +7,7 @@ assets/source-documents/
 .env*
 .qa/
 Pics/
+# Local agent instructions and original videos must never enter public history.
+[Aa][Gg][Ee][Nn][Tt][Ss].[Mm][Dd]
+*.[Mm][Oo][Vv]
+*.[Mm][Pp]4

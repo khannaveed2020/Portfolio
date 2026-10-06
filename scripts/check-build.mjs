@@ -1,6 +1,10 @@
 import assert from 'node:assert/strict'
 import { readFile, readdir, stat } from 'node:fs/promises'
 import { checkMedia } from './check-media.mjs'
+import { execFileSync } from 'node:child_process'
+
+const trackedFiles = execFileSync('git', ['ls-files', '-z'], { encoding: 'utf8' }).split('\0')
+assert(!trackedFiles.some(file => /(?:^|\/)agents\.md$|\.(?:mov|mp4)$/i.test(file)), 'Private agent instructions or videos are tracked')
 
 const html = await readFile('dist/index.html', 'utf8')
 for (const image of html.matchAll(/<img\b[^>]*>/g)) assert(image[0].includes('draggable="false"'), 'Public images must disable native dragging before hydration')
@@ -41,7 +45,9 @@ assert(html.includes('Ratnavo Dutta') && html.includes('Ankush G'), 'Missing ver
 assert(html.indexOf('id="testimonials"') < html.indexOf('id="contact"'), 'Testimonials must precede Contact')
 assert(html.includes('details/recommendations/'), 'Missing LinkedIn recommendation source link')
 assert(html.includes('Next testimonial'), 'Missing explicit testimonial control')
-assert(!/Pause skills ticker|Resume skills ticker|skills-pause/.test(html), 'Ticker controls removed by user request')
+assert(html.includes('Pause moving lists') && html.includes('aria-controls="skills-tapes"'), 'Moving lists need an explicit pause control')
+assert(!html.includes('cat-mascot-layer'), 'Mascot must not create an inert control before hydration')
+assert(!/RoadLens_demo\.mp4|Watch walkthrough/.test(html), 'Removed video link returned')
 assert(html.includes('Terraform · lab'), 'Skills ticker must preserve lab boundary')
 assert(html.includes('logos-track'), 'Missing opposite-direction logo tape')
 assert(html.includes('GitHub Copilot') && html.includes('AI Agents') && html.includes('Copilot Studio'), 'Missing user-requested tape skills')
@@ -60,7 +66,7 @@ for (const match of html.matchAll(/(?:src|href)="(\/Portfolio\/[^\"#]+)"/g)) awa
 async function audit(path) {
   for (const entry of await readdir(path, { withFileTypes: true })) {
     const file = `${path}/${entry.name}`
-    assert(!/\.(?:docx|mov|mp4|m4v|avi|webm)$|master.resume|source-documents|sample.self.pictures/i.test(file), `Private file in output: ${file}`)
+    assert(!/\.(?:docx|mov|mp4|m4v|avi|webm)$|(?:^|\/)agents\.md$|master.resume|source-documents|sample.self.pictures/i.test(file), `Private file in output: ${file}`)
     if (entry.isDirectory()) await audit(file)
   }
 }

@@ -1,6 +1,5 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import './cat-mascot.css'
 
 type CatState =
@@ -25,6 +24,7 @@ function clamp(value: number, min: number, max: number) {
 }
 
 export function CatMascot() {
+  const [ready, setReady] = useState(false)
   const layerRef = useRef<HTMLDivElement>(null)
   const buttonRef = useRef<HTMLButtonElement>(null)
   const activateRef = useRef<() => void>(() => undefined)
@@ -33,8 +33,6 @@ export function CatMascot() {
     const layer = layerRef.current
     const button = buttonRef.current
     if (!layer || !button) return
-
-    gsap.registerPlugin(ScrollTrigger)
 
     const svg = button.querySelector<SVGSVGElement>('svg')
     const catArt = button.querySelector<SVGGElement>('#catArt')
@@ -239,7 +237,14 @@ export function CatMascot() {
         pupilX += (pointerTargetX - pupilX) * 0.14
         pupilY += (pointerTargetY - pupilY) * 0.14
         gsap.set(pupils, { x: pupilX, y: pupilY })
-        pointerFrame = requestAnimationFrame(tick)
+        if (Math.abs(pointerTargetX - pupilX) + Math.abs(pointerTargetY - pupilY) > 0.02) {
+          pointerFrame = requestAnimationFrame(tick)
+        } else {
+          pupilX = pointerTargetX
+          pupilY = pointerTargetY
+          gsap.set(pupils, { x: pupilX, y: pupilY })
+          pointerFrame = 0
+        }
       }
       pointerFrame = requestAnimationFrame(tick)
     }
@@ -659,6 +664,7 @@ export function CatMascot() {
       const dy = event.clientY - (rect.top + rect.height * 0.37)
       pointerTargetX = clamp(dx / 45, -3.2, 3.2)
       pointerTargetY = clamp(dy / 55, -2.2, 2.2)
+      startPointerTracking()
       hasYawnedSincePointer = false
       clearTimer(variationTimer)
       variationTimer = undefined
@@ -689,20 +695,23 @@ export function CatMascot() {
       }
     }
 
+    const onScroll = () => {
+      const shouldDock = window.scrollY > SCROLL_THRESHOLD
+      if (shouldDock === cornerMode) return
+      if (shouldDock) dock()
+      else returnToHeader()
+    }
+
     const context = gsap.context(() => {
       gsap.set(eyelids, { scaleY: 0 })
       gsap.set(mouthOpen, { opacity: 0, scaleY: 0.08 })
       if (reducedQuery.matches) setReducedPosition()
       else if (cornerMode) dock(true)
       else startWalk()
-
-      ScrollTrigger.create({
-        start: SCROLL_THRESHOLD,
-        onEnter: () => dock(),
-        onLeaveBack: () => returnToHeader(),
-      })
     }, layer)
+    setReady(true)
 
+    window.addEventListener('scroll', onScroll, { passive: true })
     window.addEventListener('pointermove', onPointerMove, { passive: true })
     window.addEventListener('resize', onResize, { passive: true })
     reducedQuery.addEventListener('change', onMotionPreferenceChange)
@@ -712,6 +721,7 @@ export function CatMascot() {
       activateRef.current = () => undefined
       stopActivity()
       cancelAnimationFrame(resizeFrame)
+      window.removeEventListener('scroll', onScroll)
       window.removeEventListener('pointermove', onPointerMove)
       window.removeEventListener('resize', onResize)
       reducedQuery.removeEventListener('change', onMotionPreferenceChange)
@@ -720,11 +730,12 @@ export function CatMascot() {
     }
   }, [])
 
-  return <div ref={layerRef} className="cat-mascot-layer">
+  return <div ref={layerRef} className="cat-mascot-layer" data-ready={ready} aria-hidden={!ready}>
     <button
       ref={buttonRef}
       className="cat-mascot"
       type="button"
+      disabled={!ready}
       aria-label="Grey cat mascot — activate for an annoyed reaction"
       data-state="headerWalk"
       onClick={() => activateRef.current()}

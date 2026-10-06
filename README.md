@@ -28,11 +28,11 @@ A live deployment must be verified after the workflow completes; a successful pu
 - Editable résumé source: `assets/source-documents/`, ignored by Git and excluded from `dist/`.
 - Typography: locally available Avenir Next/Avenir with Segoe UI and system fallbacks; no remote font requests.
 
-Desktop fine pointers enable portrait tracking. The cat mascot walks in the header and docks after scrolling; reduced motion uses a static pose. Native scrolling and details are used throughout.
+Desktop fine pointers enable portrait tracking; the portrait remains in its hero. The cat mascot loads in a separate chunk after hydration, walks in the header and docks after scrolling; reduced motion uses a static pose. Idle eye tracking stops when settled. Native scrolling and details are used throughout. The moving skills and logo lists share a keyboard-operable pause/resume control.
 
 Images disable native dragging in static HTML. React cancels context menus and drag events targeted at images/SVG artwork after hydration; other text and link targets retain normal behaviour. WebKit touch-callout suppression is a browser-specific extra deterrent. This does not prevent direct downloads, screenshots or copying from the public GitHub repository. Without JavaScript, context-menu blocking is unavailable.
 
-`npm run check` verifies deployment exclusions and checks JPEG/PNG/WebP metadata, including the PNG embedded in the Mphasis SVG. It checks valid generated assets, not arbitrary hostile image formats. The public résumé is intentionally downloadable and unchanged.
+`npm run check` verifies deployment exclusions, rejects tracked agent instructions/videos and checks JPEG/PNG/WebP metadata, including the PNG embedded in the Mphasis SVG. It checks valid generated assets, not arbitrary hostile image formats. The public résumé is intentionally downloadable and unchanged. Local agent guidance remains ignored and must not be committed.
 
 To publish: open repository Settings → Pages, select GitHub Actions as the source, then open Actions → Deploy portfolio to GitHub Pages → Run workflow on `main`. Verify the deployment URL, `/Portfolio/` assets and résumé after success. Pushing alone does not publish. See [GitHub's workflow documentation](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages).
 

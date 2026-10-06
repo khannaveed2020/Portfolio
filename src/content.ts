@@ -112,7 +112,6 @@ export const credentials = [
 export const roadLens = {
   title: 'RoadLens — Intelligent Car Dashcam',
   url: 'https://github.com/khannaveed2020/intelligent-car-dashcam',
-  demo: 'https://github.com/khannaveed2020/intelligent-car-dashcam/blob/main/demo/RoadLens_demo.mp4',
   summary: 'A local video-search project that helps you find people and vehicles in dashcam footage. Upload an MP4, process sampled frames with YOLO and search the results with simple queries.',
   technologies: ['Python', 'Streamlit', 'YOLO', 'OpenCV', 'Docker'],
   benefits: [

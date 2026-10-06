@@ -1,4 +1,4 @@
-import { useEffect, useId, useRef, useState } from 'react'
+import { useEffect, useId, useRef } from 'react'
 import { motion, useMotionValue, useReducedMotion, useSpring, useTransform } from 'motion/react'
 
 const portrait = `${import.meta.env.BASE_URL}character/naveed-anime.webp`
@@ -11,7 +11,6 @@ export function Character() {
   const reduced = useReducedMotion()
   const id = useId().replace(/:/g, '')
   const host = useRef<HTMLDivElement>(null)
-  const [docked, setDocked] = useState(false)
   const x = useMotionValue(0)
   const y = useMotionValue(0)
   const pupilX = useSpring(x, { stiffness: 150, damping: 24 })
@@ -35,8 +34,6 @@ export function Character() {
         if (!rect) return
         const dx = event.clientX - rect.left - rect.width / 2
         const dy = event.clientY - rect.top - rect.height * .35
-        // Away from the hero, only react to a nearby pointer.
-        if (docked && Math.hypot(dx, dy) > 180) { x.set(0); y.set(0); return }
         x.set(Math.max(-12, Math.min(12, dx / 30)))
         y.set(Math.max(-7, Math.min(7, dy / 40)))
       })
@@ -53,19 +50,10 @@ export function Character() {
       document.removeEventListener('pointerleave', reset)
       fine.removeEventListener('change', reset)
     }
-  }, [reduced, docked, x, y, pupilX, pupilY])
-
-  useEffect(() => {
-    const desktop = matchMedia('(min-width: 1100px) and (hover: hover) and (pointer: fine)')
-    const check = () => setDocked(!reduced && desktop.matches && window.scrollY > window.innerHeight * .72)
-    check()
-    window.addEventListener('scroll', check, { passive: true })
-    desktop.addEventListener('change', check)
-    return () => { window.removeEventListener('scroll', check); desktop.removeEventListener('change', check) }
-  }, [reduced])
+  }, [reduced, x, y, pupilX, pupilY])
 
   return <div className="character-slot">
-    <motion.div ref={host} className={`character ${docked ? 'character-docked' : ''}`} layout={!reduced} transition={{ duration: .45, ease: 'easeInOut' }} aria-hidden="true">
+    <motion.div ref={host} className="character" aria-hidden="true">
       <div className="portrait-halo" />
       <svg viewBox="-35 -20 1094 1576" className="portrait" focusable="false">
         <defs>

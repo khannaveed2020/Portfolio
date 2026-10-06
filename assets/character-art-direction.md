@@ -23,5 +23,5 @@ The user selected the softer animated direction. A fresh image was generated wit
 - Runtime asset: `public/character/naveed-anime.webp` (1024 × 1536, alpha, metadata-free).
 - The raster intentionally has no pupils. `src/Character.tsx` supplies brown irises, pupils and highlights in the pre-rendered HTML; the complete website portrait therefore remains visible without JavaScript.
 - SVG clips separate the static torso and moving head with neck overlap. Clipped eyes follow the pointer; the head tilts at most 1.4 degrees. CSS eyelids blink briefly every eight seconds on fine-pointer devices only.
-- Touch and reduced-motion visitors receive a neutral static portrait. Desktop scrolling docks it in a corner; the docked portrait reacts only within 180px.
+- Touch and reduced-motion visitors receive a neutral static portrait. The portrait stays in its hero; the separate cat mascot owns the corner companion role.
 - The user selected this softer animation direction; likeness can still be refined through feedback.

@@ -1,7 +1,6 @@
-import { useEffect, useRef, useState, type SyntheticEvent } from 'react'
+import { lazy, Suspense, useEffect, useRef, useState, type SyntheticEvent } from 'react'
 import { motion, MotionConfig, useReducedMotion, useScroll, useInView, useAnimate } from 'motion/react'
 import { Character } from './Character'
-import { CatMascot } from './mascot/CatMascot'
 import { ProfileLogo, CompanyLogo, CredentialSymbols } from './Visuals'
 import { StoryGallery } from './StoryGallery'
 import { credentials, experience, expertise, profileLinks, roadLens } from './content'
@@ -9,6 +8,7 @@ import { TestimonialTicker, SkillsTicker } from './Tickers'
 
 const resume = `${import.meta.env.BASE_URL}Naveed_Khan_Resume.pdf`
 const navigation = [['about', 'About Me'], ['work', 'About My Work'], ['credentials', 'Credentials']] as const
+const CatMascot = lazy(() => import('./mascot/CatMascot').then(module => ({ default: module.CatMascot })))
 
 // A casual-saving deterrent only; public assets remain retrievable.
 function preventImageSave(event: SyntheticEvent) {
@@ -34,6 +34,8 @@ function Reveal({ children, className = '' }: { children: React.ReactNode; class
 
 export function App() {
   const [active, setActive] = useState('about')
+  const [enhanced, setEnhanced] = useState(false)
+  useEffect(() => setEnhanced(true), [])
   const { scrollYProgress } = useScroll()
   useEffect(() => {
     const nodes = navigation.map(([id]) => document.getElementById(id)!).filter(Boolean)
@@ -57,7 +59,7 @@ export function App() {
       <nav aria-label="Main navigation">{navigation.map(([id, label]) => <a key={id} href={`#${id}`} aria-current={active === id ? 'location' : undefined}>{label}</a>)}</nav>
       <a className="resume-link" href={resume} target="_blank" rel="noopener noreferrer" aria-label="Open Naveed Khan résumé PDF">Résumé <span aria-hidden="true">↗</span></a>
     </header>
-    <CatMascot />
+    {enhanced && <Suspense fallback={null}><CatMascot /></Suspense>}
     <main id="main">
       <section id="about" className="about-section">
         <div className="hero shell">
@@ -98,7 +100,7 @@ export function App() {
           <Reveal><div className="section-heading"><p className="eyebrow">04 / Building & exploring</p><h2 id="projects-heading">Projects & Practical Learning.</h2><p>I build tools to investigate technical problems and use my homelab to explore new ideas. Here are the projects, published modules and hands-on experiments behind that learning.</p></div></Reveal>
           <Reveal><article className="featured-project">
             <figure className="project-visual"><img draggable={false} src={`${import.meta.env.BASE_URL}photos/roadlens-preview.jpg`} srcSet={`${import.meta.env.BASE_URL}photos/roadlens-preview-small.jpg 640w, ${import.meta.env.BASE_URL}photos/roadlens-preview.jpg 1280w`} sizes="(max-width: 720px) calc(100vw - 48px), 40vw" width="1280" height="737" loading="lazy" decoding="async" alt="RoadLens preview showing dashcam footage alongside vehicle counts and search results"/><figcaption>RoadLens · User-supplied preview</figcaption></figure>
-            <div className="project-copy"><p className="eyebrow">Public source / Computer vision</p><h4>{roadLens.title}</h4><p>{roadLens.summary}</p><ul className="project-benefits" aria-label="RoadLens benefits">{roadLens.benefits.map(([title, text]) => <li key={title}><strong>{title}</strong><span>{text}</span></li>)}</ul><ul className="technology-list" aria-label="Project technologies">{roadLens.technologies.map(t => <li key={t}>{t}</li>)}</ul><div className="project-links"><a className="text-link" href={roadLens.url} target="_blank" rel="noopener noreferrer"><ProfileLogo name="GitHub"/>View source <span aria-hidden="true">↗</span></a><a className="text-link" href={roadLens.demo} target="_blank" rel="noopener noreferrer">Watch walkthrough <span aria-hidden="true">↗</span></a></div></div>
+            <div className="project-copy"><p className="eyebrow">Public source / Computer vision</p><h4>{roadLens.title}</h4><p>{roadLens.summary}</p><ul className="project-benefits" aria-label="RoadLens benefits">{roadLens.benefits.map(([title, text]) => <li key={title}><strong>{title}</strong><span>{text}</span></li>)}</ul><ul className="technology-list" aria-label="Project technologies">{roadLens.technologies.map(t => <li key={t}>{t}</li>)}</ul><div className="project-links"><a className="text-link" href={roadLens.url} target="_blank" rel="noopener noreferrer"><ProfileLogo name="GitHub"/>View source <span aria-hidden="true">↗</span></a></div></div>
           </article></Reveal>
         <div className="labs-grid">
           <Reveal className="lab-card"><p className="eyebrow">Open source / PowerShell</p><h3>Tools built to investigate.</h3><p>NetTrace for Windows diagnostics, DebugURL for DNS, TLS and HTTP analysis, and PrivateDNSZones for Azure DNS automation.</p><p className="card-note">Three published modules · 400+ combined downloads</p><a className="text-link" href={profileLinks[3][1]} target="_blank" rel="noopener noreferrer">Explore PowerShell modules <span aria-hidden="true">↗</span></a></Reveal>

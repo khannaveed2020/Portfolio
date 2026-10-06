@@ -5,6 +5,7 @@
   pointer-events: none;
   contain: layout style;
 }
+.cat-mascot-layer:not([data-ready='true']) { visibility: hidden; }
 
 .cat-mascot {
   position: absolute;
@@ -94,24 +95,6 @@
 .cat-mascot .mouth-open {
   transform-box: fill-box;
   transform-origin: 50% 0;
-}
-
-/* Keep the portrait in its hero layout even while its component reports a docked state. */
-.hero-scene .character.character-docked {
-  position: relative;
-  inset: auto;
-  width: 100%;
-  height: 100%;
-  z-index: auto;
-  opacity: 1;
-}
-
-.hero-scene .character.character-docked .portrait-halo {
-  width: 90%;
-  height: auto;
-  aspect-ratio: 1;
-  border: 0;
-  background: radial-gradient(circle at 50% 50%, #d6a06d30, #a57e9c16 65%, transparent 74%);
 }
 
 @media (max-width: 650px) {
