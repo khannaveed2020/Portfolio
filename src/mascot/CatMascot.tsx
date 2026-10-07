@@ -227,7 +227,7 @@ export function CatMascot() {
         headerY,
         cornerScale,
         cornerX: window.innerWidth - baseWidth * cornerScale - safeMargin,
-        cornerY: window.innerHeight - baseHeight * cornerScale - safeMargin,
+        cornerY: window.innerHeight - baseHeight * cornerScale - (window.innerWidth <= 650 ? 84 : safeMargin),
       }
     }
 

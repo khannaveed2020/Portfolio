@@ -263,3 +263,11 @@ This revision supersedes the earlier no-pause and portrait-docking decisions. Th
 ## Final media and ticker revision — 6 October 2026
 
 The latest user decision supersedes the review-follow-up pause controls: remove them and restore continuous ticker motion. Reduced-motion and no-JavaScript fallbacks remain static. This retains the documented WCAG 2.2.2 limitation. HBK must be imprinted in all Aviation, Scuba and Photography JPEG variants, replacing the former website overlays. Leave the portrait, project preview, logos and certification artwork unchanged.
+
+## Mobile interaction revision — 7 October 2026
+
+Replace photo sliders and Next photo text buttons with paired Previous/Next arrow boxes and a photo count. Support left/right swipes while preserving vertical page scrolling and pinch zoom. Preserve independent wraparound, whole images, accessible labels and static galleries.
+
+Reserve testimonial space using the longest quote at each viewport width instead of fixed heights. Keep inactive quotes out of keyboard navigation and accessibility output. Raise the mobile corner mascot and reserve footer space so Back to top and the mascot are both visible.
+
+Pages is configured and the earlier revision is deployed. GitHub Support has accepted the cache-removal request; completion remains unverified. Current 320px, 390px and 1280px browser checks pass; physical touch hardware, Safari/Firefox, OS reduced motion and performance audits remain outstanding. Push this revision normally; publish it through the existing manual workflow when requested.

@@ -10,7 +10,7 @@ export function TestimonialTicker() {
   const progress = testimonials.length > 1 ? index / (testimonials.length - 1) * 100 : 100
   return <>
     <div className="testimonial-ticker" role="region" aria-label="Testimonials" aria-roledescription={enhanced ? 'carousel' : undefined}>
-      <div id="testimonial-slides" className="testimonials-list">{testimonials.map((person, i) => <figure className={`testimonial ${enhanced && index === i ? 'testimonial-active' : ''}`} hidden={enhanced && index !== i} key={person.name}>
+      <div id="testimonial-slides" className={`testimonials-list ${enhanced ? 'testimonials-layered' : ''}`}>{testimonials.map((person, i) => <figure className={`testimonial ${enhanced ? index === i ? 'testimonial-active' : 'testimonial-inactive' : ''}`} inert={enhanced && index !== i} aria-hidden={enhanced && index !== i ? true : undefined} key={person.name}>
         <blockquote><button className="quote-switch" onClick={next} disabled={!enhanced}>{person.quote.split('\n\n').map((paragraph, i, all) => <span className="quote-paragraph" key={i}>{i === 0 ? '“' : ''}{paragraph}{i === all.length - 1 ? '”' : ''}</span>)}<span className="quote-switch-hint" hidden={!enhanced}>Click this quote to see the next testimonial <span aria-hidden="true">↗</span></span></button></blockquote>
         <figcaption><a className="testimonial-author" href={person.profile} target="_blank" rel="noopener noreferrer">{person.name} <span aria-hidden="true">↗</span></a><span className="testimonial-title">{person.title}</span><span className="testimonial-relationship">{person.relationship}</span><span className="testimonial-source">LinkedIn recommendation · <time dateTime={person.date}>{person.displayDate}</time></span></figcaption>
       </figure>)}</div>

@@ -1,4 +1,4 @@
-import { useEffect, useState, type CSSProperties } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 const photos = {
   flying: [
@@ -36,32 +36,35 @@ const photos = {
 export function StoryGallery({ kind }: { kind: keyof typeof photos }) {
   const [enhanced, setEnhanced] = useState(false)
   const [index, setIndex] = useState(0)
+  const touchStart = useRef<{ x: number; y: number } | null>(null)
   useEffect(() => setEnhanced(true), [])
   const items = photos[kind]
   const name = kind === 'flying' ? 'aviation' : kind === 'diving' ? 'scuba' : 'photography'
   const id = `${name}-photos`
   const base = `${import.meta.env.BASE_URL}photos/`
-  const progress = items.length > 1 ? index / (items.length - 1) * 100 : 100
+  const move = (direction: number) => setIndex(current => (current + direction + items.length) % items.length)
   return <div className={`story-gallery ${kind}`} role="region" aria-label={`${name} photographs`} aria-roledescription={enhanced ? 'carousel' : undefined}>
-    <div id={id} className="gallery-slides">
+    <div id={id} className="gallery-slides" onTouchStart={event => {
+      const touch = event.touches[0]
+      touchStart.current = event.touches.length === 1 ? { x: touch.clientX, y: touch.clientY } : null
+    }} onTouchCancel={() => { touchStart.current = null }} onTouchEnd={event => {
+      const start = touchStart.current
+      touchStart.current = null
+      if (!start || event.touches.length) return
+      const touch = event.changedTouches[0]
+      const dx = touch.clientX - start.x
+      const dy = touch.clientY - start.y
+      if (Math.abs(dx) >= 48 && Math.abs(dx) > Math.abs(dy) * 1.25) move(dx < 0 ? 1 : -1)
+    }}>
       {items.map(([file, alt, caption], i) => <figure className="gallery-slide" key={file} hidden={enhanced && index !== i}>
         <div className="photo-frame"><img draggable={false} src={`${base}${file}.jpg`} srcSet={`${base}${file}-small.jpg 640w, ${base}${file}.jpg 1280w`} sizes="(max-width: 720px) calc(100vw - 48px), (max-width: 1100px) 45vw, 550px" alt={alt} width="1280" height={kind === 'diving' ? '1280' : '960'} loading="lazy" decoding="async" /></div>
         <figcaption>{caption}</figcaption>
       </figure>)}
     </div>
     <div className="gallery-controls" hidden={!enhanced}>
-      <input
-        className="carousel-range"
-        type="range"
-        min="0"
-        max={items.length - 1}
-        value={index}
-        onChange={event => setIndex(Number(event.currentTarget.value))}
-        aria-label={`Choose ${name} photo`}
-        aria-valuetext={`${items[index][2]}, photo ${index + 1} of ${items.length}`}
-        style={{ '--carousel-progress': `${progress}%` } as CSSProperties}
-      />
-      <button aria-label={`Next ${name} photo`} aria-controls={id} onClick={() => setIndex(current => (current + 1) % items.length)}>Next photo <span aria-hidden="true">→</span></button>
+      <button aria-label={`Previous ${name} photo`} aria-controls={id} onClick={() => move(-1)}><span aria-hidden="true">‹</span></button>
+      <span className="gallery-count" aria-live="polite" aria-atomic="true">{index + 1} / {items.length}</span>
+      <button aria-label={`Next ${name} photo`} aria-controls={id} onClick={() => move(1)}><span aria-hidden="true">›</span></button>
     </div>
   </div>
 }

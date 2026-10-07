@@ -33,6 +33,8 @@ assert(!/New Zealand|Auckland|AEWV|sponsorship|Education &amp; languages|JSS PPH
 assert(html.includes('href="mailto:khannaveed2020@outlook.com"'))
 assert(!html.replace(/<[^>]*>/g, '').includes('khannaveed2020@outlook.com'), 'Visible email address appeared')
 assert(html.includes('aria-label="Next aviation photo"') && html.includes('aria-label="Next scuba photo"'), 'Missing accessible photo controls')
+for (const name of ['aviation', 'scuba', 'photography']) assert(html.includes(`aria-label="Previous ${name} photo"`), `Missing previous ${name} arrow`)
+assert(!/aria-label="Choose (aviation|scuba|photography) photo"|Next photo /.test(html), 'Old gallery slider or text button returned')
 assert(html.includes('/Portfolio/photos/aviation-06.jpg') && html.includes('/Portfolio/photos/scuba-02.jpg'), 'Missing story photo galleries')
 assert(html.includes('id="photography-heading"') && html.includes('aria-label="Next photography photo"'), 'Missing Photography section or control')
 assert(html.includes('id="personal-summary-heading"') && html.indexOf('id="personal-summary-heading"') < html.indexOf('aviation-photos'), 'Personal summary must precede Aviation')

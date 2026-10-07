@@ -167,3 +167,12 @@ No public deployment was made during this implementation.
 - Portrait, RoadLens previews and all logo/badge assets remain byte-identical to the previous commit. Production checker validates the stamped asset hashes; all 66 raster metadata checks pass.
 - Build, strict TypeScript, output/privacy and whitespace checks pass. Main JavaScript: 407.03 KB / 129.95 KB gzip; separate mascot: 88.19 KB / 32.28 KB gzip.
 - GitHub cache cleanup requires authenticated Support access. Sign-in page reached; no ticket submitted. Local draft and pending items remain in the ignored review folder.
+
+## Mobile interaction fixes — 7 October 2026
+
+- Gallery sliders and text buttons are replaced with labelled 48px Previous/Next arrow boxes and an announced photo count. Horizontal swipes wrap around; vertical, short, cancelled and multi-finger gestures do not advance images.
+- All 24 simulated touch checks passed. Physical mobile hardware and Safari/Firefox gesture handling remain unverified. The local fixture is excluded from the final build.
+- Testimonials share a grid cell sized by the longest quote at the current width. Inactive quotes are invisible, inert and hidden from assistive technology; both remain readable in static output. Heights remained identical across switches: 1200.21875px at 320px, 1006.75px at 390px and 782.375px at 1280px. No horizontal overflow at either mobile width.
+- Raised the mobile corner mascot to 84px above the viewport bottom and reserved footer space. At 320px and 390px, Back to top clears the fully visible mascot. Screenshot: .qa/mobile-footer-fixed.png.
+- Build, TypeScript, static/privacy checks, all 66 raster metadata checks, 48 watermark hashes and whitespace checks pass. No media files or dependencies changed.
+- GitHub Support confirmed creation of the cached-view removal request; completion remains unverified. Pages is live with the earlier revision. These changes require a new manual deployment after pushing.
