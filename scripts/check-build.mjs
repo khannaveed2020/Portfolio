@@ -16,17 +16,18 @@ for (const [file, hash] of Object.entries(watermarks)) {
 }
 
 const html = await readFile('dist/index.html', 'utf8')
+const assetBase = '/'
 for (const image of html.matchAll(/<img\b[^>]*>/g)) assert(image[0].includes('draggable="false"'), 'Public images must disable native dragging before hydration')
-assert(html.includes('/Portfolio/character/naveed-anime.webp'), 'Missing personal character asset')
+assert(html.includes(`${assetBase}character/naveed-anime.webp`), 'Missing personal character asset')
 assert((html.match(/class="portrait-pupils"/g) || []).length === 2, 'Both pupils must exist without JavaScript')
 assert(!html.includes('Portrait study · placeholder'), 'Old portrait placeholder label returned')
 for (const id of ['about', 'work', 'credentials', 'labs', 'testimonials', 'contact']) assert(html.includes(`id="${id}"`), `Missing static section ${id}`)
 assert(!html.includes('Credentials &amp; Labs') && !html.includes('Lab experience is labelled separately'), 'Superseded combined heading or disclaimer')
 assert(html.indexOf('id="labs"') < html.indexOf('Tools built to investigate.'), 'Tools must be grouped with labs')
-assert(html.includes('/Portfolio/photos/roadlens-preview.jpg'), 'Missing RoadLens screenshot')
+assert(html.includes(`${assetBase}photos/roadlens-preview.jpg`), 'Missing RoadLens screenshot')
 for (const word of ['Microsoft', 'Wipro Infotech', 'Cessna 172', 'Traffic Manager', 'Bastion', 'Azure NAT Gateway', 'Lab experience only']) assert(html.includes(word), `Missing source-grounded content: ${word}`)
 assert(html.includes('aria-label="Open Naveed Khan résumé PDF"'))
-assert(html.includes('href="/Portfolio/Naveed_Khan_Resume.pdf"'))
+assert(html.includes(`href="${assetBase}Naveed_Khan_Resume.pdf"`))
 assert(html.includes('<details>') && html.includes('<summary>'))
 assert(!html.includes('<!--app-html-->'))
 assert(!/New Zealand|Auckland|AEWV|sponsorship|Education &amp; languages|JSS PPH/.test(html), 'Private instruction context appeared in public HTML')
@@ -35,16 +36,16 @@ assert(!html.replace(/<[^>]*>/g, '').includes('khannaveed2020@outlook.com'), 'Vi
 assert(html.includes('aria-label="Next aviation photo"') && html.includes('aria-label="Next scuba photo"'), 'Missing accessible photo controls')
 for (const name of ['aviation', 'scuba', 'photography']) assert(html.includes(`aria-label="Previous ${name} photo"`), `Missing previous ${name} arrow`)
 assert(!/aria-label="Choose (aviation|scuba|photography) photo"|Next photo /.test(html), 'Old gallery slider or text button returned')
-assert(html.includes('/Portfolio/photos/aviation-06.jpg') && html.includes('/Portfolio/photos/scuba-02.jpg'), 'Missing story photo galleries')
+assert(html.includes(`${assetBase}photos/aviation-06.jpg`) && html.includes(`${assetBase}photos/scuba-02.jpg`), 'Missing story photo galleries')
 assert(html.includes('id="photography-heading"') && html.includes('aria-label="Next photography photo"'), 'Missing Photography section or control')
 assert(html.includes('id="personal-summary-heading"') && html.indexOf('id="personal-summary-heading"') < html.indexOf('aviation-photos'), 'Personal summary must precede Aviation')
 assert(html.includes('id="chapter-bridge-heading"') && html.indexOf('id="chapter-bridge-heading"') < html.indexOf('id="work"'), 'Missing personal-to-professional transition')
 assert(!html.includes('photo-watermark'), 'Story watermarks must be embedded in image pixels')
 for (let number = 5077; number <= 5092; number++) {
-  assert(html.includes(`/Portfolio/photos/photography-${number}.jpg`), `Missing HBK photo ${number}`)
+  assert(html.includes(`${assetBase}photos/photography-${number}.jpg`), `Missing HBK photo ${number}`)
   await stat(`dist/photos/photography-${number}-small.jpg`)
 }
-assert(html.includes('/Portfolio/credly.svg'), 'Missing local brand logo')
+assert(html.includes(`${assetBase}credly.svg`), 'Missing local brand logo')
 assert(html.includes('<h3 id="credentials-heading"'), 'Credentials must be an explicit heading')
 assert(html.includes('RoadLens — Intelligent Car Dashcam'), 'Missing verified project content')
 assert(html.includes('Run offline after setup') && html.includes('Keep footage local'), 'Missing README-supported project benefits')
@@ -73,7 +74,7 @@ assert(!hero.includes('Senior Support Escalation Engineer'), 'Role leaked into p
 const pdf = await readFile('dist/Naveed_Khan_Resume.pdf')
 assert(pdf.subarray(0, 5).toString() === '%PDF-')
 assert((await stat('dist/Naveed_Khan_Resume.pdf')).size > 10000)
-for (const match of html.matchAll(/(?:src|href)="(\/Portfolio\/[^\"#]+)"/g)) await stat(`dist/${match[1].replace('/Portfolio/', '')}`)
+for (const match of html.matchAll(/(?:src|href)="(\/[^\"#]+)"/g)) await stat(`dist/${match[1].slice(1)}`)
 async function audit(path) {
   for (const entry of await readdir(path, { withFileTypes: true })) {
     const file = `${path}/${entry.name}`

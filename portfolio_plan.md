@@ -38,7 +38,7 @@ Audience: recruiters and hiring managers. Country-specific job-search, relocatio
 - ChatGPT Plus (chat and Codex in VS Code)
 - VS Code, Git, GitHub
 - Lovable: optional bounded design critique or scaffold. Keep the local project authoritative; do not publish a duplicate or spend credits debugging. A critique-only pass does not require a second scaffold or GitHub sync.
-- Primary hosting: GitHub Pages, public repository `khannaveed2020/Portfolio`, base path `/Portfolio/` (case-sensitive). Home-server hosting may follow after the site is stable.
+- Primary hosting: GitHub Pages, public repository `khannaveed2020/Portfolio`, custom-domain base path `/`. Home-server hosting may follow after the site is stable.
 
 ### UI and animation library policy for v1
 
@@ -124,7 +124,7 @@ Professional content is sourced from `public/Naveed_Khan_Resume.pdf`. Include cu
 - Public download: `public/Naveed_Khan_Resume.pdf`; title `Naveed Khan Resume`.
 - Editable local source: `assets/source-documents/Naveed_Khan_Public_Resume.docx`; exclude this directory from Git and deployment.
 - Persistent header control: accessible label `Open Naveed Khan résumé PDF`, opens in a new tab with `rel="noopener noreferrer"`.
-- Use Vite's base URL so the deployed link is `/Portfolio/Naveed_Khan_Resume.pdf`.
+- Use Vite's root base URL so the custom-domain résumé is served at `/Naveed_Khan_Resume.pdf`.
 - Public safety changes: India only, no phone/address/postcode, no scuba depth, no Master Resume label; professional profile links retained.
 - Latest additions include Traffic Manager, Bastion, Azure NAT Gateway, Azure PaaS deployment/configuration, and Wipro user-access requests, first-level analysis and monthly MIS reporting. Copilot Studio agent descriptions remain purpose-neutral.
 
@@ -164,7 +164,7 @@ Example prompt:
 ## 10. Deployment
 
 - Local: `npm run dev`, then `npm run build && npm run preview` to test the production build
-- GitHub Pages: `base: '/Portfolio/'` in `vite.config.ts`; deploy `dist/` through GitHub Actions. Repository created as `khannaveed2020/Portfolio` on 5 October 2026. Verify deployment separately from successful Git push.
+- GitHub Pages: `base: '/'` in `vite.config.ts` for the custom domain; deploy `dist/` through GitHub Actions. Repository created as `khannaveed2020/Portfolio` on 5 October 2026. Verify deployment separately from successful Git push.
 - Linux home server: nginx serving `dist/`, HTTPS via Let's Encrypt, domain or tunnel decision needed. Provide step-by-step guidance when I ask.
 
 ## 11. Testing checklist
