@@ -1,4 +1,18 @@
-# Initial portfolio verification
+# Portfolio verification
+
+## Current configuration — 9 October 2026
+
+- GitHub Pages serves `https://khanonwheels.in/` through the custom domain. Vite and build checks use base path `/`; assets and the résumé are served from the domain root. Earlier `/Portfolio/` entries below describe historical verification and are superseded.
+- Skills and logo tickers remain continuous with no pause controls or hover/focus pausing. Reduced-motion and no-JavaScript fallbacks remain static. Earlier pause-control entries are historical.
+
+## Dependency baseline and browser checks — 9 October 2026
+
+- Replaced all direct dependency `latest` declarations with exact versions already resolved in the lockfile. Updated only the lockfile's root declarations; resolved package records, versions and integrity hashes remain unchanged. No dependencies were added or upgraded.
+- Production output after pinning and a clean offline install is byte-identical to the pre-change build. Strict TypeScript, build, static/privacy checks, 67 raster metadata checks, 48 watermark hashes and whitespace checks pass. npm audit reports zero known vulnerabilities.
+- In-app browser checks against the local production preview pass: work navigation, Enter-operated experience disclosure, all three galleries' Next/Previous controls and wraparound, and testimonial switching by click and Enter. The résumé link uses `/Naveed_Khan_Resume.pdf`.
+- No horizontal overflow at 320, 390, 768 or 1440 CSS pixels. Mobile header/hero visually inspected at 320 pixels. Testimonial height remains identical across switches at 320, 390 and 1440 pixels. No browser console warnings or errors were captured during these checks.
+- Both tickers animate in opposite directions and have no pause controls. No application source, styling or deployment configuration changed.
+- Limits: no physical touch-device, Firefox/Safari, OS reduced-motion or globally JavaScript-disabled browser test in this pass. Existing static/reduced-motion fallbacks remain in place. No deployment performed.
 
 ## Hero portrait frame — 5 October 2026
 

@@ -4,7 +4,7 @@ Personal portfolio built with Vite, React, strict TypeScript, Tailwind CSS and M
 
 ## Local development
 
-Use Node 24 and npm. Run `npm ci`, then `npm run dev`. Open the printed URL with `/Portfolio/` appended.
+Use Node 24 and npm. Run `npm ci`, then `npm run dev`. Open the printed URL at its root; do not append `/Portfolio/`.
 
 Run `npm run build` and `npm run check` before reviewing the production output with `npm run preview`.
 
@@ -12,7 +12,7 @@ The build renders the React page to static HTML before hydration. Content, navig
 
 ## GitHub Pages
 
-Repository: `khannaveed2020/Portfolio`. Default branch: `main`. Pushes run build verification. When ready to publish, select GitHub Actions as the Pages source and run the workflow manually; manual dispatch builds, verifies and deploys `dist/`. Vite is configured for `/` for the custom-domain deployment.
+Repository: `khannaveed2020/Portfolio`. Default branch: `main`. Pushes run build verification. When ready to publish, select GitHub Actions as the Pages source and run the workflow manually; manual dispatch builds, verifies and deploys `dist/`. GitHub Pages serves the custom domain `https://khanonwheels.in/`. Keep Vite’s base path `/`: assets and the résumé use root paths, not `/Portfolio/`.
 
 A live deployment must be verified after the workflow completes; a successful push alone does not confirm hosting.
 
@@ -28,7 +28,7 @@ A live deployment must be verified after the workflow completes; a successful pu
 - Editable résumé source: `assets/source-documents/`, ignored by Git and excluded from `dist/`.
 - Typography: locally available Avenir Next/Avenir with Segoe UI and system fallbacks; no remote font requests.
 
-Desktop fine pointers enable portrait tracking; the portrait remains in its hero. The cat mascot loads in a separate chunk after hydration, walks in the header and docks after scrolling; reduced motion uses a static pose. Idle eye tracking stops when settled. Native scrolling and details are used throughout. The skills and logo lists move continuously, with static reduced-motion and no-JavaScript fallbacks.
+Desktop fine pointers enable portrait tracking; the portrait remains in its hero. The cat mascot loads in a separate chunk after hydration, walks in the header and docks after scrolling; reduced motion uses a static pose. Idle eye tracking stops when settled. Native scrolling and details are used throughout. The skills and logo lists move continuously without pause controls or hover/focus pausing, with static reduced-motion and no-JavaScript fallbacks.
 
 Images disable native dragging in static HTML. React cancels context menus and drag events targeted at images/SVG artwork after hydration; other text and link targets retain normal behaviour. WebKit touch-callout suppression is a browser-specific extra deterrent. This does not prevent direct downloads, screenshots or copying from the public GitHub repository. Without JavaScript, context-menu blocking is unavailable.
 

@@ -38,7 +38,7 @@ Audience: recruiters and hiring managers. Country-specific job-search, relocatio
 - ChatGPT Plus (chat and Codex in VS Code)
 - VS Code, Git, GitHub
 - Lovable: optional bounded design critique or scaffold. Keep the local project authoritative; do not publish a duplicate or spend credits debugging. A critique-only pass does not require a second scaffold or GitHub sync.
-- Primary hosting: GitHub Pages, public repository `khannaveed2020/Portfolio`, custom-domain base path `/`. Home-server hosting may follow after the site is stable.
+- Primary hosting: GitHub Pages, public repository `khannaveed2020/Portfolio`, custom domain `https://khanonwheels.in/`, base path `/`. Assets are served from the domain root, not `/Portfolio/`. Home-server hosting may follow after the site is stable.
 
 ### UI and animation library policy for v1
 
